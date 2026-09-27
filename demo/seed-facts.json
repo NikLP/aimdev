@@ -1,0 +1,61 @@
+{
+  "site": [
+    "Harbourside Community Library is open Monday to Friday from 9am to 8pm, Saturday from 10am to 5pm, and Sunday from 12pm to 4pm.",
+    "The library is closed on public holidays and on the last Friday of every month for staff training.",
+    "Members can borrow up to 20 items at a time for 3 weeks, and can renew twice online unless another member has reserved the item.",
+    "The library stopped charging overdue fines in 2022, and items not returned after 8 weeks are billed at replacement cost.",
+    "Membership is free for residents of the borough, and children under 16 need a parent or guardian to sign up.",
+    "Baby Rhyme Time runs every Tuesday at 10:30am in the Children's Room.",
+    "Code Club for ages 9 to 13 meets every Thursday at 4pm in the makerspace.",
+    "The annual book sale is held on the first weekend of June in the main hall.",
+    "Free Wi-Fi is available in the building on the network Harbourside_Public, and it needs no password.",
+    "Public computers can be booked for 60 minutes at a time, and printing costs 10p per black-and-white page.",
+    "The makerspace has two 3D printers, and users must complete a 20-minute induction before using them.",
+    "Community groups can book a meeting room for free, for up to 4 hours at a time.",
+    "The building is step-free, there is a hearing loop at the main desk, and large-print and audio books are shelved by the entrance.",
+    "Only assistance dogs are allowed inside the library.",
+    "You can reach the library on 01632 960 123 or at hello@harbourside-library.example.",
+    "The library's writing style is warm and plain English with no jargon, and it addresses readers as 'you'.",
+    "Borrowing history is deleted 30 days after an item is returned, unless the member opts in to keep it.",
+    "The library website is built on Drupal 11 and maintained by the agency Northlight Digital.",
+    "Northlight Digital provides website support on weekdays from 9am to 5pm, and urgent problems go to the on-call number."
+  ],
+  "role": {
+    "content_editor": [
+      "Editors must add alt text to every image before publishing.",
+      "Events must be published at least two weeks before they take place.",
+      "News posts need a summary of no more than 160 characters."
+    ],
+    "communications_manager": [
+      "Only the Communications Manager can publish press releases."
+    ]
+  },
+  "user": {
+    "1": [
+      "Sam Okafor is the library's Head of Digital and the site administrator.",
+      "Sam prefers short answers as bullet points.",
+      "Sam wants the weekly website analytics summary on Monday mornings.",
+      "Sam is presenting the new events calendar to the trustees on 14 October."
+    ]
+  },
+  "case": {
+    "events-calendar-redesign": [
+      "The events calendar redesign was approved by the trustees on 3 September.",
+      "The redesigned events calendar launches on 20 October.",
+      "Northlight Digital is building the events calendar with Views and a recurring-dates field.",
+      "The old events page will redirect to the new calendar on launch day."
+    ]
+  },
+  "persona": {
+    "site_name": "Harbourside Community Library",
+    "site_slogan": "A fictional library, used to demonstrate AIM: agent memory built in Drupal",
+    "agent_prompt": "You are the assistant on the website of Harbourside Community Library, a fictional library used to demonstrate AIM, agent memory built natively in Drupal. Be warm and use plain English. Answer questions about the library using facts you recall from memory. If nothing you recall is relevant to a question about the library, say you don't have that recorded and invite the visitor to tell you if they know. You only help with the library. If a question is about anything else (general knowledge, other topics), politely say you can only help with questions about the library, and do not answer it even if you know the answer. You can also remember short facts about the library for later, but only things genuinely worth keeping long-term, not small talk. Do not save a fact the moment it's mentioned - wait until a point in the conversation has actually been settled (the visitor has confirmed it, or a topic has reached a natural pause), then save it as a clear, correct statement. If asked a broad or open-ended question like 'what do you know' or 'tell me everything', do not try to list everything - ask what specifically they'd like to know.",
+    "welcome": "Hi! I'm the Harbourside Library assistant. Ask me about opening hours, borrowing, events or services, or tell me something worth remembering for next time.",
+    "front_page_title": "Welcome",
+    "widget_label": "Harbourside Library assistant",
+    "bot_name": "Library Assistant"
+  },
+  "config": {
+    "recall_max_distance": 0.48
+  }
+}

@@ -1,0 +1,22 @@
+uuid: 14ec65f9-3ac7-4aab-9261-3b3972bbc393
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+  module:
+    - ai_chatbot
+    - file
+    - filter
+    - system
+_core:
+  default_config_hash: wkW7P5A53YhGmsgamrmTbfwpZrqdnPYiJdoAZQtdmJg
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access deepchat api'
+  - 'delete own files'
+  - 'use text format basic_html'

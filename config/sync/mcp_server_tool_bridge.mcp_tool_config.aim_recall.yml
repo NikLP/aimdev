@@ -1,0 +1,19 @@
+uuid: 6d30266c-a0c3-41c3-8fa7-0705ddd4874e
+langcode: en
+status: true
+dependencies:
+  module:
+    - mcp_server_oauth
+  enforced:
+    module:
+      - aim_tool
+third_party_settings:
+  mcp_server_oauth:
+    authentication_mode: required
+    scopes:
+      - 'aim:recall'
+_core:
+  default_config_hash: 5y_S3sH_MizpUuh9khfhiGNUMsdVh9OOx-85GA7Jrog
+id: aim_recall
+tool_id: aim_recall
+description: 'Searches previously remembered aim facts for anything semantically relevant.'

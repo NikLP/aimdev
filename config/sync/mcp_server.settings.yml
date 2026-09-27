@@ -1,0 +1,13 @@
+_core:
+  default_config_hash: JtykKovyUvaulzCFS36nUgMlm-20H7nIErT_nTvynAQ
+server_name: 'Drupal MCP Server'
+server_version: 1.0.0
+server_instructions: |-
+  AIM stores durable facts (not conversation transcripts) for this site. Use aim_remember for anything the user states as true about themselves, the site, or a task worth recalling later - not for things already visible in the current context. Use aim_recall before answering questions that might depend on something remembered earlier. Keep saved facts short and atomic, one fact per call.
+
+  Facts have a scope: user, role, site, or case. Default to site for facts about the site itself. Use user only for a fact about the person you are talking to right now - never save a user-scope fact about someone else without them confirming who it is about. If a role- or case-scope fact has no clear role or case to attach it to, ask before saving it.
+pagination_limit: 50
+pending:
+  poll_interval_ms: 300
+  sampling_timeout: 25
+  elicitation_timeout: 600

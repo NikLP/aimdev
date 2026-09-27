@@ -1,0 +1,19 @@
+uuid: 9142c2f5-534f-4720-b15a-dcc77c2e6b5d
+langcode: en
+status: true
+dependencies:
+  module:
+    - mcp_server_oauth
+  enforced:
+    module:
+      - aim_tool
+third_party_settings:
+  mcp_server_oauth:
+    authentication_mode: required
+    scopes:
+      - 'aim:remember'
+_core:
+  default_config_hash: Do7bZPR30g9tww6HfRQa9IhBV44VEO4FCFcynZGAGC0
+id: aim_remember
+tool_id: aim_remember
+description: 'Saves a short, atomic fact directly into aim memory.'

@@ -1,0 +1,22 @@
+uuid: aa0e1655-0ca5-42d8-a7e4-dc469f211839
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - aim_tool_oauth
+_core:
+  default_config_hash: P8DhHaBPiv96AfpBklbAIDDa5COacru5WpDgAVjpeu4
+id: aim_remember
+name: 'aim:remember'
+description: 'Write access to aim memory (save facts via aim_remember).'
+grant_types:
+  authorization_code:
+    status: true
+  refresh_token:
+    status: true
+umbrella: false
+parent: null
+granularity_id: permission
+granularity_configuration:
+  permission: 'store aim memory'

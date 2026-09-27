@@ -1,0 +1,19 @@
+uuid: 12076312-dc04-49d2-9701-59ff8d15b914
+langcode: en
+status: true
+dependencies:
+  config:
+    - ai.ai_guardrail.aim_max_length
+    - ai.ai_guardrail.aim_no_markup
+_core:
+  default_config_hash: dwjYRQ_cAkIGjW9Qg6dxWxS7hKS2y3ejPk8Fn-AiAOY
+id: aim_write_guardrails
+label: 'AIM: fact write guardrails'
+description: 'Applied to every candidate fact before it is stored.'
+stop_threshold: 1.0
+pre_generate_guardrails:
+  plugin_id:
+    - aim_max_length
+    - aim_no_markup
+post_generate_guardrails:
+  plugin_id: {  }

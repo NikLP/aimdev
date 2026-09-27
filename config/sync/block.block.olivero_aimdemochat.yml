@@ -1,0 +1,53 @@
+uuid: 567338b5-0e45-4766-a94d-182383aa5dcf
+langcode: en
+status: true
+dependencies:
+  module:
+    - ai_chatbot
+    - user
+  theme:
+    - olivero
+  enforced:
+    module:
+      - aim_chatbot
+_core:
+  default_config_hash: kHWJuSVpPUlg3IB5LMH2am27h92lkwUUayDXU3NR_rc
+id: olivero_aimdemochat
+theme: olivero
+region: content
+weight: -10
+provider: null
+plugin: ai_deepchat_block
+settings:
+  id: ai_deepchat_block
+  label: 'Harbourside Library assistant'
+  label_display: visible
+  provider: ai_chatbot
+  ai_assistant: aim_demo_assistant
+  bot_name: 'Library Assistant'
+  bot_image: /modules/contrib/ai/modules/ai_chatbot/assets/ai-icon-gradient.svg
+  use_username: 1
+  default_username: Visitor
+  use_avatar: 0
+  default_avatar: ''
+  first_message: "Hi! I'm the Harbourside Library assistant. Ask me about opening hours, borrowing, events or services, or tell me something worth remembering for next time."
+  loading_message: Thinking...
+  stream: 0
+  toggle_state: open
+  width: 400px
+  height: 500px
+  placement: bottom-right
+  show_structured_results: false
+  show_copy_icon: true
+  collapse_minimal: false
+  style_file: 'module:ai_chatbot:toolbar.yml'
+  verbose_mode: false
+  expansion_method: expand
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated

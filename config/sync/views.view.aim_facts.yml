@@ -1,0 +1,414 @@
+uuid: 6cc7c814-c168-41b1-a400-5e1425eb1d56
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.admin
+  module:
+    - aim
+    - user
+_core:
+  default_config_hash: '-f-r5tNa5E_TMzhgemyEdF3Yn8l3xQr8IthtlmwQots'
+id: aim_facts
+label: 'AIM facts'
+module: views
+description: 'Lists every remembered fact - scope, subject, text, source, state, and whether it has been retired by consolidation.'
+tag: default
+base_table: aim_fact
+base_field: id
+display:
+  default:
+    id: default
+    display_title: Default
+    display_plugin: default
+    position: 0
+    display_options:
+      title: 'AIM facts'
+      fields:
+        aim_fact_bulk_form:
+          id: aim_fact_bulk_form
+          table: aim_fact
+          field: aim_fact_bulk_form
+          entity_type: aim_fact
+          plugin_id: bulk_form
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+          element_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+        id:
+          id: id
+          table: aim_fact
+          field: id
+          entity_type: aim_fact
+          entity_field: id
+          plugin_id: field
+          label: ID
+          exclude: false
+          alter:
+            alter_text: false
+          element_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+        scope:
+          id: scope
+          table: aim_fact
+          field: scope
+          entity_type: aim_fact
+          entity_field: scope
+          plugin_id: field
+          label: Scope
+          exclude: false
+          alter:
+            alter_text: false
+          element_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          type: string
+          settings:
+            link_to_entity: false
+        subject:
+          id: subject
+          table: aim_fact
+          field: subject
+          entity_type: aim_fact
+          entity_field: subject
+          plugin_id: field
+          label: Subject
+          exclude: false
+          alter:
+            alter_text: false
+          element_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          type: string
+          settings:
+            link_to_entity: false
+        subject_uid:
+          id: subject_uid
+          table: aim_fact
+          field: subject_uid
+          entity_type: aim_fact
+          entity_field: subject_uid
+          plugin_id: field
+          label: 'Subject (user)'
+          exclude: false
+          alter:
+            alter_text: false
+          element_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          type: entity_reference_label
+          settings:
+            link: false
+        text:
+          id: text
+          table: aim_fact
+          field: text
+          entity_type: aim_fact
+          entity_field: text
+          plugin_id: field
+          label: Text
+          exclude: false
+          alter:
+            alter_text: false
+          element_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          type: basic_string
+          settings:
+            trim_length: 150
+        source:
+          id: source
+          table: aim_fact
+          field: source
+          entity_type: aim_fact
+          entity_field: source
+          plugin_id: field
+          label: Source
+          exclude: false
+          alter:
+            alter_text: false
+          element_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          type: string
+          settings:
+            link_to_entity: false
+        uid:
+          id: uid
+          table: aim_fact
+          field: uid
+          entity_type: aim_fact
+          entity_field: uid
+          plugin_id: field
+          label: 'Extracted by'
+          exclude: false
+          alter:
+            alter_text: false
+          element_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          type: entity_reference_label
+          settings:
+            link: false
+        state:
+          id: state
+          table: aim_fact
+          field: state
+          entity_type: aim_fact
+          entity_field: state
+          plugin_id: field
+          label: State
+          exclude: false
+          alter:
+            alter_text: false
+          element_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          type: boolean
+          settings:
+            format: custom
+            format_custom_false: ''
+            format_custom_true: 'true'
+        expires:
+          id: expires
+          table: aim_fact
+          field: expires
+          entity_type: aim_fact
+          entity_field: expires
+          plugin_id: field
+          label: 'Retired at'
+          exclude: false
+          alter:
+            alter_text: false
+          element_class: ''
+          element_default_classes: true
+          empty: 'still live'
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+          type: timestamp
+          settings:
+            date_format: short
+            custom_date_format: ''
+            timezone: ''
+        operations:
+          id: operations
+          table: aim_fact
+          field: operations
+          entity_type: aim_fact
+          plugin_id: entity_operations
+          label: Operations
+          exclude: false
+          alter:
+            alter_text: false
+          element_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+      pager:
+        type: full
+        options:
+          pagination_heading_level: h4
+          items_per_page: 50
+          tags:
+            next: 'Next ›'
+            previous: '‹ Previous'
+            first: '« First'
+            last: 'Last »'
+      access:
+        type: perm
+        options:
+          perm: 'administer aim memory'
+      cache:
+        type: tag
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          plugin_id: text_custom
+          empty: true
+          content: 'No facts remembered yet.'
+      sorts:
+        id:
+          id: id
+          table: aim_fact
+          field: id
+          entity_type: aim_fact
+          entity_field: id
+          plugin_id: standard
+          order: DESC
+      arguments: {  }
+      filters: {  }
+      style:
+        type: table
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          columns:
+            aim_fact_bulk_form: aim_fact_bulk_form
+            id: id
+            scope: scope
+            subject: subject
+            subject_uid: subject_uid
+            text: text
+            source: source
+            uid: uid
+            state: state
+            expires: expires
+            operations: operations
+          default: id
+          info:
+            aim_fact_bulk_form:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            id:
+              sortable: true
+              default_sort_order: desc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            scope:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            subject:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            subject_uid:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            text:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            source:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: priority-low
+            uid:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: priority-low
+            state:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            expires:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            operations:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          override: true
+          sticky: true
+          summary: ''
+          empty_table: true
+          caption: ''
+          description: ''
+          class: ''
+      row:
+        type: fields
+      query:
+        type: views_query
+      relationships: {  }
+      show_admin_links: false
+      display_extenders: {  }
+    cache_metadata:
+      max-age: 0
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - user.permissions
+      tags: {  }
+  page_1:
+    id: page_1
+    display_title: Page
+    display_plugin: page
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: admin/content/aim-facts
+      menu:
+        type: normal
+        title: 'AIM facts'
+        description: 'Browse every fact aim currently remembers.'
+        weight: 0
+        menu_name: admin
+        parent: system.admin_content
+        context: ''
+    cache_metadata:
+      max-age: 0
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - user.permissions
+      tags: {  }
