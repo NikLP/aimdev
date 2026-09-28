@@ -3,6 +3,7 @@ _core:
 index_id: aim_vector_index
 control_field_max_length: false
 exclude_chunk_from_metadata: false
+exclude_title: false
 indexing_options:
   text:
     field_name: text
@@ -18,4 +19,7 @@ indexing_options:
     indexing_option: attributes
   subject_uid:
     field_name: subject_uid
+    indexing_option: attributes
+  trusted:
+    field_name: trusted
     indexing_option: attributes
