@@ -37,15 +37,11 @@
         "drupal/simple_oauth": "^6",
         "drupal/tool": "^1.0@beta",
         "drush/drush": "^13.8",
-        "e0ipso/simple_oauth_21": "^1"
+        "e0ipso/simple_oauth_21": "^1.13.1"
     },
     "conflict": {
         "drupal/drupal": "*",
         "twig/twig": "3.30.0"
-    },
-    "provide": {
-        "drupal/simple_oauth_client_registration": "1.13.0",
-        "drupal/simple_oauth_server_metadata": "1.13.0"
     },
     "minimum-stability": "stable",
     "prefer-stable": true,

@@ -1,0 +1,11 @@
+uuid: 8bdc7e54-1be6-4019-b379-f2e8bd2a7c42
+langcode: en
+status: true
+dependencies:
+  module:
+    - aim
+id: aim_fact_untrust
+label: Untrust
+type: aim_fact
+plugin: aim_fact_untrust
+configuration: {  }

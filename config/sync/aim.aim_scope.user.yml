@@ -1,6 +1,12 @@
 uuid: 260c631e-7b03-4df3-bc30-9a1e7d89e7f7
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  enforced:
+    module:
+      - aim_scope_user
 id: user
 label: User
+plugin: user
+settings:
+  requires_account: true

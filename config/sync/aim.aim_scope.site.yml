@@ -1,6 +1,11 @@
 uuid: 5df0a65b-88f3-4b1b-9d6e-2c036752a3ab
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  enforced:
+    module:
+      - aim_scope_site
 id: site
 label: Site
+plugin: null
+settings: {  }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8e15ec0bc162c45ed140ca4d9d9c5774",
+    "content-hash": "6a68d4375dfefdd8c8a6e262b2043c11",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3318,17 +3318,24 @@
         },
         {
             "name": "e0ipso/simple_oauth_21",
-            "version": "v1.13.0",
+            "version": "v1.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/e0ipso/simple_oauth_21.git",
-                "reference": "9ed04e9b181bc34c6a6505825fbdcc1c2289b966"
+                "reference": "b45cbce5f1eb87c1ba0f89dcebd3d61bd2fe4a7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/e0ipso/simple_oauth_21/zipball/9ed04e9b181bc34c6a6505825fbdcc1c2289b966",
-                "reference": "9ed04e9b181bc34c6a6505825fbdcc1c2289b966",
+                "url": "https://api.github.com/repos/e0ipso/simple_oauth_21/zipball/b45cbce5f1eb87c1ba0f89dcebd3d61bd2fe4a7f",
+                "reference": "b45cbce5f1eb87c1ba0f89dcebd3d61bd2fe4a7f",
                 "shasum": ""
+            },
+            "provide": {
+                "drupal/simple_oauth_client_registration": "self.version",
+                "drupal/simple_oauth_device_flow": "self.version",
+                "drupal/simple_oauth_native_apps": "self.version",
+                "drupal/simple_oauth_pkce": "self.version",
+                "drupal/simple_oauth_server_metadata": "self.version"
             },
             "require-dev": {
                 "drupal/coder": "^8",
@@ -3351,9 +3358,9 @@
             "description": "Implements OAuth 2.1 on top of Simple OAuth for Drupal",
             "support": {
                 "issues": "https://github.com/e0ipso/simple_oauth_21/issues",
-                "source": "https://github.com/e0ipso/simple_oauth_21/tree/v1.13.0"
+                "source": "https://github.com/e0ipso/simple_oauth_21/tree/v1.13.1"
             },
-            "time": "2025-11-03T17:00:51+00:00"
+            "time": "2026-09-29T14:31:47+00:00"
         },
         {
             "name": "egulias/email-validator",

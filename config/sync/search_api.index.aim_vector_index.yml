@@ -37,14 +37,6 @@ field_settings:
     dependencies:
       module:
         - aim
-  subject_uid:
-    label: 'Subject uid'
-    datasource_id: 'entity:aim_fact'
-    property_path: subject_uid
-    type: integer
-    dependencies:
-      module:
-        - aim
   text:
     label: Text
     datasource_id: 'entity:aim_fact'
@@ -58,6 +50,14 @@ field_settings:
     datasource_id: 'entity:aim_fact'
     property_path: trusted
     type: boolean
+    dependencies:
+      module:
+        - aim
+  user:
+    label: 'Subject (user)'
+    datasource_id: 'entity:aim_fact'
+    property_path: user
+    type: integer
     dependencies:
       module:
         - aim

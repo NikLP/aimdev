@@ -1,0 +1,11 @@
+uuid: b1a251ca-9717-4f04-b848-654201f476a3
+langcode: en
+status: true
+dependencies:
+  module:
+    - aim
+id: aim_fact_trust
+label: Trust
+type: aim_fact
+plugin: aim_fact_trust
+configuration: {  }

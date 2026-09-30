@@ -1,0 +1,11 @@
+uuid: 158819bd-63cf-456e-ab07-1e97f7dd5808
+langcode: en
+status: true
+dependencies:
+  module:
+    - aim
+id: aim_fact_unretire
+label: Un-retire
+type: aim_fact
+plugin: aim_fact_unretire
+configuration: {  }

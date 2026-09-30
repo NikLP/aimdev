@@ -13,7 +13,13 @@ module:
   ai_search: 0
   ai_vdb_provider_mariadb: 0
   aim: 0
+  aim_benchmark: 0
   aim_chatbot: 0
+  aim_scope_case: 0
+  aim_scope_entity: 0
+  aim_scope_role: 0
+  aim_scope_site: 0
+  aim_scope_user: 0
   aim_tool: 0
   aim_tool_oauth: 0
   announcements_feed: 0

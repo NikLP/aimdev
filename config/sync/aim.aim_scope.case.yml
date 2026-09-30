@@ -1,6 +1,11 @@
 uuid: bdd282cc-ee30-484a-b951-7ff0397fbda9
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  enforced:
+    module:
+      - aim_scope_case
 id: case
 label: Case
+plugin: case
+settings: {  }

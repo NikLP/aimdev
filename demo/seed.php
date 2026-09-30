@@ -39,18 +39,18 @@ if ($old) {
 }
 $count = 0;
 foreach ($data['site'] as $text) {
-  $mm->remember($text, 'site', NULL, $source);
+  $mm->remember($text, 'site', NULL, $source, trusted: TRUE);
   $count++;
 }
 foreach ($data['role'] as $role => $texts) {
   foreach ($texts as $text) {
-    $mm->remember($text, 'role', $role, $source);
+    $mm->remember($text, 'role', $role, $source, trusted: TRUE);
     $count++;
   }
 }
 foreach ($data['user'] as $uid => $texts) {
   foreach ($texts as $text) {
-    $mm->remember($text, 'user', (string) $uid, $source);
+    $mm->remember($text, 'user', (string) $uid, $source, trusted: TRUE);
     $count++;
   }
 }
@@ -58,7 +58,7 @@ foreach ($data['case'] as $texts) {
   $case_id = NULL;
   foreach ($texts as $text) {
     // The first fact mints the case ID, the rest join it.
-    $fact = $mm->remember($text, 'case', $case_id, $source);
+    $fact = $mm->remember($text, 'case', $case_id, $source, trusted: TRUE);
     $case_id ??= $fact->get('subject')->value;
     $count++;
   }

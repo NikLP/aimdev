@@ -98,12 +98,12 @@ display:
           type: string
           settings:
             link_to_entity: false
-        subject_uid:
-          id: subject_uid
+        user:
+          id: user
           table: aim_fact
-          field: subject_uid
+          field: user
           entity_type: aim_fact
-          entity_field: subject_uid
+          entity_field: user
           plugin_id: field
           label: 'Subject (user)'
           exclude: false
@@ -306,13 +306,13 @@ display:
             id: id
             scope: scope
             subject: subject
-            subject_uid: subject_uid
             text: text
             source: source
             uid: uid
             state: state
             expires: expires
             operations: operations
+            user: user
           default: id
           info:
             aim_fact_bulk_form:
@@ -335,13 +335,6 @@ display:
               empty_column: false
               responsive: ''
             subject:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            subject_uid:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -384,6 +377,13 @@ display:
               empty_column: false
               responsive: ''
             operations:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            user:
+              sortable: false
+              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
