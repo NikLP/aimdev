@@ -154,7 +154,7 @@ async function askWidget(page, question) {
       if (!(j.models || []).some((m) => /nomic-embed-text/.test(m.name))) throw new Error('nomic-embed-text not found');
     });
     await check('vector index fully indexed, no orphans', async () => {
-      const out = drush('sql:query', "SELECT (SELECT COUNT(*) FROM aim_fact WHERE expires IS NULL AND text IS NOT NULL), (SELECT COUNT(*) FROM aim_facts), (SELECT COUNT(*) FROM aim_facts v LEFT JOIN aim_fact f ON v.drupal_entity_id = CONCAT('entity:aim_fact/', f.id, ':en') WHERE f.id IS NULL), (SELECT COUNT(*) FROM aim_fact WHERE source LIKE 'zz%' OR text LIKE '%ZZ%')");
+      const out = drush('sql:query', "SELECT (SELECT COUNT(*) FROM aim_fact WHERE expires IS NULL AND text IS NOT NULL), (SELECT COUNT(*) FROM aim_fact_vectors), (SELECT COUNT(*) FROM aim_fact_vectors v LEFT JOIN aim_fact f ON v.drupal_entity_id = CONCAT('entity:aim_fact/', f.id, ':en') WHERE f.id IS NULL), (SELECT COUNT(*) FROM aim_fact WHERE source LIKE 'zz%' OR text LIKE '%ZZ%')");
       const [live, rows, orphans, tests] = out.split(/\s+/).map(Number);
       if (live !== rows) throw new Error(`${live} live facts but ${rows} vector rows (run: ddev drush sapi-i aim_vector_index)`);
       if (orphans) throw new Error(orphans + ' orphan vector rows');
