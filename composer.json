@@ -28,6 +28,7 @@
         "drupal/core-project-message": "^11.4",
         "drupal/core-recipe-unpack": "^11.4",
         "drupal/core-recommended": "^11.4",
+        "drupal/cshs": "^4.0",
         "drupal/eca": "^3.1",
         "drupal/gin": "^5.0",
         "drupal/mcp_server": "^2.0.0-beta3",

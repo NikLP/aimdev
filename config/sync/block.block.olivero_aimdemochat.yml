@@ -23,7 +23,6 @@ settings:
   label: 'Harbourside Library assistant'
   label_display: visible
   provider: ai_chatbot
-  ai_assistant: aim_demo_assistant
   bot_name: 'Library Assistant'
   bot_image: /modules/contrib/ai/modules/ai_chatbot/assets/ai-icon-gradient.svg
   use_username: 1
@@ -32,16 +31,22 @@ settings:
   default_avatar: ''
   first_message: "Hi! I'm the Harbourside Library assistant. Ask me about opening hours, borrowing, events or services, or tell me something worth remembering for next time."
   loading_message: Thinking...
+  agent_delegation_message: ''
   stream: 0
   toggle_state: open
   width: 400px
   height: 500px
   placement: bottom-right
-  show_structured_results: false
   show_copy_icon: true
   collapse_minimal: false
   style_file: 'module:ai_chatbot:toolbar.yml'
-  verbose_mode: false
+  disable_csrf: false
+  chat_processor_plugin: ai_assistant_api_processor
+  plugin_configuration:
+    assistant_id: aim_demo_assistant
+    stream_output: false
+    verbose_mode: false
+    show_structured_results: false
   expansion_method: expand
 visibility:
   user_role:
