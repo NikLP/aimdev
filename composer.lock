@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e6118976a9a5a1f1673067da7c83ef1a",
+    "content-hash": "95571ea06c3139f14dc86f3d607389de",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1228,17 +1228,11 @@
         },
         {
             "name": "drupal/ai",
-            "version": "1.5.0",
+            "version": "dev-1.6.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ai.git",
-                "reference": "1.5.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ai-1.5.0.zip",
-                "reference": "1.5.0",
-                "shasum": "9675eb1dba3e597b92b5cede66c1971d9684bd53"
+                "reference": "e454dfc4bec17a91ecce3c737f6f8a340cd032c2"
             },
             "require": {
                 "drupal/ai_content_suggestions": "^1.5",
@@ -1277,12 +1271,15 @@
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-1.6.x": "1.6.x-dev"
+                },
                 "drupal": {
-                    "version": "1.5.0",
-                    "datestamp": "1790327388",
+                    "version": "1.6.x-dev",
+                    "datestamp": "1790871416",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -1519,6 +1516,111 @@
             "homepage": "https://www.drupal.org/project/ai_content_suggestions",
             "support": {
                 "source": "https://git.drupalcode.org/project/ai_content_suggestions"
+            }
+        },
+        {
+            "name": "drupal/ai_context",
+            "version": "1.0.0-rc1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/ai_context.git",
+                "reference": "1.0.0-rc1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ai_context-1.0.0-rc1.zip",
+                "reference": "1.0.0-rc1",
+                "shasum": "96aae95bc02710548fdc2f0abd17969990d16e9d"
+            },
+            "require": {
+                "drupal/ai": "^1.4 || ^2",
+                "drupal/ai_agents": "^1.2",
+                "drupal/core": "^10.5 || ^11.2",
+                "league/commonmark": "^2.4"
+            },
+            "require-dev": {
+                "drupal/ai": "*",
+                "drupal/ai_agents_debugger": "^1.0@beta",
+                "drupal/ai_file_to_text": "^1.0",
+                "drupal/diff": "^1.0",
+                "drupal/document_loader": "^2.0.3",
+                "drupal/document_loader_mdx": "*",
+                "drupal/document_loader_media": "*",
+                "drupal/dynamic_entity_reference": "^3.2",
+                "drupal/field_widget_actions": "^1.4",
+                "drupal/scheduler": "^2.3",
+                "drupal/scheduler_content_moderation_integration": "^3.0",
+                "drupal/token": "^1.15",
+                "drush/drush": "^12|^13",
+                "twig/twig": "~3.29.0"
+            },
+            "suggest": {
+                "drupal/ai_agents_debugger": "Provides AI Agents debugger integration for testing agent context delivery.",
+                "drupal/ai_file_to_text": "Provides markdown editor importer support for Word, PDFs, and other document formats.",
+                "drupal/canvas": "Required when using Context Items on Canvas-enabled sites. Use Canvas 1.8.0 or later.",
+                "drupal/diff": "Allows you to compare revisions of context items.",
+                "drupal/document_loader": "Provides markdown editor importer support for common files (txt, md, pdf, docx, xlsx).",
+                "drupal/document_loader_webpage": "Provides markdown editor importer support for URL content.",
+                "drupal/dynamic_entity_reference": "Provides the entity item scope plugin for associating context with one or more entity items.",
+                "drupal/field_widget_actions": "Provides field widget actions used by enhanced context item editing workflows.",
+                "drupal/scheduler": "Schedules publishing and unpublishing of context items.",
+                "drupal/scheduler_content_moderation_integration": "Schedules moderation state changes for context items.",
+                "drupal/token": "Provides token replacement support used by optional integrations."
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-rc1",
+                    "datestamp": "1790379993",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "scripts": {
+                "lint": [
+                    "@lint:cspell",
+                    "@lint:phpcs",
+                    "@lint:phpstan",
+                    "@lint:eslint",
+                    "@lint:stylelint"
+                ],
+                "lint:cspell": [
+                    "npx --yes cspell \"**/*.{php,js,yml,md,twig,css,sh}\" --config .cspell.json"
+                ],
+                "lint:phpcs": [
+                    "cd ../../../.. && vendor/bin/phpcs --standard=Drupal,DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,yml --ignore='*/.gitlab/*' web/modules/contrib/ai_context"
+                ],
+                "lint:phpstan": [
+                    "cd ../../../.. && php -d memory_limit=512M vendor/bin/phpstan analyze web/modules/contrib/ai_context --configuration=web/modules/contrib/ai_context/phpstan.neon.dist"
+                ],
+                "lint:eslint": [
+                    "npx --yes eslint js/**/*.js"
+                ],
+                "lint:stylelint": [
+                    "../../../core/node_modules/.bin/stylelint --config .stylelint-local.json --config-basedir ../../../core \"css/**/*.css\" \"modules/*/css/**/*.css\""
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "kristen pol",
+                    "homepage": "https://www.drupal.org/user/8389"
+                },
+                {
+                    "name": "kurtfoster",
+                    "homepage": "https://www.drupal.org/user/403040"
+                }
+            ],
+            "description": "Manage AI context used in agent prompts for better AI outcomes.",
+            "homepage": "https://www.drupal.org/project/ai_context",
+            "support": {
+                "source": "https://git.drupalcode.org/project/ai_context",
+                "issues": "https://drupal.org/project/issues/ai_context"
             }
         },
         {
@@ -1790,6 +1892,64 @@
             "homepage": "https://www.drupal.org/project/ai_provider_ollama",
             "support": {
                 "source": "https://git.drupalcode.org/project/ai_provider_ollama"
+            }
+        },
+        {
+            "name": "drupal/ai_provider_typesafeai",
+            "version": "1.1.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/ai_provider_typesafeai.git",
+                "reference": "1.1.0-beta1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ai_provider_typesafeai-1.1.0-beta1.zip",
+                "reference": "1.1.0-beta1",
+                "shasum": "20c5bf8b1f041b16b2ea862dbbe49d80e27d9954"
+            },
+            "require": {
+                "drupal/ai": "^1.6",
+                "drupal/core": "^10.5 || ^11.2",
+                "drupal/key": "^1.18"
+            },
+            "require-dev": {
+                "drupal/ai_logging": "^1.3.2"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.1.0-beta1",
+                    "datestamp": "1790873284",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "dsdeiz",
+                    "homepage": "https://www.drupal.org/user/447770"
+                },
+                {
+                    "name": "markusa",
+                    "homepage": "https://www.drupal.org/user/142798"
+                },
+                {
+                    "name": "rafad",
+                    "homepage": "https://www.drupal.org/user/3840089"
+                }
+            ],
+            "description": "TypeSafe AI (Jev) provider for Drupal AI, implementing typed Decision operations, text classification and moderation.",
+            "homepage": "https://www.drupal.org/project/ai_provider_typesafeai",
+            "support": {
+                "source": "https://git.drupalcode.org/project/ai_provider_typesafeai",
+                "issues": "https://www.drupal.org/project/issues/ai_provider_typesafeai"
             }
         },
         {
@@ -2136,6 +2296,67 @@
             "homepage": "https://www.drupal.org/project/annotations",
             "support": {
                 "source": "https://git.drupalcode.org/project/annotations"
+            }
+        },
+        {
+            "name": "drupal/config_pages",
+            "version": "4.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/config_pages.git",
+                "reference": "4.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/config_pages-4.0.1.zip",
+                "reference": "4.0.1",
+                "shasum": "5a0c3fdcba4668da89d8bb74bff363bc6233268d"
+            },
+            "require": {
+                "drupal/core": "^10 || ^11 || ^12"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "4.0.1",
+                    "datestamp": "1786281581",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "m.krestnicov",
+                    "homepage": "https://www.drupal.org/user/3193903"
+                },
+                {
+                    "name": "qwaygon",
+                    "homepage": "https://www.drupal.org/user/636624"
+                },
+                {
+                    "name": "shumer",
+                    "homepage": "https://www.drupal.org/user/2297432"
+                }
+            ],
+            "description": "ConfigPages module",
+            "homepage": "http://drupal.org/project/config_pages",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/config_pages",
+                "issues": "http://drupal.org/project/issues/config_pages"
             }
         },
         {
@@ -17252,7 +17473,10 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "drupal/ai": 20,
+        "drupal/ai_context": 5,
         "drupal/ai_provider_ollama": 5,
+        "drupal/ai_provider_typesafeai": 10,
         "drupal/ai_search": 15,
         "drupal/annotations": 15,
         "drupal/mcp_server": 10,

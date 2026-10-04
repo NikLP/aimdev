@@ -8,8 +8,8 @@ module:
   ai_assistant_api: 0
   ai_chatbot: 0
   ai_provider_amazeeio: 0
-  ai_provider_anthropic: 0
   ai_provider_ollama: 0
+  ai_provider_typesafeai: 0
   ai_search: 0
   ai_vdb_provider_mariadb: 0
   aim: 0

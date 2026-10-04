@@ -7,20 +7,29 @@ default_providers:
     provider_id: amazeeio
     model_id: claude-5-sonnet
   chat_with_complex_json:
-    provider_id: anthropic
-    model_id: claude-opus-4-5-20251101
+    provider_id: amazeeio
+    model_id: claude-5-sonnet
   chat_with_image_vision:
-    provider_id: anthropic
-    model_id: claude-sonnet-4-5-20250929
+    provider_id: amazeeio
+    model_id: claude-5-sonnet
   chat_with_structured_response:
-    provider_id: anthropic
-    model_id: claude-opus-4-5-20251101
+    provider_id: amazeeio
+    model_id: claude-5-sonnet
   chat_with_tools:
-    provider_id: anthropic
-    model_id: claude-opus-4-5-20251101
+    provider_id: amazeeio
+    model_id: claude-5-sonnet
+  decision:
+    provider_id: typesafeai
+    model_id: jev-latest
   embeddings:
     provider_id: ollama
     model_id: nomic_embed_text_latest
+  moderation:
+    provider_id: typesafeai
+    model_id: jev-latest
+  text_classification:
+    provider_id: typesafeai
+    model_id: jev-latest
   text_to_image:
     provider_id: amazeeio
     model_id: gemini-2.5-flash-image
