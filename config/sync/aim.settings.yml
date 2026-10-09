@@ -37,7 +37,9 @@ merge_verify_prompt: |
   nothing that neither fact states, except where Fact B plainly corrects or
   supersedes a detail of Fact A. Otherwise set faithful to false.
 recall_max_distance: 0.48
+recall_gap: 0.1
 default_trusted: true
+show_redacted_facts: true
 log_audit: true
 log_verbose: true
 log_query_text: true

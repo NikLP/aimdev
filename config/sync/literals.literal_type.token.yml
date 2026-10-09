@@ -1,0 +1,9 @@
+uuid: 1ce094fc-4d29-4019-983d-d355394c6d61
+langcode: en
+status: true
+dependencies: {  }
+id: token
+label: Token
+description: ''
+resolver: token
+validate_as: string

@@ -25,6 +25,15 @@ $mm = \Drupal::service('aim.memory_manager');
 $storage = \Drupal::entityTypeManager()->getStorage('aim_fact');
 $source = 'demo-seed';
 
+// Literals the demo facts point at. Created only when missing, so a value
+// edited on stage is not overwritten by a re-seed.
+$literal_storage = \Drupal::entityTypeManager()->getStorage('literal');
+foreach ($data['literals'] as $literal) {
+  if (!$literal_storage->loadByProperties(['key' => $literal['key']])) {
+    $literal_storage->create($literal + ['status' => 1])->save();
+  }
+}
+
 // Facts.
 // DEMO_RESET=1 also removes every fact the audience added through chat or
 // MCP, returning the site to its starting state between demo runs. Without

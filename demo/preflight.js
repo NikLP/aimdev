@@ -205,6 +205,23 @@ async function askWidget(page, question) {
       });
     }
 
+    await check('literals: exact value by viewer, via the lookup tool', async () => {
+      const out = php(`
+        $reader = \\Drupal::service("literals.reader");
+        $anon = new \\Drupal\\Core\\Session\\AnonymousUserSession();
+        $admin = \\Drupal\\user\\Entity\\User::load(1);
+        \\Drupal::currentUser()->setAccount($admin);
+        $tool = \\Drupal::service("plugin.manager.tool")->createInstance("literals:lookup");
+        $tool->setInputValue("question", "What is the library main phone number?");
+        $v = $tool->execute()->getResult()->getContextValues();
+        echo json_encode(["phone" => $reader->read("main_phone", $anon), "staffAnon" => $reader->read("staff_line", $anon), "staffAdmin" => $reader->read("staff_line", $admin), "tool" => $v["value"] ?? ""]);`);
+      const r = JSON.parse(out.split('\n').pop());
+      if (!r.phone || r.tool !== r.phone) throw new Error('tool returned "' + r.tool + '", expected ' + r.phone);
+      if (r.staffAnon !== null) throw new Error('anonymous can read the staff line: ' + r.staffAnon);
+      if (!r.staffAdmin) throw new Error('admin cannot read the staff line');
+      return 'tool gave ' + r.tool + '; staff line hidden from anonymous, visible to admin';
+    });
+
     await check('chat widget: hidden and API closed for anonymous', async () => {
       const home = await (await fetch(cfg.publicUrl + '/')).text();
       if (home.includes('block-olivero-aimdemochat')) throw new Error('widget block still renders for anonymous visitors');

@@ -1,0 +1,8 @@
+_core:
+  default_config_hash: 62DnJufhMhtPvPAumsNk2mAf4cIxLF2RgHzZT4Zs08c
+match_threshold: 0.5
+choice_margin: 0.2
+miss_ttl: 300
+max_question_length: 300
+log_audit: true
+chooser_context: 'Questions are put to the website of the Harbourside Community Library, so "you" and "your" mean the library itself. Pick a literal when the question is about the library and its own services; if the question names another organization or venue, such as a bank, an email provider or the cafe, answer none.'

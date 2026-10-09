@@ -1,0 +1,41 @@
+uuid: 88b8371c-9ad9-4fc9-904e-8bfcf11aaba5
+langcode: en
+status: false
+dependencies:
+  module:
+    - ai_chatbot
+  theme:
+    - olivero
+id: olivero_literalschat
+theme: olivero
+region: content
+weight: 11
+provider: null
+plugin: ai_deepchat_block
+settings:
+  id: ai_deepchat_block
+  label: 'Literals assistant'
+  label_display: visible
+  provider: ai_chatbot
+  bot_name: Literals
+  bot_image: /modules/contrib/ai/modules/ai_chatbot/assets/ai-icon-gradient.svg
+  use_username: 1
+  default_username: Visitor
+  use_avatar: 0
+  default_avatar: ''
+  first_message: "Ask me for a link, number or address. I only answer from the site's curated literals."
+  loading_message: Thinking...
+  agent_delegation_message: ''
+  stream: 0
+  toggle_state: open
+  width: 400px
+  height: 500px
+  placement: bottom-left
+  show_copy_icon: true
+  collapse_minimal: false
+  style_file: 'module:ai_chatbot:toolbar.yml'
+  disable_csrf: false
+  chat_processor_plugin: literals_chat_processor
+  plugin_configuration: {  }
+  expansion_method: expand
+visibility: {  }

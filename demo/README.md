@@ -77,6 +77,27 @@ so the laptop must be awake and online. `tailscale funnel status` shows it.
      `ddev drush aim:consolidate --scope=site --dry-run` to show the
      merge/retire decision.
 
+## Exact values (literals), about 3 minutes
+
+The seed creates two literals (`main_phone`, public; `staff_line`,
+logged-in only). The assistant has a lookup tool for them
+(`tool:literals:lookup`) and its persona says to use it for phone numbers and
+web addresses.
+
+1. **Live value.** In the widget ask "How do I ring the library?" The
+   assistant calls the lookup tool and gives the number exactly. Edit
+   `main_phone` at `/admin/content/literals` and ask again: the new number,
+   no reindex. Re-seeding does not overwrite an edited literal; put it back
+   by hand.
+2. **Different viewer.** The staff line is visible only when logged in. As
+   anonymous it is not found; no fact names it.
+3. **Another agent.** Over MCP, ask Claude for the library phone number: the
+   `literals_lookup` tool returns the same value, as the OAuth user.
+
+Pre-flight covers the lookup tool and the audience boundary (`literals:`
+check). Keep demo literals one exact value each ("the main phone number"),
+not topics like opening hours, which vary by day.
+
 ## What to say about how it is built
 
 - Facts are content entities. The four scopes (user, role, site, case) are

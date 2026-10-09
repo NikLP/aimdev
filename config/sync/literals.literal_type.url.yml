@@ -1,0 +1,9 @@
+uuid: e3a16b41-366d-441e-a9cb-c905c0c125a2
+langcode: en
+status: true
+dependencies: {  }
+id: url
+label: 'URL or path'
+description: ''
+resolver: url
+validate_as: string

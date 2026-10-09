@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "95571ea06c3139f14dc86f3d607389de",
+    "content-hash": "bb9fd7c48cae8d7e86595b5a07ae01ec",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1519,111 +1519,6 @@
             }
         },
         {
-            "name": "drupal/ai_context",
-            "version": "1.0.0-rc1",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/ai_context.git",
-                "reference": "1.0.0-rc1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ai_context-1.0.0-rc1.zip",
-                "reference": "1.0.0-rc1",
-                "shasum": "96aae95bc02710548fdc2f0abd17969990d16e9d"
-            },
-            "require": {
-                "drupal/ai": "^1.4 || ^2",
-                "drupal/ai_agents": "^1.2",
-                "drupal/core": "^10.5 || ^11.2",
-                "league/commonmark": "^2.4"
-            },
-            "require-dev": {
-                "drupal/ai": "*",
-                "drupal/ai_agents_debugger": "^1.0@beta",
-                "drupal/ai_file_to_text": "^1.0",
-                "drupal/diff": "^1.0",
-                "drupal/document_loader": "^2.0.3",
-                "drupal/document_loader_mdx": "*",
-                "drupal/document_loader_media": "*",
-                "drupal/dynamic_entity_reference": "^3.2",
-                "drupal/field_widget_actions": "^1.4",
-                "drupal/scheduler": "^2.3",
-                "drupal/scheduler_content_moderation_integration": "^3.0",
-                "drupal/token": "^1.15",
-                "drush/drush": "^12|^13",
-                "twig/twig": "~3.29.0"
-            },
-            "suggest": {
-                "drupal/ai_agents_debugger": "Provides AI Agents debugger integration for testing agent context delivery.",
-                "drupal/ai_file_to_text": "Provides markdown editor importer support for Word, PDFs, and other document formats.",
-                "drupal/canvas": "Required when using Context Items on Canvas-enabled sites. Use Canvas 1.8.0 or later.",
-                "drupal/diff": "Allows you to compare revisions of context items.",
-                "drupal/document_loader": "Provides markdown editor importer support for common files (txt, md, pdf, docx, xlsx).",
-                "drupal/document_loader_webpage": "Provides markdown editor importer support for URL content.",
-                "drupal/dynamic_entity_reference": "Provides the entity item scope plugin for associating context with one or more entity items.",
-                "drupal/field_widget_actions": "Provides field widget actions used by enhanced context item editing workflows.",
-                "drupal/scheduler": "Schedules publishing and unpublishing of context items.",
-                "drupal/scheduler_content_moderation_integration": "Schedules moderation state changes for context items.",
-                "drupal/token": "Provides token replacement support used by optional integrations."
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.0.0-rc1",
-                    "datestamp": "1790379993",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "RC releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "scripts": {
-                "lint": [
-                    "@lint:cspell",
-                    "@lint:phpcs",
-                    "@lint:phpstan",
-                    "@lint:eslint",
-                    "@lint:stylelint"
-                ],
-                "lint:cspell": [
-                    "npx --yes cspell \"**/*.{php,js,yml,md,twig,css,sh}\" --config .cspell.json"
-                ],
-                "lint:phpcs": [
-                    "cd ../../../.. && vendor/bin/phpcs --standard=Drupal,DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,yml --ignore='*/.gitlab/*' web/modules/contrib/ai_context"
-                ],
-                "lint:phpstan": [
-                    "cd ../../../.. && php -d memory_limit=512M vendor/bin/phpstan analyze web/modules/contrib/ai_context --configuration=web/modules/contrib/ai_context/phpstan.neon.dist"
-                ],
-                "lint:eslint": [
-                    "npx --yes eslint js/**/*.js"
-                ],
-                "lint:stylelint": [
-                    "../../../core/node_modules/.bin/stylelint --config .stylelint-local.json --config-basedir ../../../core \"css/**/*.css\" \"modules/*/css/**/*.css\""
-                ]
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "kristen pol",
-                    "homepage": "https://www.drupal.org/user/8389"
-                },
-                {
-                    "name": "kurtfoster",
-                    "homepage": "https://www.drupal.org/user/403040"
-                }
-            ],
-            "description": "Manage AI context used in agent prompts for better AI outcomes.",
-            "homepage": "https://www.drupal.org/project/ai_context",
-            "support": {
-                "source": "https://git.drupalcode.org/project/ai_context",
-                "issues": "https://drupal.org/project/issues/ai_context"
-            }
-        },
-        {
             "name": "drupal/ai_logging",
             "version": "1.3.3",
             "source": {
@@ -2299,67 +2194,6 @@
             }
         },
         {
-            "name": "drupal/config_pages",
-            "version": "4.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/config_pages.git",
-                "reference": "4.0.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/config_pages-4.0.1.zip",
-                "reference": "4.0.1",
-                "shasum": "5a0c3fdcba4668da89d8bb74bff363bc6233268d"
-            },
-            "require": {
-                "drupal/core": "^10 || ^11 || ^12"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "4.0.1",
-                    "datestamp": "1786281581",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                },
-                "drush": {
-                    "services": {
-                        "drush.services.yml": "^9"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "m.krestnicov",
-                    "homepage": "https://www.drupal.org/user/3193903"
-                },
-                {
-                    "name": "qwaygon",
-                    "homepage": "https://www.drupal.org/user/636624"
-                },
-                {
-                    "name": "shumer",
-                    "homepage": "https://www.drupal.org/user/2297432"
-                }
-            ],
-            "description": "ConfigPages module",
-            "homepage": "http://drupal.org/project/config_pages",
-            "keywords": [
-                "Drupal"
-            ],
-            "support": {
-                "source": "http://cgit.drupalcode.org/config_pages",
-                "issues": "http://drupal.org/project/issues/config_pages"
-            }
-        },
-        {
             "name": "drupal/consumers",
             "version": "1.24.0",
             "source": {
@@ -2825,72 +2659,6 @@
                 "source": "https://github.com/drupal/core-recommended/tree/11.4.8"
             },
             "time": "2026-09-26T20:35:18+00:00"
-        },
-        {
-            "name": "drupal/cshs",
-            "version": "4.0.5",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/cshs.git",
-                "reference": "4.0.5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/cshs-4.0.5.zip",
-                "reference": "4.0.5",
-                "shasum": "1b58aa222f58d261b8796cd73f67bb0eb11b782e"
-            },
-            "require": {
-                "drupal/core": "^10.3 || ^11",
-                "php": ">=8.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "4.0.5",
-                    "datestamp": "1765211744",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Walter Jenner",
-                    "homepage": "https://drupal.org/u/valderama"
-                },
-                {
-                    "name": "Sergii Bondarenko",
-                    "homepage": "https://drupal.org/u/BR0kEN",
-                    "email": "sb@firstvector.org"
-                },
-                {
-                    "name": "Daneel Cruz",
-                    "homepage": "https://drupal.org/u/daneelcm"
-                },
-                {
-                    "name": "Purushotam Rai",
-                    "homepage": "https://drupal.org/u/purushotam.rai"
-                }
-            ],
-            "description": "A simple client-side hierarchical select widget for taxonomy terms.",
-            "homepage": "https://www.drupal.org/project/cshs",
-            "keywords": [
-                "client-side-select",
-                "hierarchical-select",
-                "module",
-                "select",
-                "taxonomy"
-            ],
-            "support": {
-                "source": "https://git.drupalcode.org/project/cshs",
-                "issues": "https://www.drupal.org/project/issues/cshs"
-            }
         },
         {
             "name": "drupal/eca",
@@ -3756,6 +3524,141 @@
             "homepage": "https://www.drupal.org/project/simple_oauth",
             "support": {
                 "source": "https://git.drupalcode.org/project/simple_oauth"
+            }
+        },
+        {
+            "name": "drupal/site_settings",
+            "version": "2.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/site_settings.git",
+                "reference": "2.0.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/site_settings-2.0.6.zip",
+                "reference": "2.0.6",
+                "shasum": "f7d6825f1df04a7fc55edf980f2f0dd213befe22"
+            },
+            "require": {
+                "drupal/core": "^10 || ^11"
+            },
+            "require-dev": {
+                "drupal/token": "1.x-dev"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.6",
+                    "datestamp": "1768424608",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "bobi-mel",
+                    "homepage": "https://www.drupal.org/user/3741631"
+                },
+                {
+                    "name": "bohart",
+                    "homepage": "https://www.drupal.org/user/289861"
+                },
+                {
+                    "name": "dieterholvoet",
+                    "homepage": "https://www.drupal.org/user/3567222"
+                },
+                {
+                    "name": "scott_euser",
+                    "homepage": "https://www.drupal.org/user/3267594"
+                }
+            ],
+            "description": "Provides a site settings entity",
+            "homepage": "https://www.drupal.org/project/site_settings",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/site_settings",
+                "issues": "http://drupal.org/project/issues/site_settings"
+            }
+        },
+        {
+            "name": "drupal/token",
+            "version": "1.17.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/token.git",
+                "reference": "8.x-1.17"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/token-8.x-1.17.zip",
+                "reference": "8.x-1.17",
+                "shasum": "21d11adf0be16f1aa95b6348b4ceadbe9a625824"
+            },
+            "require": {
+                "drupal/core": "^10.3 || ^11"
+            },
+            "require-dev": {
+                "drupal/book": "^1 || ^2"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.17",
+                    "datestamp": "1767942434",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": ">=9"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
+                },
+                {
+                    "name": "dave reid",
+                    "homepage": "https://www.drupal.org/user/53892"
+                },
+                {
+                    "name": "eaton",
+                    "homepage": "https://www.drupal.org/user/16496"
+                },
+                {
+                    "name": "fago",
+                    "homepage": "https://www.drupal.org/user/16747"
+                },
+                {
+                    "name": "greggles",
+                    "homepage": "https://www.drupal.org/user/36762"
+                },
+                {
+                    "name": "mikeryan",
+                    "homepage": "https://www.drupal.org/user/4420"
+                }
+            ],
+            "description": "Provides a user interface for the Token API, some missing core tokens.",
+            "homepage": "https://www.drupal.org/project/token",
+            "support": {
+                "source": "https://git.drupalcode.org/project/token"
             }
         },
         {
@@ -13193,6 +13096,66 @@
             "time": "2025-10-16T12:23:49+00:00"
         },
         {
+            "name": "drupal/config_devel",
+            "version": "1.13.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/config_devel.git",
+                "reference": "8.x-1.13"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/config_devel-8.x-1.13.zip",
+                "reference": "8.x-1.13",
+                "shasum": "f75dbfb87ced5e08d45cf131dd66d40b57803370"
+            },
+            "require": {
+                "drupal/core": "^10 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.13",
+                    "datestamp": "1790087596",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "alexpott",
+                    "homepage": "https://www.drupal.org/user/157725"
+                },
+                {
+                    "name": "benjy",
+                    "homepage": "https://www.drupal.org/user/1852732"
+                },
+                {
+                    "name": "chx",
+                    "homepage": "https://www.drupal.org/user/9446"
+                },
+                {
+                    "name": "joachim",
+                    "homepage": "https://www.drupal.org/user/107701"
+                },
+                {
+                    "name": "vijaycs85",
+                    "homepage": "https://www.drupal.org/user/93488"
+                }
+            ],
+            "description": "Helps developers work with configuration.",
+            "homepage": "https://www.drupal.org/project/config_devel",
+            "support": {
+                "source": "https://git.drupalcode.org/project/config_devel"
+            }
+        },
+        {
             "name": "drupal/core-dev",
             "version": "11.4.8",
             "source": {
@@ -17474,7 +17437,6 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "drupal/ai": 20,
-        "drupal/ai_context": 5,
         "drupal/ai_provider_ollama": 5,
         "drupal/ai_provider_typesafeai": 10,
         "drupal/ai_search": 15,

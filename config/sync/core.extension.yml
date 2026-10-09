@@ -47,6 +47,10 @@ module:
   layout_builder: 0
   layout_discovery: 0
   link: 0
+  literals: 0
+  literals_chat: 0
+  literals_finder: 0
+  literals_tool: 0
   mcp_server: 0
   mcp_server_oauth: 0
   mcp_server_tool_bridge: 0
@@ -70,7 +74,9 @@ module:
   system: 0
   taxonomy: 0
   text: 0
+  token: 0
   tool: 0
+  tool_ai_connector: 0
   toolbar: 0
   update: 0
   user: 0
