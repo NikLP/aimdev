@@ -1,0 +1,13 @@
+uuid: a3ca8709-0456-4395-ba3d-656d398e0e65
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - aim_scope_site
+_core:
+  default_config_hash: Z5y3REm1N8ltPl-_nwDxrBmDJOu-XDqjcOLVP9pYjq4
+id: site
+label: Site
+plugin: null
+settings: {  }

@@ -1,0 +1,22 @@
+uuid: bd8b1922-3339-45e3-9506-4763bc8feb20
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - aim_tool_oauth
+_core:
+  default_config_hash: cF9stMe6yzfE0iPP2c_6djauweRGUB7fmI2DArEtYZs
+id: aim_recall
+name: 'aim:recall'
+description: 'Read access to aim memory (semantic search via aim_recall).'
+grant_types:
+  authorization_code:
+    status: true
+  refresh_token:
+    status: true
+umbrella: false
+parent: null
+granularity_id: permission
+granularity_configuration:
+  permission: 'read aim memory'

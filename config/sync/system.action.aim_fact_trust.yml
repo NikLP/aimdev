@@ -1,0 +1,13 @@
+uuid: d69f213b-c420-4ff7-bb97-352567199384
+langcode: en
+status: true
+dependencies:
+  module:
+    - aim
+_core:
+  default_config_hash: fXRKaB43o_e_A8WYfkkfl_vVylzyc9Ri61m1u-Ik5mY
+id: aim_fact_trust
+label: Trust
+type: aim_fact
+plugin: aim_fact_trust
+configuration: {  }

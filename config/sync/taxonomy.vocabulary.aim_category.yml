@@ -1,0 +1,11 @@
+uuid: b31c5dd0-1761-4757-8b8b-6f61592bd266
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: BGya0evDNqu9YLSYsNYLzKgh9llnfkYSuT9i4zQbflk
+name: 'AIM Category'
+vid: aim_category
+description: 'Curated terms for AIM memory.'
+weight: 0
+new_revision: false

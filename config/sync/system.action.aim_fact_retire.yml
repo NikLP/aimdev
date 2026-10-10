@@ -1,0 +1,13 @@
+uuid: 46750ac2-23cb-48c2-863f-6f12a36e9af2
+langcode: en
+status: true
+dependencies:
+  module:
+    - aim
+_core:
+  default_config_hash: rpa2X_F9dp9smt6Gdw1_NMZEaEAt0NvMZW96Cz1YggM
+id: aim_fact_retire
+label: Retire
+type: aim_fact
+plugin: aim_fact_retire
+configuration: {  }

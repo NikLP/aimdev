@@ -1,0 +1,14 @@
+uuid: 179f133f-6e68-4ed0-8c07-c7299c3d79fd
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - aim_scope_user
+_core:
+  default_config_hash: lzy8JqOBzHhvfrqjpryqU3YF7_EqDNJIrqsIcWEhYmk
+id: user
+label: User
+plugin: user
+settings:
+  requires_account: true

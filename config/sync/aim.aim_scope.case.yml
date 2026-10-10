@@ -1,0 +1,13 @@
+uuid: 0de2d706-b2b5-4d66-a24b-bb08134e4153
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - aim_scope_case
+_core:
+  default_config_hash: '-m_QMc7o1EpPU2KQJDzuhyVYyhq8XydFyC5tqnZeL0I'
+id: case
+label: Case
+plugin: case
+settings: {  }

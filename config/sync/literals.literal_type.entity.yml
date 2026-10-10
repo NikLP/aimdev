@@ -1,0 +1,11 @@
+uuid: 6d5c0cc0-2868-4421-a849-64fdd00bc702
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: NmMsFVBApPEP1mxKIwzzoV0upot5qvvhxex3yu_GWJ8
+id: entity
+label: Entity
+description: ''
+resolver: entity
+validate_as: string

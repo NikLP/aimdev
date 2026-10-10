@@ -1,0 +1,35 @@
+uuid: b03bc6e4-dfb1-4212-b2fd-56ee2c2a0a8a
+langcode: en
+status: true
+dependencies:
+  module:
+    - ai_search
+    - ai_vdb_provider_mariadb
+  enforced:
+    module:
+      - aim
+_core:
+  default_config_hash: YbcfcO8ty-SwySKq9aSkLj5aPrifbg05qsS-P05ShTw
+id: aim_vector
+name: 'AIM Vector Search'
+description: ''
+backend: search_api_ai_search
+backend_config:
+  chat_model: amazeeio__claude-5-sonnet
+  database: mariadb
+  database_settings:
+    database_name: ''
+    collection: aim_fact_vectors
+    metric: cosine_similarity
+    mhnsw_ef_search: 100
+  embeddings_engine: 'ollama__nomic-embed-text:latest'
+  embeddings_engine_configuration:
+    set_dimensions: true
+    dimensions: 768
+  embedding_strategy: contextual_chunks
+  embedding_strategy_configuration:
+    chunk_size: '500'
+    chunk_min_overlap: '100'
+    contextual_content_max_percentage: '30'
+    skip_moderation: false
+  include_raw_embedding_vector: false

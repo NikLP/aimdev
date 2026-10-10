@@ -1,0 +1,17 @@
+uuid: ec864bee-c9fc-4779-b851-612251d55097
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - literals_finder
+_core:
+  default_config_hash: zH_8kMo5vl1kpfeM2BUprzImOAqmEtGx-PkiLLJ6kkY
+id: literals_no_markup
+label: 'Literals: no HTML markup'
+description: 'Rejects a literal gist or value containing HTML tags, since both are stored and served as plain text.'
+guardrail: regexp_guardrail
+guardrail_settings:
+  regexp_pattern: '/<[a-z][\s\S]*>/i'
+  scan_all_user_messages: false
+  violation_message: 'This text contains HTML markup, which is not allowed in a literal.'

@@ -1,0 +1,19 @@
+uuid: 65800eca-9ff8-4e6e-a6fc-27fc279cca71
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - literals_finder
+_core:
+  default_config_hash: eYldIweeLz_QV3B4xs4cyzrNBY9lJemn7dY5tYcO0iM
+id: literals_max_length
+label: 'Literals: maximum text length'
+description: 'Rejects a literal gist or value longer than a short exact value should be.'
+guardrail: input_length_limit
+guardrail_settings:
+  max_length: 2000
+  use_tokens: false
+  tokenizer_model: gpt-4
+  violation_message: 'This text is @count @unit long, which exceeds the maximum of @max @unit.'
+  check_all_messages: false

@@ -1,0 +1,13 @@
+uuid: f97945e4-4947-46e6-9e35-944196cb68e5
+langcode: en
+status: true
+dependencies:
+  module:
+    - aim
+_core:
+  default_config_hash: frK6uDmdZd0cqhGiG0Aloqe2x4gwRVzry0ZpCrtVfdw
+id: aim_fact_unretire
+label: Un-retire
+type: aim_fact
+plugin: aim_fact_unretire
+configuration: {  }

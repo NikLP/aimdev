@@ -1,0 +1,13 @@
+uuid: 09e942bd-e266-4a18-b4e0-3f84f4997122
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - aim_scope_entity
+_core:
+  default_config_hash: 3uSf-lkL62eJH4dYuayvKFcNqGDhVCYni_TGyQiF4Kg
+id: entity
+label: Entity
+plugin: entity
+settings: {  }

@@ -1,0 +1,12 @@
+uuid: 1480dc60-a169-455e-963d-a54dbff4e496
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - aim_tool
+_core:
+  default_config_hash: GvXtst0zqrDE1ktkyt610JRN6TQVnHYzw95k_uX7fVk
+id: aim_literal
+tool_id: aim_literal
+description: 'Looks up an exact value (phone number, address, link) that aim memory refers to as a literal, by key or search words.'

@@ -1,0 +1,13 @@
+uuid: adfefd77-6b7e-40a7-af49-7ea9cc16f3fe
+langcode: en
+status: true
+dependencies:
+  module:
+    - aim
+_core:
+  default_config_hash: ZjeABVnaUFcQKfPrMJjQAUCkNE0DHm4Cr20sguzD8Cc
+id: aim_fact_delete_action
+label: 'Delete fact'
+type: aim_fact
+plugin: 'entity:delete_action:aim_fact'
+configuration: {  }

@@ -1,0 +1,25 @@
+uuid: 49b97c22-caff-48e1-9440-f9d30aebd4c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+  module:
+    - ai_chatbot
+    - file
+    - filter
+    - literals
+    - system
+_core:
+  default_config_hash: wkW7P5A53YhGmsgamrmTbfwpZrqdnPYiJdoAZQtdmJg
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access deepchat api'
+  - 'delete own files'
+  - 'use text format basic_html'
+  - 'view literals'
+  - 'view restricted literals'

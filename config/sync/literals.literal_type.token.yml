@@ -1,0 +1,11 @@
+uuid: 0b9891b4-6692-444b-82b6-e59772d4f88e
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: ZIcaOm3hcxeEeRxrZpWxUXO0xjFNSQCzI9nLhNsSaTg
+id: token
+label: Token
+description: ''
+resolver: token
+validate_as: string

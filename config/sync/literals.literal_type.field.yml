@@ -1,0 +1,9 @@
+uuid: 0aab1b65-66bd-4557-aa62-07c07c803d83
+langcode: en
+status: true
+dependencies: {  }
+id: field
+label: Field
+description: ''
+resolver: field
+validate_as: string

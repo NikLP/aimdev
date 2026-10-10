@@ -1,0 +1,13 @@
+uuid: deba5a09-4d05-4a94-a315-c4fea291f818
+langcode: en
+status: true
+dependencies:
+  module:
+    - aim
+_core:
+  default_config_hash: zkRFCH6M0GG7XrDle2AnXL886CnJJQtUitrZ8QOcKEk
+id: aim_fact_untrust
+label: Untrust
+type: aim_fact
+plugin: aim_fact_untrust
+configuration: {  }

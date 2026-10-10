@@ -1,0 +1,24 @@
+_core:
+  default_config_hash: XtCZCLiIihpy6q309VjC0i_oBuzGiL6Xpy53c7Qx_tY
+index_id: aim_vector_index
+control_field_max_length: false
+exclude_chunk_from_metadata: false
+indexing_options:
+  text:
+    field_name: text
+    indexing_option: main_content
+  scope:
+    field_name: scope
+    indexing_option: attributes
+  subject:
+    field_name: subject
+    indexing_option: attributes
+  source:
+    field_name: source
+    indexing_option: attributes
+  user:
+    field_name: user
+    indexing_option: attributes
+  trusted:
+    field_name: trusted
+    indexing_option: attributes

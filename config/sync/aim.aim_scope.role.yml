@@ -1,0 +1,13 @@
+uuid: 71dc40e6-e90a-4d18-9c20-d83bf5362587
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - aim_scope_role
+_core:
+  default_config_hash: fGGGFZaNkVZjQeAp5O0PN8x3pnXL9_9Gg2GXeWAVq6A
+id: role
+label: Role
+plugin: null
+settings: {  }

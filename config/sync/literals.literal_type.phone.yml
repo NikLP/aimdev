@@ -1,0 +1,11 @@
+uuid: 600c234a-443e-4c2e-ab68-9299a9eefa0c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: THVUjtNqvxkY9C789tUx_vqQq9jPgrbiaml6LfAehHg
+id: phone
+label: 'Phone number'
+description: ''
+resolver: text
+validate_as: phone
