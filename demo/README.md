@@ -8,8 +8,12 @@ part of the `aim` module.
 | --- | --- |
 | `preflight.js` | End-to-end check of everything the demo needs, about 35 seconds. Cleans up after itself. |
 | `preflight.config.json` | The questions and expected answers the pre-flight uses. |
-| `seed.php` | Loads the demo: 31 facts, site name, front page, chat persona, recall cutoff. Idempotent. |
-| `seed-facts.json` | The facts and persona text. Edit this to change the story. |
+| `ingest-test/` | Test material for an ingest run (TESTS.md, type B), not part of the demo. |
+
+The demo itself (31 facts, three literals, site name, chat persona and
+tools, widget wording, recall cutoff) is the `aim_demo_library` recipe in
+the module: [its README](../web/modules/custom/aim/recipes/aim_demo_library/README.md).
+Change the story there.
 
 ## Before going on stage
 
@@ -31,15 +35,17 @@ path in the script). Any FAIL line says what to check.
 Facts added during a run stay until you reset. The chat widget is for
 logged-in users only (anonymous visitors don't see it and `/api/deepchat`
 returns 403), so the audience can't add facts through it. Return to the
-starting state with:
+starting state by deleting every fact and re-applying the recipe:
 
 ```bash
-ddev exec DEMO_RESET=1 drush php:script demo/seed.php
+ddev drush entity:delete aim_fact -y
+ddev drush queue:delete aim_consolidate
+ddev drush recipe:apply /var/www/html/web/modules/custom/aim/recipes/aim_demo_library
+ddev drush search-api:index aim_vector_index
 ```
 
-To go back to how the site was before the demo was built (the old
-NeuralPulse test corpus and default front page): `ddev snapshot restore
-pre-demo-seed`. That discards everything since.
+Re-applying skips literals that already exist, so a literal edited on
+stage keeps its edit; put it back by hand.
 
 ## The public URL
 
@@ -50,7 +56,7 @@ so the laptop must be awake and online. `tailscale funnel status` shows it.
 
 1. **The widget, site scope.** Log in first (`ddev drush uli
    --uri=https://amaria.snake-amberjack.ts.net`), since the widget is
-   hidden from anonymous visitors. On the front page, open the chat and ask:
+   hidden from anonymous visitors. Open the chat and ask:
    - "When are you open on Sundays?" (recalls from memory)
    - "Do you charge late fees?" (finds "overdue fines": meaning, not keywords)
    - "Can I bring my dog?"
@@ -79,23 +85,24 @@ so the laptop must be awake and online. `tailscale funnel status` shows it.
 
 ## Exact values (literals), about 3 minutes
 
-The seed creates two literals (`main_phone`, public; `staff_line`,
-logged-in only). The assistant has a lookup tool for them
-(`tool:literals:lookup`) and its persona says to use it for phone numbers and
+The recipe imports three literals (`main_phone`, public; `staff_line` and
+`my_account`, restricted: signed-in visitors only, through `view restricted
+literals`). It also gives the assistant aim's lookup tool
+(`tool:aim_literal`), and its persona says to use it for phone numbers and
 web addresses.
 
 1. **Live value.** In the widget ask "How do I ring the library?" The
    assistant calls the lookup tool and gives the number exactly. Edit
    `main_phone` at `/admin/content/literals` and ask again: the new number,
-   no reindex. Re-seeding does not overwrite an edited literal; put it back
+   no reindex. A reset does not overwrite an edited literal; put it back
    by hand.
 2. **Different viewer.** The staff line is visible only when logged in. As
    anonymous it is not found; no fact names it.
 3. **Another agent.** Over MCP, ask Claude for the library phone number: the
-   `literals_lookup` tool returns the same value, as the OAuth user.
+   `aim_literal` tool returns the same value, as the OAuth user.
 
-Pre-flight covers the lookup tool and the audience boundary (`literals:`
-check). Keep demo literals one exact value each ("the main phone number"),
+Pre-flight covers the lookup tool and the restricted-literal boundary
+(`literals:` check). Keep demo literals one exact value each ("the main phone number"),
 not topics like opening hours, which vary by day.
 
 ## What to say about how it is built
@@ -126,10 +133,10 @@ not topics like opening hours, which vary by day.
   model has to notice they don't answer it.
 - Do not use it for classified data: a hosted model can see what it recalls.
 
-## What `seed.php` changes
+## What the recipe changes
 
-Site name and slogan, the front page (a basic page, node 1, and the `page`
-content type it needs), the chat agent's and assistant's instructions, the
-widget label and welcome message, and `aim.settings:recall_max_distance`
-(0.48; the module default is 0.45, see ADR-0019's second calibration). All
-of it is exported in `config/sync`.
+Site name and slogan, the chat agent's and assistant's instructions and
+tools, the widget label, welcome message and signed-in-only visibility,
+`access deepchat api` for authenticated users, `index_directly`, and
+`aim.settings:recall_max_distance` (0.48; the module default is 0.45, see
+ADR-0019's second calibration). It no longer sets a front page.

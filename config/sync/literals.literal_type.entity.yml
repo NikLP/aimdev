@@ -1,9 +1,0 @@
-uuid: 645e27db-a722-44b5-ad23-94a2f7d2262b
-langcode: en
-status: true
-dependencies: {  }
-id: entity
-label: Entity
-description: ''
-resolver: entity
-validate_as: string

@@ -154,7 +154,7 @@ async function askWidget(page, question) {
       if (!(j.models || []).some((m) => /nomic-embed-text/.test(m.name))) throw new Error('nomic-embed-text not found');
     });
     await check('vector index fully indexed, no orphans', async () => {
-      const out = drush('sql:query', "SELECT (SELECT COUNT(*) FROM aim_fact WHERE expires IS NULL AND text IS NOT NULL), (SELECT COUNT(*) FROM aim_fact_vectors), (SELECT COUNT(*) FROM aim_fact_vectors v LEFT JOIN aim_fact f ON v.drupal_entity_id = CONCAT('entity:aim_fact/', f.id, ':en') WHERE f.id IS NULL), (SELECT COUNT(*) FROM aim_fact WHERE source LIKE 'zz%' OR text LIKE '%ZZ%')");
+      const out = drush('sql:query', "SELECT (SELECT COUNT(*) FROM aim_fact WHERE retired IS NULL AND text IS NOT NULL), (SELECT COUNT(*) FROM aim_fact_vectors), (SELECT COUNT(*) FROM aim_fact_vectors v LEFT JOIN aim_fact f ON v.drupal_entity_id = CONCAT('entity:aim_fact/', f.id, ':en') WHERE f.id IS NULL), (SELECT COUNT(*) FROM aim_fact WHERE source LIKE 'zz%' OR text LIKE '%ZZ%')");
       const [live, rows, orphans, tests] = out.split(/\s+/).map(Number);
       if (live !== rows) throw new Error(`${live} live facts but ${rows} vector rows (run: ddev drush sapi-i aim_vector_index)`);
       if (orphans) throw new Error(orphans + ' orphan vector rows');
@@ -211,7 +211,7 @@ async function askWidget(page, question) {
         $anon = new \\Drupal\\Core\\Session\\AnonymousUserSession();
         $admin = \\Drupal\\user\\Entity\\User::load(1);
         \\Drupal::currentUser()->setAccount($admin);
-        $tool = \\Drupal::service("plugin.manager.tool")->createInstance("literals:lookup");
+        $tool = \\Drupal::service("plugin.manager.tool")->createInstance("aim_literal");
         $tool->setInputValue("question", "What is the library main phone number?");
         $v = $tool->execute()->getResult()->getContextValues();
         echo json_encode(["phone" => $reader->read("main_phone", $anon), "staffAnon" => $reader->read("staff_line", $anon), "staffAdmin" => $reader->read("staff_line", $admin), "tool" => $v["value"] ?? ""]);`);

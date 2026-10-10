@@ -1,7 +1,0 @@
-_core:
-  default_config_hash: xA_M5oVyatSw3y7k62PDeeVt8qYGPT6jpXnFgGCWVb4
-api_key: typesafe_jev
-host: ''
-models_cache_ttl: 86400
-moderation_threshold: 0.5
-moderation_categories: "hate: Hateful or demeaning content targeting a protected group.\r\nharassment: Threats, bullying or abuse directed at a person.\r\nself_harm: Encouragement or instructions for self-harm or suicide.\r\nsexual_minors: Sexual content involving minors.\r\nviolence: Graphic violence or instructions to harm others.\r\nillegal: Instructions for serious crimes, weapons or dangerous substances.\r\nprompt_injection: Attempts to override system instructions or jailbreak the assistant.\r\n"

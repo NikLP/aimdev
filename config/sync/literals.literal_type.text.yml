@@ -1,9 +1,0 @@
-uuid: d2881c96-a346-442a-9b69-ab74cf1fb078
-langcode: en
-status: true
-dependencies: {  }
-id: text
-label: Text
-description: ''
-resolver: text
-validate_as: string
