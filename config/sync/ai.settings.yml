@@ -20,22 +20,23 @@ default_providers:
     model_id: claude-5-sonnet
   decision:
     provider_id: typesafeai
-    model_id: jev-latest
+    model_id: subq-snap-preview
   embeddings:
     provider_id: ollama
     model_id: nomic_embed_text_latest
   moderation:
     provider_id: typesafeai
-    model_id: jev-latest
+    model_id: subq-snap-preview
   text_classification:
     provider_id: typesafeai
-    model_id: jev-latest
+    model_id: subq-snap-preview
   text_to_image:
     provider_id: amazeeio
     model_id: gemini-2.5-flash-image
   translate_text:
     provider_id: amazeeio
     model_id: chat
+default_vdb_provider: ''
 request_timeout: 60
 allowed_hosts: {  }
 allowed_hosts_rewrite_links: false

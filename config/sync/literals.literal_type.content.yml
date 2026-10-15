@@ -1,0 +1,9 @@
+uuid: 9378f16a-3ce4-4847-b6ca-e206cbdb5b15
+langcode: en
+status: true
+dependencies: {  }
+id: content
+label: Content
+description: 'A piece of content on this site, picked by title. Resolves to its URL.'
+resolver: content
+target_bundles: {  }

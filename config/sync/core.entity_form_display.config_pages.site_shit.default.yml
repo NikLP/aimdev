@@ -1,0 +1,22 @@
+uuid: 569fc889-190a-479b-9f03-041ebcff3829
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.site_shit
+    - field.field.config_pages.site_shit.aimemail
+id: config_pages.site_shit.default
+targetEntityType: config_pages
+bundle: site_shit
+mode: default
+content:
+  aimemail:
+    type: email_default
+    weight: 0
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+hidden:
+  label: true

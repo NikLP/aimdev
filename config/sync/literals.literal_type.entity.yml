@@ -1,11 +1,9 @@
-uuid: 6d5c0cc0-2868-4421-a849-64fdd00bc702
+uuid: efb7340e-e53d-4835-9f72-495e1514392f
 langcode: en
-status: true
+status: false
 dependencies: {  }
-_core:
-  default_config_hash: NmMsFVBApPEP1mxKIwzzoV0upot5qvvhxex3yu_GWJ8
 id: entity
 label: Entity
-description: ''
+description: 'Any entity, as type:id (e.g. <code>node:12</code>). Resolves to its URL.'
 resolver: entity
-validate_as: string
+target_bundles: {  }

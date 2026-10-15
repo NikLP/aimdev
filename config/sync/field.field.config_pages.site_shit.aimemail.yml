@@ -1,0 +1,19 @@
+uuid: a970fa4c-6fa6-4852-8a95-f288285b9225
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.site_shit
+    - field.storage.config_pages.aimemail
+id: config_pages.site_shit.aimemail
+field_name: aimemail
+entity_type: config_pages
+bundle: site_shit
+label: Email
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

@@ -5,7 +5,7 @@ dependencies: {  }
 _core:
   default_config_hash: x2OCCBYFGFsu7jVoc5mJYkT_36IHbHQTZdCelr8kXpM
 id: url
-label: 'URL or path'
-description: ''
+label: Path
+description: 'An internal path such as <code>/news</code>, access checked for the viewer.'
 resolver: url
-validate_as: string
+target_bundles: {  }

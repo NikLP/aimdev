@@ -12,7 +12,7 @@ _core:
 id: aim_facts
 label: 'AIM facts'
 module: views
-description: 'Lists every remembered fact - scope, subject, text, source, state, whether it has been retired by consolidation, and whether it is trusted.'
+description: 'Lists every remembered fact - scope, subject, text, source, whether it has been retired by consolidation, and whether it is trusted.'
 tag: default
 base_table: aim_fact
 base_field: id
@@ -136,8 +136,7 @@ display:
           empty_zero: false
           hide_alter_empty: true
           type: basic_string
-          settings:
-            trim_length: 150
+          settings: {  }
         source:
           id: source
           table: aim_fact
@@ -178,28 +177,6 @@ display:
           type: entity_reference_label
           settings:
             link: false
-        state:
-          id: state
-          table: aim_fact
-          field: state
-          entity_type: aim_fact
-          entity_field: state
-          plugin_id: field
-          label: State
-          exclude: false
-          alter:
-            alter_text: false
-          element_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          type: boolean
-          settings:
-            format: custom
-            format_custom_false: ''
-            format_custom_true: 'true'
         trusted:
           id: trusted
           table: aim_fact
@@ -222,6 +199,20 @@ display:
             format: true-false
             format_custom_false: ''
             format_custom_true: 'true'
+        grounding_score:
+          id: grounding_score
+          table: aim_fact
+          field: grounding_score
+          entity_type: aim_fact
+          entity_field: grounding_score
+          plugin_id: field
+          label: Grounding
+          type: number_decimal
+          settings:
+            thousand_separator: ''
+            decimal_separator: .
+            scale: 2
+            prefix_suffix: false
         retired:
           id: retired
           table: aim_fact
@@ -273,7 +264,7 @@ display:
       access:
         type: perm
         options:
-          perm: 'administer aim memory'
+          perm: 'administer aim'
       cache:
         type: tag
       empty:
@@ -294,7 +285,28 @@ display:
           plugin_id: standard
           order: DESC
       arguments: {  }
-      filters: {  }
+      filters:
+        grounding_score:
+          id: grounding_score
+          table: aim_fact
+          field: grounding_score
+          entity_type: aim_fact
+          entity_field: grounding_score
+          plugin_id: numeric
+          operator: '<'
+          value:
+            min: ''
+            max: ''
+            value: ''
+          exposed: true
+          expose:
+            operator_id: grounding_score_op
+            label: 'Grounding score below'
+            description: 'Facts whose source text scored under this, to spot-check the grounded check.'
+            use_operator: false
+            identifier: grounding_below
+            remember: false
+            multiple: false
       style:
         type: table
         options:
@@ -310,9 +322,9 @@ display:
             text: text
             source: source
             uid: uid
-            state: state
             retired: retired
             operations: operations
+            grounding_score: grounding_score
           default: id
           info:
             aim_fact_bulk_form:
@@ -369,13 +381,6 @@ display:
               separator: ''
               empty_column: false
               responsive: priority-low
-            state:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
             retired:
               sortable: true
               default_sort_order: asc
@@ -384,6 +389,13 @@ display:
               empty_column: false
               responsive: ''
             operations:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            grounding_score:
+              sortable: true
+              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
@@ -407,6 +419,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - user.permissions
       tags: {  }
@@ -431,6 +444,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - user.permissions
       tags: {  }

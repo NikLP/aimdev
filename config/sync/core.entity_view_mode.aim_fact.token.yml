@@ -1,0 +1,11 @@
+uuid: b35fa7a5-178f-499c-bb82-497cdd43b683
+langcode: en
+status: true
+dependencies:
+  module:
+    - aim
+id: aim_fact.token
+label: Token
+description: null
+targetEntityType: aim_fact
+cache: true

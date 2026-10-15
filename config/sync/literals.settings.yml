@@ -1,3 +1,3 @@
 _core:
   default_config_hash: fXzYbbpyJVy5OMQisgU4hspvKgvwvOqjxuvluofNoas
-log_audit: false
+log_audit: true

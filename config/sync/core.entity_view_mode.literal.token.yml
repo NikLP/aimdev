@@ -1,0 +1,11 @@
+uuid: 152a5c26-d624-4f44-b5b7-b27feae3f12b
+langcode: en
+status: true
+dependencies:
+  module:
+    - literals
+id: literal.token
+label: Token
+description: null
+targetEntityType: literal
+cache: true

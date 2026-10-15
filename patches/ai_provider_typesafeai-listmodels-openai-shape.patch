@@ -1,0 +1,22 @@
+--- a/src/TypeSafeAiClient.php
++++ b/src/TypeSafeAiClient.php
+@@ -229,6 +229,19 @@
+    */
+   public function listModels(): array {
+     $body = $this->request('GET', '/models');
++    // TypeSafe returns "models" with "name"; OpenAI-style hosts such as subq
++    // return "data" with "id".
++    if (isset($body['data']) && is_array($body['data']) && !isset($body['models'])) {
++      $body['models'] = [];
++      foreach ($body['data'] as $item) {
++        if (is_array($item) && isset($item['id'])) {
++          $body['models'][] = [
++            'name' => $item['id'],
++            'description' => $item['name'] ?? '',
++          ];
++        }
++      }
++    }
+     if (!isset($body['models']) || !is_array($body['models'])) {
+       throw new AiResponseErrorException('The TypeSafe API response did not contain a "models" list.');
+     }

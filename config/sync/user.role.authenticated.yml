@@ -3,9 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - aim.aim_scope.site
     - filter.format.basic_html
   module:
     - ai_chatbot
+    - aim
     - file
     - filter
     - literals
@@ -22,4 +24,4 @@ permissions:
   - 'delete own files'
   - 'use text format basic_html'
   - 'view literals'
-  - 'view restricted literals'
+  - 'view site aim facts'

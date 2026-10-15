@@ -1,0 +1,17 @@
+uuid: c09726e6-3e4a-4e42-9995-bd9530644e09
+langcode: en
+status: true
+dependencies: {  }
+id: site_shit
+label: 'Site shit'
+token: true
+context:
+  show_warning: false
+  group:
+    language: false
+  fallback:
+    language: ''
+menu:
+  path: /admin/content/shit
+  weight: 0
+  description: blah

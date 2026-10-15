@@ -1,15 +1,15 @@
 {
-    "_hash": "624073c40fb54fa782cd59738a0097f8a4a3e5769b641290949dc7115a1e9e8f",
+    "_hash": "5b0d7355677a964198b9a4aaca1badbc522f95d5d650bd693889fc6d1c6f9b9f",
     "patches": {
-        "drupal/project_browser": [
+        "drupal/ai_provider_typesafeai": [
             {
-                "package": "drupal/project_browser",
-                "description": "#3622921 Implement getModulesToInstall in TestModuleInstaller",
-                "url": "https://git.drupalcode.org/issue/project_browser-3622921/-/commit/9afcce0676ca61ca1514a14b6d882cbd081c0045.diff",
-                "sha256": "56fb6668c88cf2d6dc81d91a2cc85d0dae112d5d83053230fe18402674cfdf8a",
+                "package": "drupal/ai_provider_typesafeai",
+                "description": "listModels() accepts OpenAI-style /models responses (subq)",
+                "url": "patches/ai_provider_typesafeai-listmodels-openai-shape.patch",
+                "sha256": "47c03f658a3e3ff5dc1562328e5c06d0044c223c92368922d253a33c8f19b5be",
                 "depth": 1,
                 "extra": {
-                    "provenance": "dependency:drupal/project_browser"
+                    "provenance": "root"
                 }
             }
         ]

@@ -6,6 +6,6 @@ _core:
   default_config_hash: ZIcaOm3hcxeEeRxrZpWxUXO0xjFNSQCzI9nLhNsSaTg
 id: token
 label: Token
-description: ''
+description: 'Tokens (e.g. <code>[site:name]</code>) are resolved when displayed, according to the permissions of the viewer.'
 resolver: token
-validate_as: string
+target_bundles: {  }

@@ -22,33 +22,88 @@ display:
     display_options:
       title: Literals
       fields:
+        literal_bulk_form:
+          id: literal_bulk_form
+          table: literal
+          field: literal_bulk_form
+          entity_type: literal
+          plugin_id: bulk_form
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+          element_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
         name:
           id: name
           table: literal
           field: name
           relationship: none
           group_type: group
+          admin_label: ''
           entity_type: literal
           entity_field: name
           plugin_id: field
           label: Name
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
-        id:
-          id: id
-          table: literal
-          field: id
-          relationship: none
-          group_type: group
-          entity_type: literal
-          entity_field: id
-          plugin_id: field
-          label: Key
-          click_sort_column: value
-          type: string
-          settings: {  }
+            link_to_entity: false
+            link_rel: canonical
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         value:
           id: value
           table: literal
@@ -62,6 +117,86 @@ display:
           click_sort_column: value
           type: basic_string
           settings: {  }
+        gist:
+          id: gist
+          table: literal
+          field: gist
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: literal
+          entity_field: gist
+          plugin_id: field
+          label: Gist
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+            link_rel: canonical
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        type:
+          id: type
+          table: literal
+          field: type
+          relationship: none
+          group_type: group
+          entity_type: literal
+          entity_field: type
+          plugin_id: field
+          label: Type
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
         status:
           id: status
           table: literal
@@ -78,27 +213,6 @@ display:
             format: custom
             format_custom_false: Draft
             format_custom_true: Published
-        operations:
-          id: operations
-          table: literal
-          field: operations
-          entity_type: literal
-          plugin_id: entity_operations
-          label: Operations
-        type:
-          id: type
-          table: literal
-          field: type
-          relationship: none
-          group_type: group
-          entity_type: literal
-          entity_field: type
-          plugin_id: field
-          label: Type
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
         restricted:
           id: restricted
           table: literal
@@ -114,6 +228,13 @@ display:
             format: yes-no
             format_custom_false: ''
             format_custom_true: ''
+        operations:
+          id: operations
+          table: literal
+          field: operations
+          entity_type: literal
+          plugin_id: entity_operations
+          label: Operations
       pager:
         type: mini
         options:
@@ -187,7 +308,7 @@ display:
           disable_sql_rewrite: false
       display_extenders: {  }
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
@@ -204,7 +325,7 @@ display:
       display_extenders: {  }
       path: admin/content/literals
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
@@ -239,7 +360,7 @@ display:
       display_extenders: {  }
       path: admin/content/literals/type/%
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'

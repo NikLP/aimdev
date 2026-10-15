@@ -7,6 +7,7 @@ module:
   ai_agents: 0
   ai_assistant_api: 0
   ai_chatbot: 0
+  ai_logging: 0
   ai_provider_amazeeio: 0
   ai_provider_ollama: 0
   ai_provider_typesafeai: 0
@@ -29,6 +30,7 @@ module:
   breakpoint: 0
   ckeditor5: 0
   config: 0
+  config_pages: 0
   consumers: 0
   contextual: 0
   datetime: 0
@@ -72,6 +74,7 @@ module:
   system: 0
   taxonomy: 0
   text: 0
+  token: 0
   tool: 0
   tool_ai_connector: 0
   toolbar: 0

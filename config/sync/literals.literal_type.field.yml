@@ -1,9 +1,9 @@
-uuid: 0aab1b65-66bd-4557-aa62-07c07c803d83
+uuid: f51c8fec-892a-4b86-ad9c-f7d60cde51bc
 langcode: en
-status: true
+status: false
 dependencies: {  }
 id: field
 label: Field
-description: ''
+description: 'A field value from a single entity, as <code>type:id:field</code> (e.g. node:12:field_phone). Resolves to the field value, access checked for the viewer.'
 resolver: field
-validate_as: string
+target_bundles: {  }
