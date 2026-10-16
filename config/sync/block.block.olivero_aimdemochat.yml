@@ -41,12 +41,15 @@ settings:
   collapse_minimal: false
   style_file: 'module:ai_chatbot:toolbar.yml'
   disable_csrf: false
-  chat_processor_plugin: ai_assistant_api_processor
+  chat_processor_plugin: aim_chatbot_gate
   plugin_configuration:
     assistant_id: aim_demo_assistant
     stream_output: false
     verbose_mode: false
     show_structured_results: false
+    gate: true
+    gate_match_threshold: 0.8
+    gate_choice_margin: 0.4
   expansion_method: expand
 visibility:
   user_role:

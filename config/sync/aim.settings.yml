@@ -41,7 +41,7 @@ merge_verify_prompt: |
   value for the same attribute (a duration, day, price or place) supersedes it:
   the old value must not appear in Merged, and its absence is not a lost detail.
   Otherwise set faithful to false.
-recall_max_distance: 0.48
+recall_max_distance: 0.52
 recall_gap: 0.1
 default_trusted: true
 show_redacted_facts: false
