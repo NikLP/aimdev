@@ -2,7 +2,7 @@ _core:
   default_config_hash: 8RZujQWKk5S8ynmP86muIHUOm4sRlJ4-unrkVPs8ImI
 prompt_logging: true
 prompt_logging_output: true
-prompt_logging_tags: 'aim_extract,aim_consolidate,aim_consolidate_verify,aim_consolidate_merge,aim_ground,ai_agents_aim_chatbot'
+prompt_logging_tags: 'aim_extract,aim_consolidate,aim_consolidate_verify,aim_consolidate_merge,aim_ground,ai_agents_aim_chatbot,literals_choose'
 prompt_logging_excluded_tags: ''
 prompt_logging_max_messages: 10000
 prompt_logging_max_age: 90

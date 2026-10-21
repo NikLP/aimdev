@@ -47,10 +47,10 @@ settings:
     stream_output: false
     verbose_mode: false
     show_structured_results: false
-    gate: true
     gate_match_threshold: 0.8
     gate_choice_margin: 0.4
   expansion_method: expand
+  load_strategy: eager
 visibility:
   user_role:
     id: user_role

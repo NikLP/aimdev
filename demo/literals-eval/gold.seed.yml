@@ -1,0 +1,50 @@
+# Gold queries for the demo library literals (recipe literals_demo_library). "expect" is a
+# literal key, "none" when nothing should match, or "ambiguous"
+# when several literals fit equally (a tie or none is right, one pick is wrong). "as" is a user ID
+# (0 = anonymous) or name. A set may declare "requires": pools (pools/
+# files to load first) and site (keys the site must have beyond the recipe). Synthetic data only: queries go to hosted Jev.
+# 2026-10-21: expectations re-labeled from a literals:sweep (deleted keys to
+# none; fair answers from the pool100 literals accepted alongside). See
+# RESULTS.md. The question wording is unchanged.
+queries:
+  - {q: 'what is your phone number', expect: [main_phone, ambiguous]}
+  - {q: 'how can I call the library', expect: main_phone}
+  - {q: 'main phone', expect: main_phone}
+  - {q: 'telephone number for the front desk', expect: main_phone}
+  - {q: 'who is the admin', expect: none}
+  - {q: 'which account runs the site', expect: none}
+  - {q: 'where do I sign in', expect: login}
+  - {q: 'how do I log in', expect: login}
+  - {q: 'login page', expect: login}
+  - {q: 'what is the name of this site', expect: site_name, as: 1}
+  - {q: 'what is the website called', expect: site_name, as: 1}
+  - {q: 'what is the name of this site', expect: none, as: 0}
+  - {q: 'where are the dimwits', expect: none}
+  - {q: 'what is the capital of France', expect: none}
+  - {q: 'what is the weather', expect: none}
+  # Near neighbours: the wrong-confident risk.
+  - {q: 'phone number to book a study room', expect: reservations_phone}
+  - {q: 'reservations phone', expect: reservations_phone}
+  - {q: 'who do I call to reserve a meeting room', expect: reservations_phone}
+  - {q: 'phone number for my library fine', expect: accounts_phone}
+  - {q: 'call billing about an overdue charge', expect: accounts_phone}
+  - {q: 'main phone', expect: main_phone}
+  - {q: 'general enquiries phone number', expect: main_phone}
+  - {q: 'what time do you open', expect: none}
+  - {q: 'are you open on Sunday', expect: none}
+  - {q: 'when do you close', expect: none}
+  - {q: 'I forgot my password', expect: password_reset}
+  - {q: 'reset my password', expect: password_reset}
+  - {q: 'phone number', expect: [main_phone, ambiguous]}
+  - {q: 'email address of the librarian', expect: none}
+  - {q: 'do you have the latest Stephen King novel', expect: [none, pl_catalogue]}
+  # "You/your" phrasings (the chooser context makes these about the library).
+  - {q: 'what are your opening hours', expect: none}
+  - {q: 'how do I get hold of you by phone', expect: [main_phone, ambiguous]}
+  - {q: 'what is your telephone number', expect: [main_phone, ambiguous]}
+  - {q: 'how do I sign in to your website', expect: login}
+  - {q: 'what is your email address', expect: none}
+  - {q: 'what is your street address', expect: none}
+  - {q: 'who is your head librarian', expect: none}
+  - {q: 'what is your refund policy', expect: none}
+  - {q: 'what is your fax number', expect: none}

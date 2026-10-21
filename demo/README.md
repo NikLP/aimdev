@@ -8,6 +8,7 @@ part of the `aim` module.
 | --- | --- |
 | `preflight.js` | Thin wrapper: sets the site root and Playwright path, then runs the pre-flight that ships with the recipe. |
 | `preflight.local.json` | This site's `publicUrl` and `localUrl`. |
+| `literals-eval/` | Gold sets, test pools and sweep results for the literals finder ([README](literals-eval/README.md)). |
 
 The demo itself (31 facts, three literals, site name, chat persona and
 tools, widget wording, recall cutoff), the pre-flight, the reset commands

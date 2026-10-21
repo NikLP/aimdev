@@ -44,6 +44,11 @@ merge_verify_prompt: |
 recall_max_distance: 0.52
 recall_gap: 0.1
 default_trusted: true
+trust_policy:
+  default: ''
+  channels:
+    chat: hold
+  scopes: {  }
 show_redacted_facts: false
 log_audit: true
 log_verbose: true

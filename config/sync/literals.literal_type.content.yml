@@ -6,4 +6,5 @@ id: content
 label: Content
 description: 'A piece of content on this site, picked by title. Resolves to its URL.'
 resolver: content
-target_bundles: {  }
+target_bundles:
+  - 'node:page'
