@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "92869bac854bc34d08e8a97c72fc5720",
+    "content-hash": "8461b140b2c9ecae803fe017ef9025cb",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2195,6 +2195,67 @@
             }
         },
         {
+            "name": "drupal/config_pages",
+            "version": "4.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/config_pages.git",
+                "reference": "4.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/config_pages-4.0.1.zip",
+                "reference": "4.0.1",
+                "shasum": "5a0c3fdcba4668da89d8bb74bff363bc6233268d"
+            },
+            "require": {
+                "drupal/core": "^10 || ^11 || ^12"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "4.0.1",
+                    "datestamp": "1786281581",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "qwaygon",
+                    "homepage": "https://www.drupal.org/user/636624"
+                },
+                {
+                    "name": "rachinskiy",
+                    "homepage": "https://www.drupal.org/user/3575731"
+                },
+                {
+                    "name": "shumer",
+                    "homepage": "https://www.drupal.org/user/2297432"
+                }
+            ],
+            "description": "ConfigPages module",
+            "homepage": "http://drupal.org/project/config_pages",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/config_pages",
+                "issues": "http://drupal.org/project/issues/config_pages"
+            }
+        },
+        {
             "name": "drupal/consumers",
             "version": "1.24.0",
             "source": {
@@ -3059,6 +3120,74 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/key",
                 "issues": "http://drupal.org/project/key"
+            }
+        },
+        {
+            "name": "drupal/literals",
+            "version": "dev-1.0.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/literals.git",
+                "reference": "9957aed715bf473f15a7d99eb254fd3543111042"
+            },
+            "require": {
+                "drupal/core": "^11",
+                "php": "^8.3"
+            },
+            "require-dev": {
+                "drupal/ai": "*",
+                "drupal/ai_chatbot": "*",
+                "drupal/literals_finder": "*",
+                "drupal/tool": "^1.0.0-beta10"
+            },
+            "suggest": {
+                "drupal/ai": "^1.4. Required by literals_finder: the Decision API chooser (find a literal by plain-language question) and Guardrails checks at save. A decision provider module (Ollama, Anthropic, ...) must also be configured.",
+                "drupal/gin": "Gives the literal edit form a node-style sidebar layout.",
+                "drupal/mcp_server_tool_bridge": "Exposes literals_tool's literals:lookup to MCP clients.",
+                "drupal/token": "Adds a token browser to the value field of token-type literals.",
+                "drupal/tool": "^1.0@beta. Required by literals_tool, which exposes literals:lookup (key, search, and question modes) over Tool API."
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.0.x": "1.0.x-dev"
+                },
+                "drupal": {
+                    "version": "1.0.x-dev",
+                    "datestamp": "1792766865",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Drupal\\literals\\": "src/",
+                    "Drupal\\literals_finder\\": "modules/literals_finder/src/",
+                    "Drupal\\literals_tool\\": "modules/literals_tool/src/"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "niklp",
+                    "homepage": "https://www.drupal.org/user/71221"
+                }
+            ],
+            "description": "Exact values (phone numbers, URLs, names) kept as governed literals: permission-based access with a per-literal restricted flag, a [literal:key] token, search, and an optional model-assisted lookup by question.",
+            "homepage": "https://www.drupal.org/project/literals",
+            "keywords": [
+                "AI",
+                "Drupal",
+                "literals",
+                "tokens"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/literals"
             }
         },
         {
@@ -12987,98 +13116,6 @@
             "time": "2026-10-03T14:15:35+00:00"
         },
         {
-            "name": "drupal/ai_eval",
-            "version": "1.1.0-alpha2",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/ai_eval.git",
-                "reference": "1.1.0-alpha2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ai_eval-1.1.0-alpha2.zip",
-                "reference": "1.1.0-alpha2",
-                "shasum": "89fd3acf1e388acc1a30df255c2a11a815384a61"
-            },
-            "require": {
-                "drupal/ai": "^1.0",
-                "drupal/core": "^11.3",
-                "opis/json-schema": "^2.3"
-            },
-            "require-dev": {
-                "drupal/ai": "*",
-                "drupal/ai_agents": "^1.3",
-                "drupal/ai_answers": "*",
-                "drupal/ai_automators": "*",
-                "drupal/ai_content_review": "^1.0@alpha",
-                "drupal/droost": "*",
-                "drupal/entity": "*",
-                "drupal/search_api": "^1.41",
-                "drupal/token": "^1.15"
-            },
-            "suggest": {
-                "drupal/ai_agents": "Required for running evaluations against AI agents",
-                "drupal/ai_content_review": "Required to enable the ai_eval_content_review submodule, which runs an AI Content Review criterion as a judge",
-                "drupal/droost": "Required to enable the ai_eval_droost submodule, which grades built Drupal state via Droost read/validate tools",
-                "drupal/search_api": "Required to enable the ai_eval_search_api retrieval runner",
-                "drupal/token": "Required by the ai_eval_ai_automators submodule."
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.1.0-alpha2",
-                    "datestamp": "1792737351",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "dwb17",
-                    "homepage": "https://www.drupal.org/user/492896"
-                },
-                {
-                    "name": "iro",
-                    "homepage": "https://www.drupal.org/user/2484526"
-                },
-                {
-                    "name": "kostask",
-                    "homepage": "https://www.drupal.org/user/257505"
-                },
-                {
-                    "name": "skourak",
-                    "homepage": "https://www.drupal.org/user/356986"
-                },
-                {
-                    "name": "zorz",
-                    "homepage": "https://www.drupal.org/user/1924846"
-                }
-            ],
-            "description": "Evaluation framework for AI agents and chat prompts with pluggable graders, quality gates, judge validation, YAML datasets, and prompt optimization.",
-            "homepage": "https://www.drupal.org/project/ai_eval",
-            "keywords": [
-                "agents",
-                "ai",
-                "ci",
-                "drupal",
-                "evaluation",
-                "llm-judge",
-                "quality-gates",
-                "testing",
-                "validation"
-            ],
-            "support": {
-                "source": "https://git.drupalcode.org/project/ai_eval",
-                "issues": "https://www.drupal.org/project/issues/ai_eval"
-            }
-        },
-        {
             "name": "drupal/coder",
             "version": "8.3.31",
             "source": {
@@ -17471,11 +17508,11 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "drupal/ai": 20,
-        "drupal/ai_eval": 15,
         "drupal/ai_provider_ollama": 5,
         "drupal/ai_provider_typesafeai": 10,
         "drupal/ai_search": 15,
         "drupal/annotations": 15,
+        "drupal/literals": 20,
         "drupal/mcp_server": 10,
         "drupal/mcp_server_oauth": 20,
         "drupal/mcp_server_tool_bridge": 10,

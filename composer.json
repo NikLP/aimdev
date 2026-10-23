@@ -34,6 +34,7 @@
         "drupal/core-recommended": "^11.4",
         "drupal/environment_indicator": "^4.0",
         "drupal/gin": "^5.0",
+        "drupal/literals": "1.0.x-dev@dev",
         "drupal/mcp_server": "^2.0.0-beta3",
         "drupal/mcp_server_oauth": "1.x-dev#fb92204",
         "drupal/mcp_server_tool_bridge": "^1.0.0-beta2",
@@ -46,7 +47,6 @@
     },
     "require-dev": {
         "cweagans/composer-patches": "^2.0",
-        "drupal/ai_eval": "^1.1@alpha",
         "drupal/config_devel": "^1.13",
         "drupal/core-dev": "^11.4",
         "drupal/devel": "^5.5"
