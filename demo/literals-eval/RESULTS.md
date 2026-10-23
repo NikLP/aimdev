@@ -3,7 +3,7 @@
 Dated `literals:sweep` results on the synthetic demo library (hosted Jev
 `subq-snap-preview`). Tuned to that library: not defaults, not for another
 site. The method is in the module's
-[DEVELOPING.md](../../web/modules/custom/literals/DEVELOPING.md) "Tuning the thresholds".
+[DEVELOPING.md](../../web/modules/contrib/literals/DEVELOPING.md) "Tuning the thresholds".
 
 ## Open
 

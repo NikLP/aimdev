@@ -22,4 +22,13 @@ Run `node demo/preflight.js` before going on stage.
 ## The public URL
 
 https://amaria.snake-amberjack.ts.net is a Tailscale Funnel to this laptop,
-so the laptop must be awake and online. `tailscale funnel status` shows it.
+so the laptop must be awake and online. `tailscale funnel status` shows it;
+after a reboot restart it with `tailscale funnel --bg
+https+insecure://127.0.0.1:443` (`.ddev/config.yaml` already lists the host
+in `additional_fqdns`).
+
+## After a rebuild
+
+Follow the recipe README's "Fresh install", including step 7 (MCP over
+OAuth). This site's key path for it is `/var/www/html/keys` (the keys
+survive a reinstall). Then `node demo/preflight.js`.
