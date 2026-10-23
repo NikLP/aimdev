@@ -2,8 +2,8 @@
 # 2026-10-21: expectations re-labeled from a literals:sweep (deleted keys to
 # none; fair answers from the pool100 literals accepted alongside). See
 # RESULTS.md. The question wording is unchanged.
-requires:
-  site: [balls_email, welcome2]
+# 2026-10-22: the welcome2 and balls_email items dropped (site-only literals,
+# not kept across a site reset).
 queries:
   - {q: 'how do I ring about a fine I got', expect: accounts_phone}
   - {q: 'who do I call about paying my late fees', expect: accounts_phone}
@@ -23,9 +23,6 @@ queries:
   - {q: 'what''s the name of the library site', expect: site_name, as: 1}
   - {q: 'how do I reach the back office', expect: staff_line, as: 1}
   - {q: 'internal number for staff', expect: staff_line, as: 1}
-  - {q: 'where''s the home page', expect: welcome2}
-  - {q: 'welcome page link', expect: welcome2}
-  - {q: 'which email do I use to get in touch', expect: balls_email, as: 1}
   - {q: 'what phone is set on the config page', expect: none, as: 1}
   - {q: 'what are your opening hours', expect: none}
   - {q: 'do you have any books on gardening', expect: [none, pl_catalogue]}

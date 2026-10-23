@@ -1,0 +1,62 @@
+# Multi-turn chat scenarios for `drush aim:chatbot-converse`, against this
+# site's aim_demo_library facts and literals. Each scenario is one thread.
+# Per turn: any (one of these substrings, case-insensitive), all, not (none
+# of these), literal (a literal key whose value must appear).
+as: 1
+scenarios:
+  - name: sunday-then-phone
+    turns:
+      - q: "Are you open on Sundays?"
+        any: ["12", "noon"]
+      - q: "What's your phone number?"
+        literal: main_phone
+  - name: phone-first
+    turns:
+      - q: "What's your phone number?"
+        literal: main_phone
+  - name: offtopic-then-hours
+    turns:
+      - q: "Capital of Australia"
+        not: ["Canberra"]
+      - q: "When are you open on Saturday?"
+        all: ["10", "5"]
+  - name: wifi
+    turns:
+      - q: "What's the Wi-Fi password?"
+        any: ["no password", "doesn't need", "does not need", "need a password", "without a password"]
+  - name: printer-followup
+    turns:
+      - q: "Do you have 3D printers?"
+        any: ["induction"]
+      - q: "How long does the induction take?"
+        any: ["20"]
+  - name: borrowing-followup
+    turns:
+      - q: "How many books can I borrow?"
+        any: ["20"]
+      - q: "And for how long?"
+        any: ["3 weeks", "three weeks"]
+  - name: kids-followup
+    turns:
+      - q: "Is there anything for kids on Thursdays?"
+        any: ["Code Club"]
+      - q: "What ages is it for?"
+        all: ["9", "13"]
+  - name: dog-then-fines
+    turns:
+      - q: "Can I bring my dog in?"
+        any: ["assistance"]
+      - q: "Do you charge late fines?"
+        any: ["2022", "no longer", "stopped", "don't charge", "do not charge"]
+  - name: room-then-number
+    turns:
+      - q: "Can my community group book a meeting room?"
+        any: ["free", "4 hours", "four hours"]
+      - q: "What number do I call to book it?"
+        literal: reservations_phone
+  - name: wifi-after-hours
+    turns:
+      - q: "What time do you close on weekdays?"
+        any: ["8pm", "8 pm", "8:00"]
+      - q: "Is there Wi-Fi?"
+        any: ["Harbourside_Public"]

@@ -1,0 +1,362 @@
+# Synthetic zz_ pool: 60 literals (department x phone/hours/email), generated once by the former literals:pool-scale from scale.yml. Written by Claude.
+literals:
+  -
+    type: text
+    id: zz_archives_email
+    name: 'Email address of the Archives'
+    gist: 'Email address of the Archives'
+    value: desk8@example.org
+  -
+    type: text
+    id: zz_archives_hours
+    name: 'Opening hours of the Archives'
+    gist: 'Opening hours of the Archives'
+    value: 'Mon-Fri 9-17 (variant 7)'
+  -
+    type: text
+    id: zz_archives_phone
+    name: 'Phone number for the Archives'
+    gist: 'Phone number for the Archives'
+    value: '+44 1223 100006'
+  -
+    type: text
+    id: zz_art_gallery_email
+    name: 'Email address of the Art gallery'
+    gist: 'Email address of the Art gallery'
+    value: desk59@example.org
+  -
+    type: text
+    id: zz_art_gallery_hours
+    name: 'Opening hours of the Art gallery'
+    gist: 'Opening hours of the Art gallery'
+    value: 'Mon-Fri 9-17 (variant 58)'
+  -
+    type: text
+    id: zz_art_gallery_phone
+    name: 'Phone number for the Art gallery'
+    gist: 'Phone number for the Art gallery'
+    value: '+44 1223 100057'
+  -
+    type: text
+    id: zz_audiobooks_email
+    name: 'Email address of the Audiobooks'
+    gist: 'Email address of the Audiobooks'
+    value: desk44@example.org
+  -
+    type: text
+    id: zz_audiobooks_hours
+    name: 'Opening hours of the Audiobooks'
+    gist: 'Opening hours of the Audiobooks'
+    value: 'Mon-Fri 9-17 (variant 43)'
+  -
+    type: text
+    id: zz_audiobooks_phone
+    name: 'Phone number for the Audiobooks'
+    gist: 'Phone number for the Audiobooks'
+    value: '+44 1223 100042'
+  -
+    type: text
+    id: zz_business_corner_email
+    name: 'Email address of the Business corner'
+    gist: 'Email address of the Business corner'
+    value: desk50@example.org
+  -
+    type: text
+    id: zz_business_corner_hours
+    name: 'Opening hours of the Business corner'
+    gist: 'Opening hours of the Business corner'
+    value: 'Mon-Fri 9-17 (variant 49)'
+  -
+    type: text
+    id: zz_business_corner_phone
+    name: 'Phone number for the Business corner'
+    gist: 'Phone number for the Business corner'
+    value: '+44 1223 100048'
+  -
+    type: text
+    id: zz_cataloguing_email
+    name: 'Email address of the Cataloguing'
+    gist: 'Email address of the Cataloguing'
+    value: desk2@example.org
+  -
+    type: text
+    id: zz_cataloguing_hours
+    name: 'Opening hours of the Cataloguing'
+    gist: 'Opening hours of the Cataloguing'
+    value: 'Mon-Fri 9-17 (variant 1)'
+  -
+    type: text
+    id: zz_cataloguing_phone
+    name: 'Phone number for the Cataloguing'
+    gist: 'Phone number for the Cataloguing'
+    value: '+44 1223 100000'
+  -
+    type: text
+    id: zz_childrens_room_email
+    name: 'Email address of the Childrens room'
+    gist: 'Email address of the Childrens room'
+    value: desk5@example.org
+  -
+    type: text
+    id: zz_childrens_room_hours
+    name: 'Opening hours of the Childrens room'
+    gist: 'Opening hours of the Childrens room'
+    value: 'Mon-Fri 9-17 (variant 4)'
+  -
+    type: text
+    id: zz_childrens_room_phone
+    name: 'Phone number for the Childrens room'
+    gist: 'Phone number for the Childrens room'
+    value: '+44 1223 100003'
+  -
+    type: text
+    id: zz_digital_skills_email
+    name: 'Email address of the Digital skills'
+    gist: 'Email address of the Digital skills'
+    value: desk56@example.org
+  -
+    type: text
+    id: zz_digital_skills_hours
+    name: 'Opening hours of the Digital skills'
+    gist: 'Opening hours of the Digital skills'
+    value: 'Mon-Fri 9-17 (variant 55)'
+  -
+    type: text
+    id: zz_digital_skills_phone
+    name: 'Phone number for the Digital skills'
+    gist: 'Phone number for the Digital skills'
+    value: '+44 1223 100054'
+  -
+    type: text
+    id: zz_genealogy_email
+    name: 'Email address of the Genealogy'
+    gist: 'Email address of the Genealogy'
+    value: desk29@example.org
+  -
+    type: text
+    id: zz_genealogy_hours
+    name: 'Opening hours of the Genealogy'
+    gist: 'Opening hours of the Genealogy'
+    value: 'Mon-Fri 9-17 (variant 28)'
+  -
+    type: text
+    id: zz_genealogy_phone
+    name: 'Phone number for the Genealogy'
+    gist: 'Phone number for the Genealogy'
+    value: '+44 1223 100027'
+  -
+    type: text
+    id: zz_interlibrary_loans_email
+    name: 'Email address of the Interlibrary loans'
+    gist: 'Email address of the Interlibrary loans'
+    value: desk14@example.org
+  -
+    type: text
+    id: zz_interlibrary_loans_hours
+    name: 'Opening hours of the Interlibrary loans'
+    gist: 'Opening hours of the Interlibrary loans'
+    value: 'Mon-Fri 9-17 (variant 13)'
+  -
+    type: text
+    id: zz_interlibrary_loans_phone
+    name: 'Phone number for the Interlibrary loans'
+    gist: 'Phone number for the Interlibrary loans'
+    value: '+44 1223 100012'
+  -
+    type: text
+    id: zz_job_centre_help_email
+    name: 'Email address of the Job centre help'
+    gist: 'Email address of the Job centre help'
+    value: desk53@example.org
+  -
+    type: text
+    id: zz_job_centre_help_hours
+    name: 'Opening hours of the Job centre help'
+    gist: 'Opening hours of the Job centre help'
+    value: 'Mon-Fri 9-17 (variant 52)'
+  -
+    type: text
+    id: zz_job_centre_help_phone
+    name: 'Phone number for the Job centre help'
+    gist: 'Phone number for the Job centre help'
+    value: '+44 1223 100051'
+  -
+    type: text
+    id: zz_language_learning_email
+    name: 'Email address of the Language learning'
+    gist: 'Email address of the Language learning'
+    value: desk47@example.org
+  -
+    type: text
+    id: zz_language_learning_hours
+    name: 'Opening hours of the Language learning'
+    gist: 'Opening hours of the Language learning'
+    value: 'Mon-Fri 9-17 (variant 46)'
+  -
+    type: text
+    id: zz_language_learning_phone
+    name: 'Phone number for the Language learning'
+    gist: 'Phone number for the Language learning'
+    value: '+44 1223 100045'
+  -
+    type: text
+    id: zz_large_print_email
+    name: 'Email address of the Large print'
+    gist: 'Email address of the Large print'
+    value: desk41@example.org
+  -
+    type: text
+    id: zz_large_print_hours
+    name: 'Opening hours of the Large print'
+    gist: 'Opening hours of the Large print'
+    value: 'Mon-Fri 9-17 (variant 40)'
+  -
+    type: text
+    id: zz_large_print_phone
+    name: 'Phone number for the Large print'
+    gist: 'Phone number for the Large print'
+    value: '+44 1223 100039'
+  -
+    type: text
+    id: zz_local_history_email
+    name: 'Email address of the Local history'
+    gist: 'Email address of the Local history'
+    value: desk11@example.org
+  -
+    type: text
+    id: zz_local_history_hours
+    name: 'Opening hours of the Local history'
+    gist: 'Opening hours of the Local history'
+    value: 'Mon-Fri 9-17 (variant 10)'
+  -
+    type: text
+    id: zz_local_history_phone
+    name: 'Phone number for the Local history'
+    gist: 'Phone number for the Local history'
+    value: '+44 1223 100009'
+  -
+    type: text
+    id: zz_makerspace_email
+    name: 'Email address of the Makerspace'
+    gist: 'Email address of the Makerspace'
+    value: desk26@example.org
+  -
+    type: text
+    id: zz_makerspace_hours
+    name: 'Opening hours of the Makerspace'
+    gist: 'Opening hours of the Makerspace'
+    value: 'Mon-Fri 9-17 (variant 25)'
+  -
+    type: text
+    id: zz_makerspace_phone
+    name: 'Phone number for the Makerspace'
+    gist: 'Phone number for the Makerspace'
+    value: '+44 1223 100024'
+  -
+    type: text
+    id: zz_maps_and_atlases_email
+    name: 'Email address of the Maps and atlases'
+    gist: 'Email address of the Maps and atlases'
+    value: desk32@example.org
+  -
+    type: text
+    id: zz_maps_and_atlases_hours
+    name: 'Opening hours of the Maps and atlases'
+    gist: 'Opening hours of the Maps and atlases'
+    value: 'Mon-Fri 9-17 (variant 31)'
+  -
+    type: text
+    id: zz_maps_and_atlases_phone
+    name: 'Phone number for the Maps and atlases'
+    gist: 'Phone number for the Maps and atlases'
+    value: '+44 1223 100030'
+  -
+    type: text
+    id: zz_music_and_film_email
+    name: 'Email address of the Music and film'
+    gist: 'Email address of the Music and film'
+    value: desk20@example.org
+  -
+    type: text
+    id: zz_music_and_film_hours
+    name: 'Opening hours of the Music and film'
+    gist: 'Opening hours of the Music and film'
+    value: 'Mon-Fri 9-17 (variant 19)'
+  -
+    type: text
+    id: zz_music_and_film_phone
+    name: 'Phone number for the Music and film'
+    gist: 'Phone number for the Music and film'
+    value: '+44 1223 100018'
+  -
+    type: text
+    id: zz_periodicals_email
+    name: 'Email address of the Periodicals'
+    gist: 'Email address of the Periodicals'
+    value: desk17@example.org
+  -
+    type: text
+    id: zz_periodicals_hours
+    name: 'Opening hours of the Periodicals'
+    gist: 'Opening hours of the Periodicals'
+    value: 'Mon-Fri 9-17 (variant 16)'
+  -
+    type: text
+    id: zz_periodicals_phone
+    name: 'Phone number for the Periodicals'
+    gist: 'Phone number for the Periodicals'
+    value: '+44 1223 100015'
+  -
+    type: text
+    id: zz_rare_books_email
+    name: 'Email address of the Rare books'
+    gist: 'Email address of the Rare books'
+    value: desk35@example.org
+  -
+    type: text
+    id: zz_rare_books_hours
+    name: 'Opening hours of the Rare books'
+    gist: 'Opening hours of the Rare books'
+    value: 'Mon-Fri 9-17 (variant 34)'
+  -
+    type: text
+    id: zz_rare_books_phone
+    name: 'Phone number for the Rare books'
+    gist: 'Phone number for the Rare books'
+    value: '+44 1223 100033'
+  -
+    type: text
+    id: zz_reference_desk_email
+    name: 'Email address of the Reference desk'
+    gist: 'Email address of the Reference desk'
+    value: desk38@example.org
+  -
+    type: text
+    id: zz_reference_desk_hours
+    name: 'Opening hours of the Reference desk'
+    gist: 'Opening hours of the Reference desk'
+    value: 'Mon-Fri 9-17 (variant 37)'
+  -
+    type: text
+    id: zz_reference_desk_phone
+    name: 'Phone number for the Reference desk'
+    gist: 'Phone number for the Reference desk'
+    value: '+44 1223 100036'
+  -
+    type: text
+    id: zz_teen_zone_email
+    name: 'Email address of the Teen zone'
+    gist: 'Email address of the Teen zone'
+    value: desk23@example.org
+  -
+    type: text
+    id: zz_teen_zone_hours
+    name: 'Opening hours of the Teen zone'
+    gist: 'Opening hours of the Teen zone'
+    value: 'Mon-Fri 9-17 (variant 22)'
+  -
+    type: text
+    id: zz_teen_zone_phone
+    name: 'Phone number for the Teen zone'
+    gist: 'Phone number for the Teen zone'
+    value: '+44 1223 100021'

@@ -1,0 +1,216 @@
+# Questions for the zz_ pool (drush literals:pool load pools/scale60.yml): 60 sampled
+# from two per literal, plus 10 unanswerable. Generated once by the former
+# literals:pool-scale. Written by Claude, synthetic.
+requires:
+  pools: [scale60]
+queries:
+  -
+    q: 'what time does the periodicals close'
+    expect: zz_periodicals_hours
+  -
+    q: 'what is the archives email address'
+    expect: zz_archives_email
+  -
+    q: 'email the interlibrary loans'
+    expect: zz_interlibrary_loans_email
+  -
+    q: 'email the language learning'
+    expect: zz_language_learning_email
+  -
+    q: 'what time does the rare books close'
+    expect: zz_rare_books_hours
+  -
+    q: 'email the art gallery'
+    expect: zz_art_gallery_email
+  -
+    q: 'what time does the digital skills close'
+    expect: zz_digital_skills_hours
+  -
+    q: 'when is the large print open'
+    expect: zz_large_print_hours
+  -
+    q: 'how do I phone the cataloguing'
+    expect: zz_cataloguing_phone
+  -
+    q: 'email the genealogy'
+    expect: zz_genealogy_email
+  -
+    q: 'when is the art gallery open'
+    expect: zz_art_gallery_hours
+  -
+    q: 'what time does the language learning close'
+    expect: zz_language_learning_hours
+  -
+    q: 'number to ring the archives'
+    expect: zz_archives_phone
+  -
+    q: 'what time does the local history close'
+    expect: zz_local_history_hours
+  -
+    q: 'how do I phone the childrens room'
+    expect: zz_childrens_room_phone
+  -
+    q: 'what time does the large print close'
+    expect: zz_large_print_hours
+  -
+    q: 'what is the large print email address'
+    expect: zz_large_print_email
+  -
+    q: 'email the makerspace'
+    expect: zz_makerspace_email
+  -
+    q: 'email the job centre help'
+    expect: zz_job_centre_help_email
+  -
+    q: 'how do I phone the digital skills'
+    expect: zz_digital_skills_phone
+  -
+    q: 'when is the language learning open'
+    expect: zz_language_learning_hours
+  -
+    q: 'when is the teen zone open'
+    expect: zz_teen_zone_hours
+  -
+    q: 'what is the job centre help email address'
+    expect: zz_job_centre_help_email
+  -
+    q: 'number to ring the job centre help'
+    expect: zz_job_centre_help_phone
+  -
+    q: 'what time does the reference desk close'
+    expect: zz_reference_desk_hours
+  -
+    q: 'when is the periodicals open'
+    expect: zz_periodicals_hours
+  -
+    q: 'number to ring the audiobooks'
+    expect: zz_audiobooks_phone
+  -
+    q: 'how do I phone the reference desk'
+    expect: zz_reference_desk_phone
+  -
+    q: 'number to ring the business corner'
+    expect: zz_business_corner_phone
+  -
+    q: 'number to ring the childrens room'
+    expect: zz_childrens_room_phone
+  -
+    q: 'number to ring the genealogy'
+    expect: zz_genealogy_phone
+  -
+    q: 'what is the business corner email address'
+    expect: zz_business_corner_email
+  -
+    q: 'what is the art gallery email address'
+    expect: zz_art_gallery_email
+  -
+    q: 'number to ring the periodicals'
+    expect: zz_periodicals_phone
+  -
+    q: 'how do I phone the music and film'
+    expect: zz_music_and_film_phone
+  -
+    q: 'email the local history'
+    expect: zz_local_history_email
+  -
+    q: 'what is the rare books email address'
+    expect: zz_rare_books_email
+  -
+    q: 'email the maps and atlases'
+    expect: zz_maps_and_atlases_email
+  -
+    q: 'email the reference desk'
+    expect: zz_reference_desk_email
+  -
+    q: 'when is the archives open'
+    expect: zz_archives_hours
+  -
+    q: 'how do I phone the teen zone'
+    expect: zz_teen_zone_phone
+  -
+    q: 'when is the local history open'
+    expect: zz_local_history_hours
+  -
+    q: 'email the archives'
+    expect: zz_archives_email
+  -
+    q: 'when is the reference desk open'
+    expect: zz_reference_desk_hours
+  -
+    q: 'email the audiobooks'
+    expect: zz_audiobooks_email
+  -
+    q: 'how do I phone the periodicals'
+    expect: zz_periodicals_phone
+  -
+    q: 'when is the cataloguing open'
+    expect: zz_cataloguing_hours
+  -
+    q: 'email the music and film'
+    expect: zz_music_and_film_email
+  -
+    q: 'what time does the genealogy close'
+    expect: zz_genealogy_hours
+  -
+    q: 'what time does the interlibrary loans close'
+    expect: zz_interlibrary_loans_hours
+  -
+    q: 'number to ring the local history'
+    expect: zz_local_history_phone
+  -
+    q: 'number to ring the teen zone'
+    expect: zz_teen_zone_phone
+  -
+    q: 'when is the genealogy open'
+    expect: zz_genealogy_hours
+  -
+    q: 'how do I phone the language learning'
+    expect: zz_language_learning_phone
+  -
+    q: 'what is the music and film email address'
+    expect: zz_music_and_film_email
+  -
+    q: 'when is the rare books open'
+    expect: zz_rare_books_hours
+  -
+    q: 'number to ring the interlibrary loans'
+    expect: zz_interlibrary_loans_phone
+  -
+    q: 'how do I phone the local history'
+    expect: zz_local_history_phone
+  -
+    q: 'what is the periodicals email address'
+    expect: zz_periodicals_email
+  -
+    q: 'how do I phone the rare books'
+    expect: zz_rare_books_phone
+  -
+    q: 'what is the wifi password'
+    expect: none
+  -
+    q: 'who won the football last night'
+    expect: none
+  -
+    q: 'how tall is mount everest'
+    expect: none
+  -
+    q: 'recipe for sourdough bread'
+    expect: none
+  -
+    q: 'phone number of the dentist'
+    expect: none
+  -
+    q: 'email the prime minister'
+    expect: none
+  -
+    q: 'what is the weather forecast'
+    expect: none
+  -
+    q: 'when does the moon rise'
+    expect: none
+  -
+    q: 'how do I phone the zeppelin hangar'
+    expect: none
+  -
+    q: 'opening hours of the town swimming baths'
+    expect: none

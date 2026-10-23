@@ -3,7 +3,7 @@
 Dated `literals:sweep` results on the synthetic demo library (hosted Jev
 `subq-snap-preview`). Tuned to that library: not defaults, not for another
 site. The method is in the module's
-[TUNING.md](../../web/modules/custom/literals/modules/literals_finder/eval/TUNING.md).
+[DEVELOPING.md](../../web/modules/custom/literals/DEVELOPING.md) "Tuning the thresholds".
 
 ## Open
 
@@ -12,6 +12,13 @@ site. The method is in the module's
   "call" in the stress set expect a tie but get `main_phone`; two
   agentblind account questions expect a tie but get one literal. Decide
   whether those labels or those answers are wrong.
+
+## Gist overlap (2026-10-22, subq-snap-preview, pool100 and stress seeded)
+
+Seven sets: 191 of 192 answerable questions hit (`nikblind` 20/20); the one
+wrong pick (`is the wifi free` got `login`) shares no wording with its gist.
+A phrase-overlap warning was built, predicted nothing, and was removed. Reopen
+only with a real miss between two similar gists.
 
 ## Second sweep (2026-10-21, subq-snap-preview, pool100 seeded)
 

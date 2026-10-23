@@ -39,7 +39,7 @@ settings:
   placement: bottom-right
   show_copy_icon: true
   collapse_minimal: false
-  style_file: 'module:ai_chatbot:toolbar.yml'
+  style_file: 'module:ai_chatbot:bard.yml'
   disable_csrf: false
   chat_processor_plugin: aim_chatbot_gate
   plugin_configuration:

@@ -2,16 +2,17 @@
 
 Gold sets and test pools for `drush literals:eval` / `literals:sweep` on this
 site's demo library, kept out of the `literals` module because they depend on
-this site (hand-made literals such as `balls_email` and `welcome2`, an
-`evaltester` user that does not exist yet) and its history. The module ships
-only `eval/gold.example.yml` and the method (`eval/TUNING.md`). Results:
+this site (an `evaltester` user that does not exist yet) and its history.
+The literals they expect ship with the `aim_demo_library` recipe or come
+from `pools/`. The module ships
+only `eval/gold.example.yml` and the method (its DEVELOPING.md, "Tuning the thresholds"). Results:
 [RESULTS.md](RESULTS.md).
 
 | Path | What |
 | --- | --- |
 | `gold.*.yml` | Gold sets. A set's `requires` names the pools and site literals it needs. |
 | `pools/pool100.yml`, `pools/stress.yml` | Test pools (`pl_*`, `st_*`) for `literals:pool`. |
-| `pools/scale.yml` | Generator spec for `literals:pool-scale --spec`. |
+| `pools/scale60.yml`, `pools/scale225.yml` | Synthetic `zz_*` pools (department x phone/hours/email) for scale runs, with `gold.scale60.yml` and `gold.scale225.yml`. |
 
 Drush runs from the docroot, so pass absolute container paths:
 

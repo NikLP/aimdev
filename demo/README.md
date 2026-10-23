@@ -10,7 +10,7 @@ part of the `aim` module.
 | `preflight.local.json` | This site's `publicUrl` and `localUrl`. |
 | `literals-eval/` | Gold sets, test pools and sweep results for the literals finder ([README](literals-eval/README.md)). |
 
-The demo itself (31 facts, three literals, site name, chat persona and
+The demo itself (31 facts, eight literals, site name, chat persona and
 tools, widget wording, recall cutoff), the pre-flight, the reset commands
 and the stage flow all live in the `aim_demo_library` recipe:
 [its README](../web/modules/custom/aim/recipes/aim_demo_library/README.md).
