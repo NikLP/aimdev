@@ -1,4 +1,4 @@
-# Demo kit (DrupalCon)
+# Demo kit
 
 A fictional community library, used to show AIM (agent memory built in
 Drupal) to Drupal developers. Everything here is for this site only, not
@@ -31,4 +31,62 @@ in `additional_fqdns`).
 
 Follow the recipe README's "Fresh install", including step 7 (MCP over
 OAuth). This site's key path for it is `/var/www/html/keys` (the keys
-survive a reinstall). Then `node demo/preflight.js`.
+survive a reinstall). Then set the models and settings below, and run
+`node demo/preflight.js`.
+
+## Model settings
+
+The recipe doesn't set any of these; set them by hand after it is applied.
+Each is listed as the UI label, then the config key. "Tuned to" names the
+model a value was measured on: if you change that model, re-check the
+value, because thresholds don't carry over from one model to another.
+"Jev" is the TypeSafe AI provider (`typesafeai`) with model
+`subq-snap-preview`.
+
+**AI defaults** (`/admin/config/ai/settings`, `ai.settings:default_providers`):
+Chat `amazeeio`, Decision Jev, Embeddings `ollama` /
+`nomic_embed_text_latest`.
+
+**AIM settings** (`/admin/config/aim/settings`, `aim.settings`):
+
+| Tab > field | Config key | This site | Module default | Tuned to |
+| --- | --- | --- | --- | --- |
+| Models > Consolidation classifier > Backend, Decision model | `activities.consolidation` | Decision API, Jev | Chat, site default | - |
+| Models > Merge verifier > Backend, Decision model | `activities.verifier` | Decision API, Jev | Chat, site default | - |
+| Models > Merge verifier > Verifier threshold | `activities.verifier.threshold` | 0.8 | empty (0.5) | Jev |
+| Models > Grounded check > Decision model | `activities.grounding` | Jev | none | - |
+| Models > Grounded check > Grounded threshold | `activities.grounding.threshold` | 0.7 | empty (0.7) | Jev |
+| Models > Grounded check > Mode | `grounding_mode` | Shadow | Off | - |
+| Consolidation > Auto-merge distance | `auto_threshold` | 0.09 | 0.09 | `nomic-embed-text` |
+| Consolidation > Ambiguous distance | `ambiguous_threshold` | 0.45 | 0.45 | `nomic-embed-text` |
+| Recall > Chatbot recall maximum distance | `recall_max_distance` | 0.52 | 0.48 | `nomic-embed-text` |
+| Recall > Recall gap | `recall_gap` | 0.1 | 0 | `nomic-embed-text` |
+| Governance > Trust new facts by default | `default_trusted` | on | off | - |
+| Logging & Debug > Log audit events | `log_audit` | on | off | - |
+| Logging & Debug > Log verbose detail | `log_verbose` | on | off | - |
+
+The distance values also depend on MariaDB's cosine distance
+([ADR-0019](../web/modules/custom/aim/adr/resolved/0019-recall-abstention-distance-cutoff.md)
+addendum for 0.52). The Verifier threshold field only shows
+when the fieldset's Backend is Decision API.
+
+**Literals finder** (`/admin/config/literals/finder`,
+`literals_finder.settings`): Add the chooser scores to the audit line
+(`log_verbose`) on.
+
+**AI logging** (`/admin/config/ai/logging/settings`, `ai_logging.settings`;
+site-wide, so neither aim nor the recipe writes it):
+
+| Field | Config key | This site |
+| --- | --- | --- |
+| Automatically log requests | `prompt_logging` | on |
+| Automatically log responses | `prompt_logging_output` | on |
+| Restrict automated logging by request tags | `prompt_logging_tags` | `aim_extract,aim_consolidate,aim_consolidate_verify,aim_consolidate_merge,aim_ground,ai_agents_aim_chatbot,literals_choose` |
+| Maximum number messages to keep stored in the log | `prompt_logging_max_messages` | 10000 |
+| Maximum age of messages to keep stored in the log | `prompt_logging_max_age` | 90 |
+
+**Set by the recipe, for reference**: on the chat block
+(`block.block.olivero_aimdemochat`), Gate match threshold
+(`settings.plugin_configuration.gate_match_threshold`) 0.8 and Gate choice
+margin (`gate_choice_margin`) 0.4. Both were tuned with Jev as the
+Decision default, since the finder uses the default Decision model.
