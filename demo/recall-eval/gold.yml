@@ -1,0 +1,46 @@
+# Recall gold set for the aim_demo_library facts (Claude-drafted 2026-10-27,
+# not blind: written with the fact list open). Each item: q (the question),
+# scope (filter, "site" for a visitor; omitted for staff, who see every scope),
+# expect (substrings naming the facts that should come back; [] means nothing
+# should). Substrings, not IDs, so the set survives a reinstall.
+items:
+  # Visitor, direct.
+  - {q: 'when are you open?', scope: site, expect: ['open Monday to Friday']}
+  - {q: 'are you open on Sunday?', scope: site, expect: ['open Monday to Friday']}
+  - {q: 'is the library open on bank holidays?', scope: site, expect: ['closed on public holidays']}
+  - {q: "what's the wifi password?", scope: site, expect: ['Free Wi-Fi']}
+  - {q: 'can I bring my dog?', scope: site, expect: ['assistance dogs']}
+  - {q: 'is there wheelchair access?', scope: site, expect: ['step-free']}
+  - {q: 'do you charge late fees?', scope: site, expect: ['overdue fines']}
+  - {q: 'how many books can I take out?', scope: site, expect: ['borrow up to 20']}
+  - {q: 'how do I join?', scope: site, expect: ['Membership is free']}
+  - {q: 'can I print here?', scope: site, expect: ['Public computers']}
+  - {q: 'can I use a 3D printer?', scope: site, expect: ['3D printers']}
+  - {q: 'how do I contact you?', scope: site, expect: ['reach the library']}
+  - {q: 'can our group use a room?', scope: site, expect: ['meeting room']}
+  - {q: 'when is the book sale?', scope: site, expect: ['book sale']}
+  - {q: 'do you keep a record of what I borrowed?', scope: site, expect: ['Borrowing history']}
+  # Visitor, broad or category questions (the known weak spot).
+  - {q: 'any upcoming events?', scope: site, expect: ['Code Club', 'Baby Rhyme Time', 'book sale']}
+  - {q: "what's on for kids?", scope: site, expect: ['Code Club', 'Baby Rhyme Time']}
+  - {q: "what's on this week?", scope: site, expect: ['Code Club', 'Baby Rhyme Time']}
+  - {q: 'activities for toddlers', scope: site, expect: ['Baby Rhyme Time']}
+  - {q: 'coding for teenagers', scope: site, expect: ['Code Club']}
+  - {q: 'anything happening on Thursday?', scope: site, expect: ['Code Club']}
+  - {q: 'what services do you offer?', scope: site, expect: ['Public computers', 'Free Wi-Fi', 'meeting room', '3D printers']}
+  # Visitor, nothing recorded: should come back empty.
+  - {q: 'do you have a cafe?', scope: site, expect: []}
+  - {q: 'where can I park?', scope: site, expect: []}
+  - {q: 'who won the football last night?', scope: site, expect: []}
+  - {q: 'can I return books to another branch?', scope: site, expect: []}
+  - {q: 'do you sell gift cards?', scope: site, expect: []}
+  # Staff, every scope.
+  - {q: 'when does the new events calendar launch?', expect: ['calendar launches on 20 October']}
+  - {q: 'who is building the events calendar?', expect: ['building the events calendar']}
+  - {q: 'rules for publishing events', expect: ['two weeks before']}
+  - {q: 'what do I need to do before publishing an image?', expect: ['alt text']}
+  - {q: 'who can publish a press release?', expect: ['press releases']}
+  - {q: 'how long can a news summary be?', expect: ['160 characters']}
+  - {q: 'how does Sam like answers?', expect: ['short answers as bullet points']}
+  - {q: 'who looks after the website?', expect: ['maintained by the agency', 'website support']}
+  - {q: 'what is the budget for the redesign?', expect: []}

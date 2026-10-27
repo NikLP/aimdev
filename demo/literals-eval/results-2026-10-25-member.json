@@ -1,0 +1,905 @@
+{
+    "tool": [
+        {
+            "q": "whats the library's phone number",
+            "expect": "main_phone",
+            "verdict": "ok",
+            "reply": "The library's phone number is **+44 1223 000000**. You can use it to reach a librarian or customer service.\n\nYou can also email hello@harbourside-library.example.",
+            "calls": 3,
+            "in": 5583,
+            "out": 164,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_literal"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5747
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "can i talk to a librarian",
+            "expect": "main_phone",
+            "verdict": "ok",
+            "reply": "Yes, you can. The quickest way is to phone the library on +44 1223 000000. You can also email hello@harbourside-library.example.\n\nOr you can come in and speak to someone at the main desk, which has a hearing loop. Opening hours are:\n- Monday to Friday, 9am to 8pm\n- Saturday, 10am to 5pm\n- Sunday, 12pm to 4pm\n\nThe library is closed on public holidays and on the last Friday of every month, when staff are in training. Please check the date before you set off.",
+            "calls": 3,
+            "in": 5671,
+            "out": 302,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_literal"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5973
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "customer service number pls",
+            "expect": "main_phone",
+            "verdict": "ok",
+            "reply": "You can call the library's main phone line on **+44 1223 000000**. It also covers customer service and speaking to a librarian.\n\nYou can email the team too, at hello@harbourside-library.example.",
+            "calls": 3,
+            "in": 5151,
+            "out": 173,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_literal"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5324
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "I've been trying to reach someone at your library for ages, how do I ring you?",
+            "expect": "main_phone",
+            "verdict": "ok",
+            "reply": "I'm sorry you've had trouble getting through. You can ring the library's main phone line on **+44 1223 000000**. That number also puts you through to customer service and a librarian.\n\nThese are our opening hours, so you can pick a good time to call:\n- Monday to Friday: 9am to 8pm\n- Saturday: 10am to 5pm\n- Sunday: 12pm to 4pm\n\nWe're closed on public holidays. We're also closed on the last Friday of every month for staff training, so nobody will answer then. That might explain some of the missed calls.\n\nYou can also email us at hello@harbourside-library.example.",
+            "calls": 3,
+            "in": 5618,
+            "out": 312,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_literal"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5930
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "phone #",
+            "expect": "main_phone",
+            "verdict": "ok",
+            "reply": "You can phone the library on **+44 1223 000000**. That's the main number, and you can use it to speak to a librarian or reach customer service.\n\nYou can also email hello@harbourside-library.example.",
+            "calls": 3,
+            "in": 5568,
+            "out": 169,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_literal"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5737
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "what is this website called",
+            "expect": "site_name",
+            "verdict": "ok",
+            "reply": "This is the website of Harbourside Community Library. I don't have a separate name for the website itself recorded. I do know it's built on Drupal 11 and maintained by an agency called Northlight Digital.",
+            "calls": 3,
+            "in": 4847,
+            "out": 236,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5083
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "name of this site?",
+            "expect": "site_name",
+            "verdict": "ok",
+            "reply": "This is the website for Harbourside Community Library.",
+            "calls": 3,
+            "in": 5396,
+            "out": 119,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5515
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "which library's website am I on",
+            "expect": "site_name",
+            "verdict": "ok",
+            "reply": "You're on the website of Harbourside Community Library. Is there anything about the library I can help you with, like opening hours or how to get in touch?",
+            "calls": 3,
+            "in": 5259,
+            "out": 158,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5417
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "who is the administrator account",
+            "expect": "none",
+            "verdict": "ok-none",
+            "reply": "I don't have anything recorded about who holds the administrator account for the library's website. If you know, tell me and I can make a note of it. If you need to reach someone at the library, I can try to find the contact details for you.",
+            "calls": 3,
+            "in": 4780,
+            "out": 197,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 4977
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "what's the admin username",
+            "expect": "none",
+            "verdict": "ok-none",
+            "reply": "I don't have an admin username recorded, so I can't help with that one. If you know it and it's something the library should keep on record, tell me. For account access, it's best to ask library staff directly.\n\nI can help with other things about the library, like opening hours, services, or borrowing.",
+            "calls": 5,
+            "in": 7631,
+            "out": 383,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_literal"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 3,
+                    "tok": 7729
+                },
+                "typesafeai": {
+                    "calls": 1,
+                    "tok": 285
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "where do i sign in",
+            "expect": "login",
+            "verdict": "wrong",
+            "reply": "I don't have anything recorded about where to sign in, whether that's an online account login or a sign-in desk at the building. If you know, tell me and I can make a note of it.\n\nI do have two related facts:\n- Membership is free for residents of the borough. Children under 16 need a parent or guardian to sign up.\n- Free Wi-Fi is available in the building on the network Harbourside_Public. It needs no password.\n\nIs one of those what you were looking for?",
+            "calls": 3,
+            "in": 5118,
+            "out": 334,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_literal"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5452
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "log in link",
+            "expect": "login",
+            "verdict": "wrong",
+            "reply": "I don't have a log in link recorded, so I can't give you one. If you know where it is, tell me and I'll make a note of it.",
+            "calls": 3,
+            "in": 4957,
+            "out": 186,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_literal"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5143
+                },
+                "ollama": {
+                    "calls": 1,
+                    "tok": 0
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "i want to access my account, where do I enter my details",
+            "expect": "login",
+            "verdict": "wrong",
+            "reply": "I don't have a record of where to log in to your library account, so I can't point you to the right page. If you know where it is, tell me and I'll make a note of it.\n\nYou can email the library at hello@harbourside-library.example, or phone them. They should be able to help you get into your account.",
+            "calls": 3,
+            "in": 5252,
+            "out": 204,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_literal"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5456
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "number to book a meeting room",
+            "expect": "reservations_phone",
+            "verdict": "ok",
+            "reply": "You can book a meeting room by phone on **+1 555 0102**. That's the library's reservations line, which takes bookings for meeting rooms and study spaces.\n\nCommunity groups can book a meeting room for free, for up to 4 hours at a time.\n\nYou can also email the library at hello@harbourside-library.example.",
+            "calls": 3,
+            "in": 5371,
+            "out": 216,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_literal"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5587
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "How do I reserve a study space by phone?",
+            "expect": "reservations_phone",
+            "verdict": "ok",
+            "reply": "You can reserve a study space by calling the library's reservations line on **+1 555 0102**. That number is for booking meeting rooms and study spaces.\n\nI don't have the details of the booking process recorded, such as how long you can book a study space for. For community groups, I do know that meeting rooms are free to book for up to 4 hours at a time. You can also email the library at hello@harbourside-library.example.",
+            "calls": 3,
+            "in": 5302,
+            "out": 248,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_literal"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5550
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "room booking tel",
+            "expect": "reservations_phone",
+            "verdict": "ok",
+            "reply": "To book a room by phone, call **+1 555 0102**. That's the reservations line for meeting rooms and study spaces.\n\nCommunity groups can book a meeting room for free, for up to 4 hours at a time.",
+            "calls": 3,
+            "in": 5152,
+            "out": 179,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_literal"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5331
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "my book club needs a room next Tuesday, who do I call",
+            "expect": "reservations_phone",
+            "verdict": "ok",
+            "reply": "Good news: community groups like your book club can book a meeting room for free, for up to 4 hours at a time.\n\nTo book, call the reservations line on **+1 555 0102**. That number handles meeting room and study space bookings.\n\nYou can also email the library at hello@harbourside-library.example. I'd call for next Tuesday, though, so you get an answer sooner.",
+            "calls": 4,
+            "in": 5669,
+            "out": 235,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_literal"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5611
+                },
+                "ollama": {
+                    "calls": 1,
+                    "tok": 0
+                },
+                "typesafeai": {
+                    "calls": 1,
+                    "tok": 293
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "who do I call about my overdue fines",
+            "expect": "accounts_phone",
+            "verdict": "ok",
+            "reply": "You can call the library's accounts line on +1 555 0103. It handles fines, billing, and card charges.\n\nThe library stopped charging overdue fines in 2022, so you may not owe any. Items that haven't been returned after 8 weeks are billed at replacement cost. If you've had a bill like that, the accounts team can help.",
+            "calls": 3,
+            "in": 5114,
+            "out": 224,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_literal"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5338
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "billing department number",
+            "expect": "accounts_phone",
+            "verdict": "ok",
+            "reply": "The number for billing is **+1 555 0103**.\n\nIt's listed as the Accounts phone. You can call it about fines and billing, card charges, and the finance department.",
+            "calls": 3,
+            "in": 5007,
+            "out": 202,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_literal"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5209
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "I was charged on my card and don't recognise it, who do I phone?",
+            "expect": "accounts_phone",
+            "verdict": "ok",
+            "reply": "Sorry about the worry over that charge. You can phone the library's accounts team on **+1 555 0103**. They deal with billing, card charges and finance questions.\n\nThe charge might be for a library item. We stopped charging overdue fines in 2022, but anything not returned after 8 weeks is billed at its replacement cost. The accounts team can tell you exactly what the charge was for.",
+            "calls": 3,
+            "in": 5154,
+            "out": 262,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_literal"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5416
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "finance dept phone",
+            "expect": "accounts_phone",
+            "verdict": "ok",
+            "reply": "The number for the finance department (accounts) is **+1 555 0103**. It's also the number to call about fines, billing and card charges.",
+            "calls": 3,
+            "in": 5013,
+            "out": 171,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_literal"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5184
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "what time do you open",
+            "expect": "none",
+            "verdict": "ok-none",
+            "reply": "We open at these times:\n\n- **Monday to Friday:** 9am to 8pm\n- **Saturday:** 10am to 5pm\n- **Sunday:** 12pm to 4pm\n\nWe're closed on public holidays. We're also closed on the last Friday of every month for staff training.",
+            "calls": 3,
+            "in": 5005,
+            "out": 148,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5153
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "are you open on sundays",
+            "expect": "none",
+            "verdict": "ok-none",
+            "reply": "Yes, we're open on Sundays from 12pm to 4pm.\n\nOur other opening hours are:\n- **Monday to Friday:** 9am to 8pm\n- **Saturday:** 10am to 5pm\n\nWe're closed on public holidays. We're also closed on the last Friday of every month for staff training. If a public holiday falls on a Sunday, we won't be open that day.",
+            "calls": 3,
+            "in": 4949,
+            "out": 184,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5133
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "closing time?",
+            "expect": "none",
+            "verdict": "ok-none",
+            "reply": "Here are our closing times:\n\n- **Monday to Friday:** 8pm\n- **Saturday:** 5pm\n- **Sunday:** 4pm\n\nWe're closed on public holidays. We're also closed on the last Friday of every month for staff training.",
+            "calls": 3,
+            "in": 4942,
+            "out": 140,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5082
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "wen are u open",
+            "expect": "none",
+            "verdict": "ok-none",
+            "reply": "We're open at these times:\n\n- **Monday to Friday:** 9am to 8pm\n- **Saturday:** 10am to 5pm\n- **Sunday:** 12pm to 4pm\n\nWe're closed on public holidays. We're also closed on the last Friday of every month for staff training.",
+            "calls": 3,
+            "in": 5005,
+            "out": 149,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5154
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "i forgot my password",
+            "expect": "password_reset",
+            "verdict": "ok",
+            "reply": "No problem. You can reset your password on this page: https://aim.ddev.site/user/password\n\nIf that doesn't work, you can email the library at hello@harbourside-library.example, or phone them, and they can help.",
+            "calls": 3,
+            "in": 5368,
+            "out": 215,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_literal"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5583
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "reset pasword",
+            "expect": "password_reset",
+            "verdict": "ok",
+            "reply": "You can reset your password here: https://aim.ddev.site/user/password\n\nThat page is for forgotten passwords and for getting back into your account.\n\nIf you still can't get in, email the library at hello@harbourside-library.example. You can also phone them.",
+            "calls": 3,
+            "in": 5555,
+            "out": 220,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_literal"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5775
+                },
+                "ollama": {
+                    "calls": 1,
+                    "tok": 0
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "can't remember my login password how do I get a new one",
+            "expect": "password_reset",
+            "verdict": "ok",
+            "reply": "You can reset it here: https://aim.ddev.site/user/password\n\nThe page is for resetting a forgotten password and getting back into your account. I don't have any other details recorded about the steps, such as what you'll be asked for. If the reset doesn't work, please ask a member of library staff.",
+            "calls": 3,
+            "in": 5111,
+            "out": 235,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_literal"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5346
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "where to change a forgotten pw",
+            "expect": "password_reset",
+            "verdict": "ok",
+            "reply": "You can reset a forgotten password here: https://aim.ddev.site/user/password\n\nEnter your details on that page to recover access to your account.",
+            "calls": 3,
+            "in": 5172,
+            "out": 161,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_literal"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5333
+                },
+                "ollama": {
+                    "calls": 1,
+                    "tok": 0
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "I need to speak to someone about my account",
+            "expect": "ambiguous",
+            "verdict": "leak",
+            "reply": "I can help you get in touch. I'm not sure yet what your account question is about, so here are two options.\n\n- **Email:** you can reach the library at hello@harbourside-library.example.\n- **Accounts phone:** +1 555 0103. This number is only for fines and billing, card charges and the finance department. If your question is about one of those, it's the right one to call. If it's about something else, like renewals, your borrowing history or your login, it may not be the best number.\n\nI don't have a general phone number for the library recorded, so for anything other than billing I'd suggest email.\n\nWhat is your account question about? I may be able to answer it here.",
+            "calls": 3,
+            "in": 5664,
+            "out": 459,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_literal"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 6123
+                },
+                "ollama": {
+                    "calls": 1,
+                    "tok": 0
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "I can't get in to my account",
+            "expect": "ambiguous",
+            "verdict": "leak",
+            "reply": "I'm sorry you can't get into your account. I don't have anything recorded about login or password problems, so I can't walk you through a fix.\n\nThe best step is to contact the library team directly. You can email them at hello@harbourside-library.example, or phone them.\n\nThe only phone number I found is +1 555 0103. That's the accounts line for fines, billing and card charges, so it may not be the right one for a login problem. It's your call whether to try it. Email is the safer choice.\n\nIf you know how account access works here, tell me and I can note it for later. Is there anything else about the library I can help with?",
+            "calls": 4,
+            "in": 8521,
+            "out": 430,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_literal"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 3,
+                    "tok": 8951
+                },
+                "ollama": {
+                    "calls": 1,
+                    "tok": 0
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "what's the wifi password",
+            "expect": "none",
+            "verdict": "ok-none",
+            "reply": "There isn't a password to enter. You can use the free Wi-Fi anywhere in the building. Connect to the network called **Harbourside_Public**. It doesn't need a password.",
+            "calls": 4,
+            "in": 5332,
+            "out": 169,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_literal"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5216
+                },
+                "typesafeai": {
+                    "calls": 1,
+                    "tok": 285
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "how much is the late fee per day",
+            "expect": "none",
+            "verdict": "ok-none",
+            "reply": "Good news: there's no daily late fee. The library stopped charging overdue fines in 2022.\n\nIf an item isn't returned after 8 weeks, you'll be billed the replacement cost for it.",
+            "calls": 3,
+            "in": 4873,
+            "out": 125,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 4998
+                },
+                "ollama": {
+                    "calls": 1,
+                    "tok": 0
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "where is the library located, what is the address",
+            "expect": "none",
+            "verdict": "ok-none",
+            "reply": "I'm sorry, but I don't have the library's address or location recorded. If you know it, tell me and I can make a note of it.\n\nI can tell you that the library is open Monday to Friday from 9am to 8pm, Saturday from 10am to 5pm, and Sunday from 12pm to 4pm. You can also reach the team by email at hello@harbourside-library.example.",
+            "calls": 4,
+            "in": 5763,
+            "out": 233,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_literal"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5706
+                },
+                "typesafeai": {
+                    "calls": 1,
+                    "tok": 290
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "phone number for the city council",
+            "expect": "none",
+            "verdict": "ok-none",
+            "reply": "I don't have a phone number for the city council recorded. I can only help with questions about the library, and the details I hold are for the library itself. If you know the council's number and it relates to the library, tell me and I'll take note.\n\nI can look up the library's own contact details if you'd like those.",
+            "calls": 4,
+            "in": 5324,
+            "out": 282,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_literal"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5320
+                },
+                "typesafeai": {
+                    "calls": 1,
+                    "tok": 286
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "when does the Northfield public library open",
+            "expect": "none",
+            "verdict": "leak",
+            "reply": "I don't have any hours recorded for a Northfield public library. I can only help with Harbourside Community Library. If you know Northfield's hours, tell me and I'll make a note of them.\n\nThese are the Harbourside Community Library hours, in case they help:\n- **Monday to Friday:** 9am to 8pm\n- **Saturday:** 10am to 5pm\n- **Sunday:** 12pm to 4pm\n\nHarbourside is closed on public holidays. It's also closed on the last Friday of every month for staff training.",
+            "calls": 3,
+            "in": 5102,
+            "out": 267,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5369
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "how do I renew a book",
+            "expect": "none",
+            "verdict": "ok-none",
+            "reply": "You can renew books online. Each item can be renewed twice, as long as no other member has reserved it. A standard loan lasts 3 weeks.\n\nThe library stopped charging overdue fines in 2022. Items that aren't back after 8 weeks are billed at replacement cost, so it's worth renewing before then.\n\nI don't have the steps for the online renewal page recorded. If you'd like, I can look for the library's web address or phone number.",
+            "calls": 3,
+            "in": 5075,
+            "out": 283,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5358
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "what's the weather like today",
+            "expect": "none",
+            "verdict": "leak",
+            "reply": "I can only help with questions about Harbourside Community Library, so I can't help with the weather. I'm happy to help with our opening hours, services, events or anything else about the library.",
+            "calls": 1,
+            "in": 2346,
+            "out": 55,
+            "tools": [],
+            "prov": {
+                "amazeeio": {
+                    "calls": 1,
+                    "tok": 2401
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "who is the head librarian",
+            "expect": "none",
+            "verdict": "ok-none",
+            "reply": "I don't have the head librarian's name recorded. If you know it, tell me and I can make a note of it.\n\nI can help with other things, like opening hours, closure days, or the rules about dogs in the library.",
+            "calls": 3,
+            "in": 5070,
+            "out": 119,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5189
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "how do I get a library card",
+            "expect": "none",
+            "verdict": "ok-none",
+            "reply": "Getting a library card is free if you live in the borough. Children under 16 need a parent or guardian to sign up for them.\n\nI don't have the exact steps recorded, such as what to bring or whether you can sign up online. You can ask the library directly at hello@harbourside-library.example, or by phone. I can look up the phone number for you if you'd like.\n\nOnce you're a member, you can borrow up to 20 items at a time for 3 weeks. You can renew twice online unless someone else has reserved the item.",
+            "calls": 3,
+            "in": 5264,
+            "out": 223,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5487
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "how do I delete my account",
+            "expect": "none",
+            "verdict": "ok-none",
+            "reply": "I don't have the steps for deleting an account recorded, so I can't say how to do it here.\n\nHere's what I do know:\n- You can contact the library by phone or by email at hello@harbourside-library.example. Staff are your best bet for a deletion request.\n- Your borrowing history is deleted 30 days after you return an item, unless you've chosen to keep it.\n\nIf you know how account deletion works at the library, tell me and I'll make a note of it.",
+            "calls": 5,
+            "in": 8754,
+            "out": 375,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_literal"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 3,
+                    "tok": 8840
+                },
+                "ollama": {
+                    "calls": 1,
+                    "tok": 0
+                },
+                "typesafeai": {
+                    "calls": 1,
+                    "tok": 289
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "what is the library's email address",
+            "expect": "none",
+            "verdict": "ok-none",
+            "reply": "You can email the library at hello@harbourside-library.example.\n\nIf you'd like to speak to someone, you can also reach the library by phone.",
+            "calls": 4,
+            "in": 5751,
+            "out": 153,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_literal"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5617
+                },
+                "typesafeai": {
+                    "calls": 1,
+                    "tok": 287
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "q": "what's 2+2",
+            "expect": "none",
+            "verdict": "leak",
+            "reply": "I can only help with questions about Harbourside Community Library, so I can't help with that one. I'm happy to help with opening hours, borrowing, events or anything else about the library.",
+            "calls": 1,
+            "in": 2345,
+            "out": 56,
+            "tools": [],
+            "prov": {
+                "amazeeio": {
+                    "calls": 1,
+                    "tok": 2401
+                }
+            },
+            "gate": "-"
+        }
+    ]
+}

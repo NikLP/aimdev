@@ -57,17 +57,18 @@ Chat `amazeeio`, Decision Jev, Embeddings `ollama` /
 | Models > Grounded check > Decision model | `activities.grounding` | Jev | none | - |
 | Models > Grounded check > Grounded threshold | `activities.grounding.threshold` | 0.7 | empty (0.7) | Jev |
 | Models > Grounded check > Mode | `grounding_mode` | Shadow | Off | - |
-| Consolidation > Auto-merge distance | `auto_threshold` | 0.09 | 0.09 | `nomic-embed-text` |
-| Consolidation > Ambiguous distance | `ambiguous_threshold` | 0.45 | 0.45 | `nomic-embed-text` |
-| Recall > Chatbot recall maximum distance | `recall_max_distance` | 0.52 | 0.48 | `nomic-embed-text` |
-| Recall > Recall gap | `recall_gap` | 0.1 | 0 | `nomic-embed-text` |
+| Consolidation > Comparison distance | `compare_distance` | 0.45 | 0.45 | `nomic-embed-text` |
+| Recall > Recall maximum distance | `recall_max_distance` | 0.60 | 0.48 | `nomic-embed-text` |
+| Recall > Recall gap | `recall_gap` | 0 | 0 | `nomic-embed-text` |
 | Governance > Trust new facts by default | `default_trusted` | on | off | - |
 | Logging & Debug > Log audit events | `log_audit` | on | off | - |
 | Logging & Debug > Log verbose detail | `log_verbose` | on | off | - |
 
 The distance values also depend on MariaDB's cosine distance
 ([ADR-0019](../web/modules/custom/aim/adr/resolved/0019-recall-abstention-distance-cutoff.md)
-addendum for 0.52). The Verifier threshold field only shows
+addendum for 0.52). Recall was loosened to 0.60 with no gap on 2026-10-27:
+the calling model judges relevance, and it still said "nothing recorded"
+for questions with no answer ([chat-eval](chat-eval/README.md)). The Verifier threshold field only shows
 when the fieldset's Backend is Decision API.
 
 **Literals finder** (`/admin/config/literals/finder`,

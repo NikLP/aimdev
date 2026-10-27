@@ -23,7 +23,7 @@ scenarios:
   - name: wifi
     turns:
       - q: "What's the Wi-Fi password?"
-        any: ["no password", "doesn't need", "does not need", "need a password", "without a password"]
+        any: ["no password", "isn't a password", "doesn't need", "does not need", "need a password", "without a password"]
   - name: printer-followup
     turns:
       - q: "Do you have 3D printers?"
@@ -60,3 +60,29 @@ scenarios:
         any: ["8pm", "8 pm", "8:00"]
       - q: "Is there Wi-Fi?"
         any: ["Harbourside_Public"]
+  # Broad questions and questions with no recorded answer (added 2026-10-27,
+  # from demo/recall-eval's misses).
+  - name: events
+    turns:
+      - q: "Any upcoming events?"
+        all: ["Code Club", "Rhyme Time"]
+  - name: kids-this-week
+    turns:
+      - q: "What's on for kids this week?"
+        all: ["Code Club", "Rhyme Time"]
+  - name: services
+    turns:
+      - q: "What services do you offer?"
+        any: ["computer", "Wi-Fi", "meeting room", "3D print"]
+  - name: wheelchair
+    turns:
+      - q: "Is there wheelchair access?"
+        any: ["step-free", "step free"]
+  - name: parking-unknown
+    turns:
+      - q: "Where can I park?"
+        any: ["don't have", "do not have", "no information", "not sure", "couldn't find", "could not find", "can't find", "don't know", "not recorded", "no details"]
+  - name: cafe-unknown
+    turns:
+      - q: "Do you have a cafe?"
+        any: ["don't have", "do not have", "no information", "not sure", "couldn't find", "could not find", "can't find", "don't know", "not recorded", "no details"]

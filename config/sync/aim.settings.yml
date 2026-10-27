@@ -1,7 +1,6 @@
 _core:
   default_config_hash: 9rxau6suBuKY1bOibxUrrGht2Y9eWAeaF074tubOJ9I
-auto_threshold: 0.09
-ambiguous_threshold: 0.45
+compare_distance: 0.45
 neighbor_limit: 3
 merge_verify: true
 activities:
