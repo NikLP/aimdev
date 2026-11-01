@@ -29,7 +29,7 @@ in `additional_fqdns`).
 
 ## After a rebuild
 
-Follow the recipe README's "Fresh install", including step 7 (MCP over
+Follow the recipe README's "Fresh install", including step 8 (MCP over
 OAuth). This site's key path for it is `/var/www/html/keys` (the keys
 survive a reinstall). Then set the models and settings below, and run
 `node demo/preflight.js`.
@@ -40,22 +40,24 @@ The recipe doesn't set any of these; set them by hand after it is applied.
 Each is listed as the UI label, then the config key. "Tuned to" names the
 model a value was measured on: if you change that model, re-check the
 value, because thresholds don't carry over from one model to another.
-"Jev" is the TypeSafe AI provider (`typesafeai`) with model
-`subq-snap-preview`.
+"Decision endpoint" is an appropriate SystemOne-compatible decision model
+endpoint, reached through the TypeSafe AI provider (`typesafeai`). The
+verifier, grounded and chat gate values were re-measured on the current
+model (`subq-snap-1.1`) on 2026-11-01.
 
 **AI defaults** (`/admin/config/ai/settings`, `ai.settings:default_providers`):
-Chat `amazeeio`, Decision Jev, Embeddings `ollama` /
+Chat `amazeeio`, Decision endpoint, Embeddings `ollama` /
 `nomic_embed_text_latest`.
 
 **AIM settings** (`/admin/config/aim/settings`, `aim.settings`):
 
 | Tab > field | Config key | This site | Module default | Tuned to |
 | --- | --- | --- | --- | --- |
-| Models > Consolidation classifier > Backend, Decision model | `activities.consolidation` | Decision API, Jev | Chat, site default | - |
-| Models > Merge verifier > Backend, Decision model | `activities.verifier` | Decision API, Jev | Chat, site default | - |
-| Models > Merge verifier > Verifier threshold | `activities.verifier.threshold` | 0.8 | empty (0.5) | Jev |
-| Models > Grounded check > Decision model | `activities.grounding` | Jev | none | - |
-| Models > Grounded check > Grounded threshold | `activities.grounding.threshold` | 0.7 | empty (0.7) | Jev |
+| Models > Consolidation classifier > Backend, Decision model | `activities.consolidation` | Decision API, decision endpoint | Chat, site default | - |
+| Models > Merge verifier > Backend, Decision model | `activities.verifier` | Decision API, decision endpoint | Chat, site default | - |
+| Models > Merge verifier > Verifier threshold | `activities.verifier.threshold` | 0.9 | empty (0.5) | Decision endpoint (`subq-snap-1.1`, hard merge set 2026-11-01) |
+| Models > Grounded check > Decision model | `activities.grounding` | Decision endpoint | none | - |
+| Models > Grounded check > Grounded threshold | `activities.grounding.threshold` | 0.7 | empty (0.7) | Decision endpoint (`subq-snap-1.1`, grounding set 2026-11-01) |
 | Models > Grounded check > Mode | `grounding_mode` | Shadow | Off | - |
 | Consolidation > Comparison distance | `compare_distance` | 0.45 | 0.45 | `nomic-embed-text` |
 | Recall > Recall maximum distance | `recall_max_distance` | 0.60 | 0.48 | `nomic-embed-text` |
@@ -73,7 +75,11 @@ when the fieldset's Backend is Decision API.
 
 **Literals finder** (`/admin/config/literals/finder`,
 `literals_finder.settings`): Add the chooser scores to the audit line
-(`log_verbose`) on.
+(`log_verbose`) on. Match threshold (`match_threshold`) 0.8, module
+default 0.5, tuned to the decision endpoint (`subq-snap-1.1`, the same
+2026-11-01 run as the chat gate below): the `aim_literal` tool uses it
+when the chat model calls the tool after the gate, and at 0.5 it served two
+wrong values in `gold.nikblind.yml`.
 
 **AI logging** (`/admin/config/ai/logging/settings`, `ai_logging.settings`;
 site-wide, so neither aim nor the recipe writes it):
@@ -89,5 +95,8 @@ site-wide, so neither aim nor the recipe writes it):
 **Set by the recipe, for reference**: on the chat block
 (`block.block.olivero_aimdemochat`), Gate match threshold
 (`settings.plugin_configuration.gate_match_threshold`) 0.8 and Gate choice
-margin (`gate_choice_margin`) 0.4. Both were tuned with Jev as the
-Decision default, since the finder uses the default Decision model.
+margin (`gate_choice_margin`) 0.4. Both were tuned with the decision endpoint as the
+Decision default, since the finder uses the default Decision model;
+re-checked 2026-11-01 on `subq-snap-1.1` with `gold.nikblind.yml` and
+`gold.agentblind.yml` (no pools): at 0.8 all 45 answerable hit and all 29
+unanswerable got none; at 0.7 one wrong value is served.
