@@ -36,7 +36,8 @@ survive a reinstall). Then set the models and settings below, and run
 
 ## Model settings
 
-The recipe doesn't set any of these; set them by hand after it is applied.
+The recipe sets the three values marked "(recipe)" below; set the rest by
+hand after it is applied.
 Each is listed as the UI label, then the config key. "Tuned to" names the
 model a value was measured on: if you change that model, re-check the
 value, because thresholds don't carry over from one model to another.
@@ -55,14 +56,13 @@ Chat `amazeeio`, Decision endpoint, Embeddings `ollama` /
 | --- | --- | --- | --- | --- |
 | Models > Consolidation classifier > Backend, Decision model | `activities.consolidation` | Decision API, decision endpoint | Chat, site default | - |
 | Models > Merge verifier > Backend, Decision model | `activities.verifier` | Decision API, decision endpoint | Chat, site default | - |
-| Models > Merge verifier > Verifier threshold | `activities.verifier.threshold` | 0.9 | empty (0.5) | Decision endpoint (`subq-snap-1.1`, hard merge set 2026-11-01) |
+| Models > Merge verifier > Verifier threshold | `activities.verifier.threshold` | 0.9 (recipe) | empty (0.5) | Decision endpoint (`subq-snap-1.1`, hard merge set 2026-11-01) |
 | Models > Grounded check > Decision model | `activities.grounding` | Decision endpoint | none | - |
 | Models > Grounded check > Grounded threshold | `activities.grounding.threshold` | 0.7 | empty (0.7) | Decision endpoint (`subq-snap-1.1`, grounding set 2026-11-01) |
-| Models > Grounded check > Mode | `grounding_mode` | Shadow | Off | - |
+| Models > Grounded check > Mode | `grounding_mode` | Demote (since 2026-11-01, ADR-0065) | Off | - |
 | Consolidation > Comparison distance | `compare_distance` | 0.45 | 0.45 | `nomic-embed-text` |
-| Recall > Recall maximum distance | `recall_max_distance` | 0.60 | 0.48 | `nomic-embed-text` |
+| Recall > Recall maximum distance | `recall_max_distance` | 0.60 (recipe) | 0.48 | `nomic-embed-text` |
 | Recall > Recall gap | `recall_gap` | 0 | 0 | `nomic-embed-text` |
-| Governance > Trust new facts by default | `default_trusted` | on | off | - |
 | Logging & Debug > Log audit events | `log_audit` | on | off | - |
 | Logging & Debug > Log verbose detail | `log_verbose` | on | off | - |
 
@@ -75,7 +75,7 @@ when the fieldset's Backend is Decision API.
 
 **Literals finder** (`/admin/config/literals/finder`,
 `literals_finder.settings`): Add the chooser scores to the audit line
-(`log_verbose`) on. Match threshold (`match_threshold`) 0.8, module
+(`log_verbose`) on. Match threshold (`match_threshold`) 0.8 (recipe), module
 default 0.5, tuned to the decision endpoint (`subq-snap-1.1`, the same
 2026-11-01 run as the chat gate below): the `aim_literal` tool uses it
 when the chat model calls the tool after the gate, and at 0.5 it served two
