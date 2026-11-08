@@ -41,7 +41,7 @@
         "drupal/queue_ui": "^3.2",
         "drupal/simple_oauth": "^6",
         "drupal/token": "^1.17",
-        "drupal/tool": "^1.0@beta",
+        "drupal/tool": "1.0.x-dev@dev",
         "drush/drush": "^13.8",
         "e0ipso/simple_oauth_21": "^1.13.1"
     },
