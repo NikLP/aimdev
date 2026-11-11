@@ -88,7 +88,7 @@ site-wide, so neither aim nor the recipe writes it):
 | --- | --- | --- |
 | Automatically log requests | `prompt_logging` | on |
 | Automatically log responses | `prompt_logging_output` | on |
-| Restrict automated logging by request tags | `prompt_logging_tags` | `aim_extract,aim_consolidate,aim_consolidate_verify,aim_consolidate_merge,aim_ground,ai_agents_aim_chatbot,literals_choose` |
+| Restrict automated logging by request tags | `prompt_logging_tags` | empty (log every model call, not just aim's tags) |
 | Maximum number messages to keep stored in the log | `prompt_logging_max_messages` | 10000 |
 | Maximum age of messages to keep stored in the log | `prompt_logging_max_age` | 90 |
 
