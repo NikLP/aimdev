@@ -1,0 +1,256 @@
+diff --git a/src/Tool/CallHandler.php b/src/Tool/CallHandler.php
+index 0be24b4..8480199 100644
+--- a/src/Tool/CallHandler.php
++++ b/src/Tool/CallHandler.php
+@@ -116,7 +116,7 @@ final class CallHandler {
+       throw new \LogicException('Only the thread\'s owner runs calls in it themself.');
+     }
+     $call_id = self::OWNER_CALL . bin2hex(random_bytes(8));
+-    $prepared = $this->prepare($thread, $offered, $name, $arguments);
++    $prepared = $this->prepare($thread, $offered, $name, $arguments, TRUE);
+     if (!$prepared->isReady() || $prepared->tool === NULL) {
+       $result = $this->executor->refusal($prepared);
+       $record = $this->recorder->record($thread, $call_id, $name, $prepared, $arguments, ToolCallInterface::STATUS_FAILED, $result->outcome, NULL, $this->currentUser, $result->summary);
+@@ -178,7 +178,7 @@ final class CallHandler {
+     }
+     $thread = $fresh;
+     $offered = $this->toolListBuilder->build($this->toolsetAccess->usableToolsets($this->currentUser), $this->currentUser);
+-    $prepared = $this->prepare($thread, $offered, $name, $arguments);
++    $prepared = $this->prepare($thread, $offered, $name, $arguments, TRUE);
+     if (!$prepared->isReady()) {
+       $result = $this->executor->refusal($prepared);
+     }
+@@ -207,10 +207,13 @@ final class CallHandler {
+    *   The function name the model called.
+    * @param array<string, mixed> $arguments
+    *   The model's arguments.
++   * @param bool $person_approved
++   *   Whether a person decided this exact call: approved its card, or ran it
++   *   as the thread's owner. The tool is told through its invoker.
+    */
+-  public function prepare(ThreadInterface $thread, OfferedTools $offered, string $name, array $arguments): PreparedCall {
++  public function prepare(ThreadInterface $thread, OfferedTools $offered, string $name, array $arguments, bool $person_approved = FALSE): PreparedCall {
+     $config = $offered->get($name)?->classification->isConfigWrite() ?? FALSE;
+-    $prepared = $this->workspaceScope->run($thread, $config, fn (): PreparedCall => $this->executor->prepare($offered, $name, $arguments, $this->currentUser, $this->threadReference->forThread($thread)));
++    $prepared = $this->workspaceScope->run($thread, $config, fn (): PreparedCall => $this->executor->prepare($offered, $name, $arguments, $this->currentUser, $this->threadReference->forThread($thread), $person_approved));
+     assert($prepared instanceof PreparedCall);
+     $writes_content = [ToolKind::ContentWrite, ToolKind::Code];
+     if ($prepared->isReady() && in_array($prepared->tool?->classification->kind, $writes_content, TRUE)) {
+diff --git a/src/Tool/SiteAgentInvoker.php b/src/Tool/SiteAgentInvoker.php
+index 60ca526..ed620e7 100644
+--- a/src/Tool/SiteAgentInvoker.php
++++ b/src/Tool/SiteAgentInvoker.php
+@@ -22,9 +22,15 @@ final class SiteAgentInvoker {
+    *
+    * Entities can't cross a model's function call boundary, so they travel as
+    * handle strings.
++   *
++   * @param bool $person_approved
++   *   Whether a person decided this exact call: it runs after its card was
++   *   approved, or the thread's owner ran it themself.
+    */
+-  public static function create(): Invoker {
+-    return new Invoker(self::ID, InvokerCapability::EntitiesAsHandles);
++  public static function create(bool $person_approved = FALSE): Invoker {
++    return $person_approved
++      ? new Invoker(self::ID, InvokerCapability::EntitiesAsHandles, SiteAgentInvokerCapability::PersonApproved)
++      : new Invoker(self::ID, InvokerCapability::EntitiesAsHandles);
+   }
+ 
+ }
+diff --git a/src/Tool/SiteAgentInvokerCapability.php b/src/Tool/SiteAgentInvokerCapability.php
+new file mode 100644
+index 0000000..df953c5
+--- /dev/null
++++ b/src/Tool/SiteAgentInvokerCapability.php
+@@ -0,0 +1,24 @@
++<?php
++
++declare(strict_types=1);
++
++namespace Drupal\site_agent\Tool;
++
++/**
++ * What the Site Agent invoker tells a tool about the call it runs.
++ *
++ * A tool checks these with Invoker::has(), like Tool API's own
++ * InvokerCapability.
++ */
++enum SiteAgentInvokerCapability {
++
++  // A person decided this exact call before it ran: it runs after a person
++  // approved its card (bound to the payload hash, so the arguments are the
++  // ones shown), or the thread's owner ran it themself. Not set on a
++  // pre-approved call, including one that runs without a prompt after an
++  // earlier approval in "once" mode. A tool can treat such input as the
++  // person's own, for example by skipping a check that exists to catch a
++  // model misreporting what a person said.
++  case PersonApproved;
++
++}
+diff --git a/src/Tool/ToolCallExecutor.php b/src/Tool/ToolCallExecutor.php
+index c142194..3b340e9 100644
+--- a/src/Tool/ToolCallExecutor.php
++++ b/src/Tool/ToolCallExecutor.php
+@@ -126,11 +126,14 @@ final class ToolCallExecutor {
+    *   The requesting account, which must be the current user.
+    * @param string $log_message
+    *   The revision log message for tools that take one: the thread reference.
++   * @param bool $person_approved
++   *   Whether a person decided this exact call, which the tool is told through
++   *   its invoker (SiteAgentInvokerCapability::PersonApproved).
+    *
+    * @return \Drupal\site_agent\Tool\PreparedCall
+    *   The prepared call, ready or refused.
+    */
+-  public function prepare(OfferedTools $offered, string $function_name, array $arguments, AccountInterface $account, string $log_message = ''): PreparedCall {
++  public function prepare(OfferedTools $offered, string $function_name, array $arguments, AccountInterface $account, string $log_message = '', bool $person_approved = FALSE): PreparedCall {
+     if ((int) $this->currentUser->id() !== (int) $account->id()) {
+       throw new \LogicException('Tool calls run as the requesting account, which must be the current user.');
+     }
+@@ -194,7 +197,7 @@ final class ToolCallExecutor {
+       return new PreparedCall($tool, $arguments, NULL, CallOutcome::AccessDenied, (string) $this->structureGate->getLockedReason());
+     }
+ 
+-    $instance = $this->toolManager->createInstance($tool->toolId(), [], SiteAgentInvoker::create());
++    $instance = $this->toolManager->createInstance($tool->toolId(), [], SiteAgentInvoker::create($person_approved));
+     $definition = $instance->getPluginDefinition();
+     assert($definition instanceof ToolDefinition);
+     $log_input = $tool->classification->logInput;
+diff --git a/tests/modules/site_agent_test/src/Plugin/tool/Tool/WriteNote.php b/tests/modules/site_agent_test/src/Plugin/tool/Tool/WriteNote.php
+index 2093221..9b8c5b1 100644
+--- a/tests/modules/site_agent_test/src/Plugin/tool/Tool/WriteNote.php
++++ b/tests/modules/site_agent_test/src/Plugin/tool/Tool/WriteNote.php
+@@ -5,6 +5,7 @@ declare(strict_types=1);
+ namespace Drupal\site_agent_test\Plugin\tool\Tool;
+ 
+ use Drupal\Core\StringTranslation\TranslatableMarkup;
++use Drupal\site_agent\Tool\SiteAgentInvokerCapability;
+ use Drupal\tool\Attribute\Tool;
+ use Drupal\tool\ExecutableResult;
+ use Drupal\tool\Tool\ToolOperation;
+@@ -34,10 +35,16 @@ use Drupal\tool\TypedData\InputDefinition;
+ )]
+ class WriteNote extends NoteToolBase {
+ 
++  /**
++   * The state key of whether the last run's invoker said a person approved it.
++   */
++  public const PERSON_APPROVED = 'site_agent_test.person_approved';
++
+   /**
+    * {@inheritdoc}
+    */
+   protected function doExecute(array $values): ExecutableResult {
++    $this->state->set(self::PERSON_APPROVED, (bool) $this->invoker?->has(SiteAgentInvokerCapability::PersonApproved));
+     $notes = $this->notes();
+     $notes[$values['key']] = $values['value'];
+     $this->saveNotes($notes);
+diff --git a/tests/src/Kernel/PersonApprovedInvokerTest.php b/tests/src/Kernel/PersonApprovedInvokerTest.php
+new file mode 100644
+index 0000000..08a4720
+--- /dev/null
++++ b/tests/src/Kernel/PersonApprovedInvokerTest.php
+@@ -0,0 +1,102 @@
++<?php
++
++declare(strict_types=1);
++
++namespace Drupal\Tests\site_agent\Kernel;
++
++use Drupal\site_agent\Approval\ApprovalMode;
++use Drupal\site_agent\Entity\ThreadInterface;
++use Drupal\site_agent\Entity\ToolCallInterface;
++use Drupal\site_agent\Tool\CallHandler;
++use Drupal\site_agent\Tool\CallOutcome;
++use Drupal\site_agent\Tool\OfferedTools;
++use Drupal\site_agent\Tool\ToolRunResult;
++use Drupal\site_agent_test\Plugin\tool\Tool\WriteNote;
++use PHPUnit\Framework\Attributes\Group;
++use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
++
++/**
++ * Tests that a tool is told when a person decided its call.
++ */
++#[Group('site_agent')]
++#[RunTestsInSeparateProcesses]
++final class PersonApprovedInvokerTest extends SiteAgentKernelTestBase {
++
++  /**
++   * The function name of the test write tool.
++   */
++  private const FUNCTION = 'site_agent_test__write_note';
++
++  /**
++   * A pre-approved call runs without the capability.
++   */
++  public function testPreApprovedCall(): void {
++    [$handler, $offered, $thread] = $this->setUpThread(ApprovalMode::PreApproved);
++    $call = $handler->handle($thread, $offered, 'pre', self::FUNCTION, ['key' => 'a', 'value' => 'one']);
++    $this->assertSame(CallOutcome::Success, $call->result?->outcome);
++    $this->assertFalse($this->personApproved());
++  }
++
++  /**
++   * An approved call runs with it.
++   */
++  public function testApprovedCall(): void {
++    [$handler, $offered, $thread] = $this->setUpThread(ApprovalMode::Always);
++    $this->assertSame(CallOutcome::Success, $this->approveAndRun($handler, $offered, $thread, 'approved')->outcome);
++    $this->assertTrue($this->personApproved());
++  }
++
++  /**
++   * A "once" call runs with it when approved, without it after.
++   */
++  public function testOnceCall(): void {
++    [$handler, $offered, $thread] = $this->setUpThread(ApprovalMode::Once);
++    $this->approveAndRun($handler, $offered, $thread, 'first');
++    $this->assertTrue($this->personApproved());
++    $call = $handler->handle($thread, $offered, 'second', self::FUNCTION, ['key' => 'b', 'value' => 'two']);
++    $this->assertSame(CallOutcome::Success, $call->result?->outcome);
++    $this->assertFalse($this->personApproved());
++  }
++
++  /**
++   * A call the thread's owner runs themself runs with it.
++   */
++  public function testOwnerCall(): void {
++    [$handler, $offered, $thread] = $this->setUpThread(ApprovalMode::Always);
++    $call = $handler->runAsOwner($thread, $offered, self::FUNCTION, ['key' => 'a', 'value' => 'one']);
++    $this->assertSame(CallOutcome::Success, $call->result?->outcome);
++    $this->assertTrue($this->personApproved());
++  }
++
++  /**
++   * Offers the write tool in the given mode and starts a thread.
++   *
++   * @return array{0: \Drupal\site_agent\Tool\CallHandler, 1: \Drupal\site_agent\Tool\OfferedTools, 2: \Drupal\site_agent\Entity\ThreadInterface}
++   *   The call handler, the offered tools and the thread.
++   */
++  private function setUpThread(ApprovalMode $mode): array {
++    $toolset = $this->createToolset(['site_agent_test:write_note' => $mode]);
++    $offered = \Drupal::service('site_agent.tool_list_builder')->build([$toolset], $this->owner);
++    return [\Drupal::service('site_agent.call_handler'), $offered, $this->startThread($this->owner)];
++  }
++
++  /**
++   * Makes a call that waits, approves it as the owner and runs it.
++   */
++  private function approveAndRun(CallHandler $handler, OfferedTools $offered, ThreadInterface $thread, string $call_id): ToolRunResult {
++    $arguments = ['key' => $call_id, 'value' => 'note'];
++    $call = $handler->handle($thread, $offered, $call_id, self::FUNCTION, $arguments);
++    $this->assertTrue($call->record->isPending());
++    \Drupal::service('site_agent.tool_call_recorder')->update($call->record, ToolCallInterface::STATUS_APPROVED, NULL, $this->owner);
++    return $handler->runApproved($call->record, $thread, $offered, self::FUNCTION, $arguments);
++  }
++
++  /**
++   * Whether the last run of the write tool was told a person approved it.
++   */
++  private function personApproved(): bool {
++    \Drupal::state()->resetCache();
++    return (bool) \Drupal::state()->get(WriteNote::PERSON_APPROVED);
++  }
++
++}

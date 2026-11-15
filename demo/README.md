@@ -10,7 +10,7 @@ part of the `aim` module.
 | `preflight.local.json` | This site's `publicUrl` and `localUrl`. |
 | `literals-eval/` | Gold sets, test pools and sweep results for the literals finder ([README](literals-eval/README.md)). |
 
-The demo itself (31 facts, eight literals, site name, chat persona and
+The demo itself (30 facts, eight literals, site name, chat persona and
 tools, widget wording, recall cutoff), the pre-flight, the reset commands
 and the stage flow all live in the `aim_demo_library` recipe:
 [its README](../web/modules/custom/aim/recipes/aim_demo_library/README.md).
@@ -29,7 +29,7 @@ in `additional_fqdns`).
 
 ## After a rebuild
 
-Follow the recipe README's "Fresh install", including step 8 (MCP over
+Follow the recipe README's "Fresh install", including step 9 (MCP over
 OAuth). This site's key path for it is `/var/www/html/keys` (the keys
 survive a reinstall). Then set the models and settings below, and run
 `node demo/preflight.js`.
@@ -43,8 +43,11 @@ model a value was measured on: if you change that model, re-check the
 value, because thresholds don't carry over from one model to another.
 "Decision endpoint" is an appropriate SystemOne-compatible decision model
 endpoint, reached through the TypeSafe AI provider (`typesafeai`). The
-verifier, grounded and chat gate values were re-measured on the current
-model (`subq-snap-1.1`) on 2026-11-01.
+verifier and grounded values were re-measured on `subq-snap-1.2` on
+2026-11-12 (scores identical to `subq-snap-1.1` on every item, so the
+values stand). The chat gate and finder values below were last measured on
+`subq-snap-1.1` (2026-11-01) and the default Decision model is now 1.2, so
+re-run `gold.nikblind.yml` and `gold.agentblind.yml` before relying on them.
 
 **AI defaults** (`/admin/config/ai/settings`, `ai.settings:default_providers`):
 Chat `amazeeio`, Decision endpoint, Embeddings `ollama` /
@@ -56,10 +59,12 @@ Chat `amazeeio`, Decision endpoint, Embeddings `ollama` /
 | --- | --- | --- | --- | --- |
 | Models > Consolidation classifier > Backend, Decision model | `activities.consolidation` | Decision API, decision endpoint | Chat, site default | - |
 | Models > Merge verifier > Backend, Decision model | `activities.verifier` | Decision API, decision endpoint | Chat, site default | - |
-| Models > Merge verifier > Verifier threshold | `activities.verifier.threshold` | 0.9 (recipe) | empty (0.5) | Decision endpoint (`subq-snap-1.1`, hard merge set 2026-11-01) |
+| Models > Merge verifier > Verifier threshold | `activities.verifier.threshold` | 0.9 (recipe) | empty (0.5) | Decision endpoint (`subq-snap-1.2`, hard merge set 2026-11-12) |
 | Models > Grounded check > Decision model | `activities.grounding` | Decision endpoint | none | - |
-| Models > Grounded check > Grounded threshold | `activities.grounding.threshold` | 0.7 | empty (0.7) | Decision endpoint (`subq-snap-1.1`, grounding set 2026-11-01) |
+| Models > Grounded check > Grounded threshold | `activities.grounding.threshold` | 0.7 | empty (0.7) | Decision endpoint (`subq-snap-1.2`, grounding set 2026-11-12) |
 | Models > Grounded check > Mode | `grounding_mode` | Demote (since 2026-11-01, ADR-0065) | Off | - |
+| Models > Grounded check > Time check | `time_check_mode` | Flag | Off | - |
+| Models > Grounded check > Time-bound threshold | `activities.grounding.time_threshold` | empty (0.3) | empty (0.3) | Decision endpoint (`subq-snap-1.2`, time gold set 2026-11-12, ADR-0057) |
 | Consolidation > Comparison distance | `compare_distance` | 0.45 | 0.45 | `nomic-embed-text` |
 | Recall > Recall maximum distance | `recall_max_distance` | 0.60 (recipe) | 0.48 | `nomic-embed-text` |
 | Recall > Recall gap | `recall_gap` | 0 | 0 | `nomic-embed-text` |

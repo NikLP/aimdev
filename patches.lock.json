@@ -1,5 +1,5 @@
 {
-    "_hash": "5b0d7355677a964198b9a4aaca1badbc522f95d5d650bd693889fc6d1c6f9b9f",
+    "_hash": "a4215e53d20fd76b353b956ebe5e1601a98fc34ce507ef3300e755fffa894e0e",
     "patches": {
         "drupal/ai_provider_typesafeai": [
             {
@@ -7,6 +7,18 @@
                 "description": "listModels() accepts OpenAI-style /models responses (subq)",
                 "url": "patches/ai_provider_typesafeai-listmodels-openai-shape.patch",
                 "sha256": "47c03f658a3e3ff5dc1562328e5c06d0044c223c92368922d253a33c8f19b5be",
+                "depth": 1,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "drupal/site_agent": [
+            {
+                "package": "drupal/site_agent",
+                "description": "Tell a tool when a person approved its call (SiteAgentInvokerCapability::PersonApproved)",
+                "url": "patches/site_agent-person-approved-invoker.patch",
+                "sha256": "c022c6dc710cd21bd2be93033eba489f2271de76d0f62bbc842e0d274932a227",
                 "depth": 1,
                 "extra": {
                     "provenance": "root"

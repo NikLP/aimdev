@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e45dba783130884b25fae0e1ad42d1fa",
+    "content-hash": "54654be59161cdfd0ea41dacd3188c58",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -951,20 +951,20 @@
         },
         {
             "name": "doctrine/deprecations",
-            "version": "1.1.6",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/deprecations.git",
-                "reference": "d4fe3e6fd9bb9e72557a19674f44d8ac7db4c6ca"
+                "reference": "d2e16653a734c8784c1851ad68b02f997b53ca82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/d4fe3e6fd9bb9e72557a19674f44d8ac7db4c6ca",
-                "reference": "d4fe3e6fd9bb9e72557a19674f44d8ac7db4c6ca",
+                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/d2e16653a734c8784c1851ad68b02f997b53ca82",
+                "reference": "d2e16653a734c8784c1851ad68b02f997b53ca82",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1 || ^8.0"
+                "php": "^7.4 || ^8.0"
             },
             "conflict": {
                 "phpunit/phpunit": "<=7.5 || >=14"
@@ -993,9 +993,9 @@
             "homepage": "https://www.doctrine-project.org/",
             "support": {
                 "issues": "https://github.com/doctrine/deprecations/issues",
-                "source": "https://github.com/doctrine/deprecations/tree/1.1.6"
+                "source": "https://github.com/doctrine/deprecations/tree/1.2.0"
             },
-            "time": "2026-02-07T07:09:04+00:00"
+            "time": "2026-11-11T10:04:49+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -1172,7 +1172,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ai.git",
-                "reference": "c370e712fa4cfa2992986fdb85d589c1586e2cd3"
+                "reference": "f330a176c8f7ed490b9b6f3d6763d52f81da7170"
             },
             "require": {
                 "drupal/ai_ckeditor": "^1.4",
@@ -1186,7 +1186,7 @@
                 "league/commonmark": "^2.8",
                 "league/html-to-markdown": "^5.2.3",
                 "openai-php/client": ">=v0.10.1",
-                "yethee/tiktoken": "^0.5.1"
+                "yethee/tiktoken": "^1.1.1"
             },
             "require-dev": {
                 "allanpichardo/mysql-vector": "^2.0",
@@ -1216,8 +1216,8 @@
                     "dev-1.6.x": "1.6.x-dev"
                 },
                 "drupal": {
-                    "version": "1.6.0-alpha1+5-dev",
-                    "datestamp": "1793978848",
+                    "version": "1.6.0-alpha1+18-dev",
+                    "datestamp": "1794403398",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -1846,17 +1846,17 @@
         },
         {
             "name": "drupal/ai_provider_typesafeai",
-            "version": "1.1.0-rc1",
+            "version": "1.1.0-rc2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ai_provider_typesafeai.git",
-                "reference": "1.1.0-rc1"
+                "reference": "1.1.0-rc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ai_provider_typesafeai-1.1.0-rc1.zip",
-                "reference": "1.1.0-rc1",
-                "shasum": "9365e23e8268477ce0f06c6f02814373d43b14e9"
+                "url": "https://ftp.drupal.org/files/projects/ai_provider_typesafeai-1.1.0-rc2.zip",
+                "reference": "1.1.0-rc2",
+                "shasum": "73787feac05fd609ebcf0b7abb710fc81805b8e3"
             },
             "require": {
                 "drupal/ai": "^1.6",
@@ -1869,8 +1869,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.1.0-rc1",
-                    "datestamp": "1793899242",
+                    "version": "1.1.0-rc2",
+                    "datestamp": "1794343778",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
@@ -3172,7 +3172,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/literals.git",
-                "reference": "076205edce1f0ae9b6d989acae226c949bd030cd"
+                "reference": "12ce93253ab9520baa1c994c22dab7c85e7534d6"
             },
             "require": {
                 "drupal/core": "^11",
@@ -3197,8 +3197,8 @@
                     "dev-1.0.x": "1.0.x-dev"
                 },
                 "drupal": {
-                    "version": "1.0.0-alpha1+3-dev",
-                    "datestamp": "1792787554",
+                    "version": "1.0.0-alpha1+12-dev",
+                    "datestamp": "1794325301",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -3707,6 +3707,103 @@
             }
         },
         {
+            "name": "drupal/site_agent",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/site_agent.git",
+                "reference": "1.0.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/site_agent-1.0.3.zip",
+                "reference": "1.0.3",
+                "shasum": "aad70d769bae914e4419b54bfa5352bcb6a049fe"
+            },
+            "require": {
+                "drupal/ai": "^1.5",
+                "drupal/core": "^11.3 || ^12",
+                "drupal/tool": "^1.0.0-beta11",
+                "drupal/tool_ai_connector": "^1.0.0-beta11",
+                "drupal/tool_belt": "^1.0.0-alpha6",
+                "drupal/tool_belt_content": "*",
+                "league/commonmark": "^2.8",
+                "php": ">=8.3"
+            },
+            "require-dev": {
+                "composer/installers": "^2",
+                "drupal/ai_context": "^1.0@RC",
+                "drupal/ai_effort": "1.0.x-dev",
+                "drupal/ai_provider_anthropic": "^1.2",
+                "drupal/ai_provider_cloudflare_gateway": "^1.0@alpha",
+                "drupal/ai_provider_openrouter": "^1.1",
+                "drupal/config_readonly": "^1.0",
+                "drupal/content_deployment": "1.0.x-dev",
+                "drupal/entity_reference_revisions": "^1.14",
+                "drupal/gemini_provider": "^1.1",
+                "drupal/mcp_server": "^2.0.0-beta6",
+                "drupal/mcp_server_oauth": "^1.0.0-alpha1",
+                "drupal/paragraphs": "^1.23",
+                "drupal/pathauto": "^1.14",
+                "drupal/search_api": "^1.40",
+                "drupal/search_api_instant": "^1.0",
+                "drupal/site_agent_tool_belt": "*",
+                "drupal/tool": "1.0.0-beta11",
+                "drupal/tool_belt": "1.0.0-alpha6",
+                "drupal/webform": "^6.3",
+                "drush/drush": "^13 || ^14",
+                "grasmash/yaml-cli": "^3.2.1 || ^4",
+                "mcp/sdk": "^0.8.1"
+            },
+            "suggest": {
+                "drupal/ai_context": "^1.0@RC, for the site_agent_ai_context submodule: the site's context items in the system prompt, and a tool for the context of a page being drafted.",
+                "drupal/ai_effort": "An effort slider in the model picker, for models it reports effort levels for.",
+                "drupal/mcp_server": "^2.0.0-beta6, with mcp/sdk ^0.8.1, for the site_agent_mcp submodule.",
+                "drupal/mcp_server_oauth": "For site_agent_mcp: OAuth for remote MCP clients such as Claude.",
+                "drupal/search_api": "^1.40, for the site_agent_search_api submodule: the content search tool searches a Search API index of content, one on Solr first; and to search chats, for the accounts that may view them.",
+                "drupal/search_api_instant": "A search-as-you-type of chats, with Search API.",
+                "drupal/webform": "^6.3, for the site_agent_webform submodule: tools to list, create and change webforms and their elements.",
+                "psy/psysh": "For the site_agent_php submodule, which runs PHP through PsySH. Drush requires it."
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.3",
+                    "datestamp": "1794242411",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Tyler Brown Cifu Shuster (tbcs)",
+                    "homepage": "https://www.drupal.org/u/tbcs",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "FivePaths, LLC",
+                    "homepage": "https://www.fivepaths.com",
+                    "role": "Supporting organization"
+                }
+            ],
+            "description": "Chat panel for the Drupal admin that manages site structure and content through Tool API tools.",
+            "homepage": "https://www.drupal.org/project/site_agent",
+            "keywords": [
+                "Actively maintained",
+                "Artificial Intelligence (AI)"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/site_agent",
+                "issues": "https://www.drupal.org/project/issues/site_agent"
+            }
+        },
+        {
             "name": "drupal/token",
             "version": "1.18.0",
             "source": {
@@ -3781,7 +3878,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/tool.git",
-                "reference": "a8d2d5ee6a1a622a605f57de2d74446c65f73fa9"
+                "reference": "4a70bb0f7996ea61ed7a935b61dd9cbf3ca16add"
             },
             "require": {
                 "drupal/core": "^10.5 || ^11",
@@ -3797,8 +3894,8 @@
                     "dev-1.0.x": "1.0.x-dev"
                 },
                 "drupal": {
-                    "version": "1.0.0-beta12+21-dev",
-                    "datestamp": "1794035924",
+                    "version": "1.0.0-beta12+25-dev",
+                    "datestamp": "1794343186",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -3847,17 +3944,172 @@
             }
         },
         {
-            "name": "drush/drush",
-            "version": "13.8.0",
+            "name": "drupal/tool_ai_connector",
+            "version": "1.0.0-beta12",
+            "require": {
+                "drupal/ai": "*",
+                "drupal/core": "^10.5 || ^11",
+                "drupal/tool": "*"
+            },
+            "type": "metapackage",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-beta12",
+                    "datestamp": "1792530025",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "ajits",
+                    "homepage": "https://www.drupal.org/user/981944"
+                },
+                {
+                    "name": "b_sharpe",
+                    "homepage": "https://www.drupal.org/user/2512258"
+                },
+                {
+                    "name": "jurgenhaas",
+                    "homepage": "https://www.drupal.org/user/168924"
+                },
+                {
+                    "name": "marcus_johansson",
+                    "homepage": "https://www.drupal.org/user/385947"
+                },
+                {
+                    "name": "mglaman",
+                    "homepage": "https://www.drupal.org/user/2416470"
+                },
+                {
+                    "name": "michaellander",
+                    "homepage": "https://www.drupal.org/user/636494"
+                },
+                {
+                    "name": "yautja_cetanu",
+                    "homepage": "https://www.drupal.org/user/626050"
+                }
+            ],
+            "description": "(Experimental) Provides tools as function calls for the AI module.",
+            "homepage": "https://www.drupal.org/project/tool",
+            "support": {
+                "source": "https://git.drupalcode.org/project/tool"
+            }
+        },
+        {
+            "name": "drupal/tool_belt",
+            "version": "1.0.0-alpha6",
             "source": {
                 "type": "git",
-                "url": "https://github.com/drush-ops/drush.git",
-                "reference": "a5529118232c722c052ad6ae3be587df43c7d6fa"
+                "url": "https://git.drupalcode.org/project/tool_belt.git",
+                "reference": "1.0.0-alpha6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drush-ops/drush/zipball/a5529118232c722c052ad6ae3be587df43c7d6fa",
-                "reference": "a5529118232c722c052ad6ae3be587df43c7d6fa",
+                "url": "https://ftp.drupal.org/files/projects/tool_belt-1.0.0-alpha6.zip",
+                "reference": "1.0.0-alpha6",
+                "shasum": "0fd245cb07dbfd13a1a2491c68a2a5f1b24fcdd1"
+            },
+            "require": {
+                "drupal/core": "^10.5 || ^11 || ^12",
+                "drupal/tool": "^1.0.0-beta10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-alpha6",
+                    "datestamp": "1790577600",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "ajits",
+                    "homepage": "https://www.drupal.org/user/981944"
+                },
+                {
+                    "name": "b_sharpe",
+                    "homepage": "https://www.drupal.org/user/2512258"
+                },
+                {
+                    "name": "michaellander",
+                    "homepage": "https://www.drupal.org/user/636494"
+                }
+            ],
+            "description": "A default collection of tools covering common Drupal core actions.",
+            "homepage": "https://www.drupal.org/project/tool_belt",
+            "support": {
+                "source": "https://git.drupalcode.org/project/tool_belt",
+                "issues": "https://www.drupal.org/project/issues/tool_belt"
+            }
+        },
+        {
+            "name": "drupal/tool_belt_content",
+            "version": "1.0.0-alpha6",
+            "require": {
+                "drupal/core": "^10.5 || ^11 || ^12",
+                "drupal/tool_belt": "*"
+            },
+            "type": "metapackage",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-alpha6",
+                    "datestamp": "1790577600",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "ajits",
+                    "homepage": "https://www.drupal.org/user/981944"
+                },
+                {
+                    "name": "b_sharpe",
+                    "homepage": "https://www.drupal.org/user/2512258"
+                },
+                {
+                    "name": "michaellander",
+                    "homepage": "https://www.drupal.org/user/636494"
+                }
+            ],
+            "description": "Provides tools for creating, editing and delete content entities and field data.",
+            "homepage": "https://www.drupal.org/project/tool_belt",
+            "support": {
+                "source": "https://git.drupalcode.org/project/tool_belt"
+            }
+        },
+        {
+            "name": "drush/drush",
+            "version": "13.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/drush-ops/drush.git",
+                "reference": "0218690d082b71e20343549515bbb3944cbc5939"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/drush-ops/drush/zipball/0218690d082b71e20343549515bbb3944cbc5939",
+                "reference": "0218690d082b71e20343549515bbb3944cbc5939",
                 "shasum": ""
             },
             "require": {
@@ -3865,18 +4117,18 @@
                 "composer-runtime-api": "^2.2",
                 "composer/semver": "^1.4 || ^3",
                 "consolidation/annotated-command": "^4.10.2",
-                "consolidation/config": "^2.1.2 || ^3.1.1",
+                "consolidation/config": "^3.1.1",
                 "consolidation/filter-via-dot-access-data": "^2.0.2",
                 "consolidation/output-formatters": "^4.6.1",
-                "consolidation/robo": "^4.0.6 || ^5.1.0",
+                "consolidation/robo": "^5.1.0",
                 "consolidation/site-alias": "^4.1.1",
                 "consolidation/site-process": "^5.4.2 || ^6.1",
                 "dflydev/dot-access-data": "^3.0.2",
                 "ext-dom": "*",
                 "grasmash/yaml-cli": "^3.2",
-                "guzzlehttp/guzzle": "^7.0",
+                "guzzlehttp/guzzle": "^7.0 || ^8.0",
                 "laravel/prompts": "^0.3.5",
-                "league/container": "^4.2",
+                "league/container": "^4.2.5",
                 "php": ">=8.3",
                 "psy/psysh": "~0.12",
                 "symfony/event-dispatcher": "^6 || ^7",
@@ -3888,7 +4140,8 @@
             "conflict": {
                 "drupal/core": "<10.4 <12.0",
                 "drupal/migrate_run": "*",
-                "drupal/migrate_tools": "<= 5"
+                "drupal/migrate_tools": "<= 5",
+                "grasmash/expander": "<3.0.1"
             },
             "require-dev": {
                 "composer/installers": "^2",
@@ -3985,7 +4238,7 @@
                 "issues": "https://github.com/drush-ops/drush/issues",
                 "security": "https://github.com/drush-ops/drush/security/advisories",
                 "slack": "https://drupal.slack.com/messages/C62H9CWQM",
-                "source": "https://github.com/drush-ops/drush/tree/13.8.0"
+                "source": "https://github.com/drush-ops/drush/tree/13.8.1"
             },
             "funding": [
                 {
@@ -3993,7 +4246,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-09-08T18:24:55+00:00"
+            "time": "2026-11-10T19:12:09+00:00"
         },
         {
             "name": "e0ipso/simple_oauth_21",
@@ -4624,16 +4877,16 @@
         },
         {
             "name": "laravel/prompts",
-            "version": "v0.3.26",
+            "version": "v0.3.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/prompts.git",
-                "reference": "2d1e9bf6bab8d3f383c254db7f2b4ea8816d55e0"
+                "reference": "abdfc75a1ae6c6f21522daed50da7124cbff09d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/prompts/zipball/2d1e9bf6bab8d3f383c254db7f2b4ea8816d55e0",
-                "reference": "2d1e9bf6bab8d3f383c254db7f2b4ea8816d55e0",
+                "url": "https://api.github.com/repos/laravel/prompts/zipball/abdfc75a1ae6c6f21522daed50da7124cbff09d2",
+                "reference": "abdfc75a1ae6c6f21522daed50da7124cbff09d2",
                 "shasum": ""
             },
             "require": {
@@ -4676,9 +4929,9 @@
             ],
             "description": "Add beautiful and user-friendly forms to your command-line applications.",
             "support": {
-                "source": "https://github.com/laravel/prompts/tree/v0.3.26"
+                "source": "https://github.com/laravel/prompts/tree/v0.3.27"
             },
-            "time": "2026-10-09T14:45:13+00:00"
+            "time": "2026-11-09T16:07:10+00:00"
         },
         {
             "name": "lcobucci/jwt",
@@ -6044,16 +6297,16 @@
         },
         {
             "name": "opis/json-schema",
-            "version": "2.6.1",
+            "version": "2.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/opis/json-schema.git",
-                "reference": "7d8685a78db131eb6a1571cc7b4db8f4b59e8628"
+                "reference": "b87b424da3fbeaab09567910fda48dc88d9dcbd8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/opis/json-schema/zipball/7d8685a78db131eb6a1571cc7b4db8f4b59e8628",
-                "reference": "7d8685a78db131eb6a1571cc7b4db8f4b59e8628",
+                "url": "https://api.github.com/repos/opis/json-schema/zipball/b87b424da3fbeaab09567910fda48dc88d9dcbd8",
+                "reference": "b87b424da3fbeaab09567910fda48dc88d9dcbd8",
                 "shasum": ""
             },
             "require": {
@@ -6103,9 +6356,9 @@
             ],
             "support": {
                 "issues": "https://github.com/opis/json-schema/issues",
-                "source": "https://github.com/opis/json-schema/tree/2.6.1"
+                "source": "https://github.com/opis/json-schema/tree/2.6.2"
             },
-            "time": "2026-11-06T04:25:16+00:00"
+            "time": "2026-11-08T08:09:42+00:00"
         },
         {
             "name": "opis/string",
@@ -11737,16 +11990,16 @@
         },
         {
             "name": "yethee/tiktoken",
-            "version": "0.5.1",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yethee/tiktoken-php.git",
-                "reference": "94a4ac18ab505198f5a0955948ab29ce659c1697"
+                "reference": "e7ab1881470e4d4f10c27f2d451fb29732e9e3fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yethee/tiktoken-php/zipball/94a4ac18ab505198f5a0955948ab29ce659c1697",
-                "reference": "94a4ac18ab505198f5a0955948ab29ce659c1697",
+                "url": "https://api.github.com/repos/yethee/tiktoken-php/zipball/e7ab1881470e4d4f10c27f2d451fb29732e9e3fa",
+                "reference": "e7ab1881470e4d4f10c27f2d451fb29732e9e3fa",
                 "shasum": ""
             },
             "require": {
@@ -11754,12 +12007,15 @@
                 "symfony/service-contracts": "^2.5 || ^3.0"
             },
             "require-dev": {
-                "doctrine/coding-standard": "^12.0",
+                "doctrine/coding-standard": "^13",
                 "mikey179/vfsstream": "^1.6.11",
                 "phpbench/phpbench": "^1.2",
-                "phpunit/phpunit": "^10.5.20",
-                "psalm/plugin-phpunit": "^0.19.0",
-                "vimeo/psalm": "5.25.0"
+                "phpunit/phpunit": "^10.5.45",
+                "psalm/plugin-phpunit": "^0.19.2",
+                "vimeo/psalm": "6.15.1"
+            },
+            "suggest": {
+                "ext-ffi": "To allow use LibEncoder"
             },
             "type": "library",
             "autoload": {
@@ -11782,9 +12038,9 @@
             ],
             "support": {
                 "issues": "https://github.com/yethee/tiktoken-php/issues",
-                "source": "https://github.com/yethee/tiktoken-php/tree/0.5.1"
+                "source": "https://github.com/yethee/tiktoken-php/tree/1.1.1"
             },
-            "time": "2024-07-17T10:09:02+00:00"
+            "time": "2026-03-10T19:45:30+00:00"
         }
     ],
     "packages-dev": [
@@ -12205,16 +12461,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "2.11.1",
+            "version": "2.11.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "472b418967419c6124edd91dc6310a3bec091dae"
+                "reference": "12c820dbc3f030954b1d09f5884fcf1e9d29d6cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/472b418967419c6124edd91dc6310a3bec091dae",
-                "reference": "472b418967419c6124edd91dc6310a3bec091dae",
+                "url": "https://api.github.com/repos/composer/composer/zipball/12c820dbc3f030954b1d09f5884fcf1e9d29d6cb",
+                "reference": "12c820dbc3f030954b1d09f5884fcf1e9d29d6cb",
                 "shasum": ""
             },
             "require": {
@@ -12304,7 +12560,7 @@
                 "irc": "ircs://irc.libera.chat:6697/composer",
                 "issues": "https://github.com/composer/composer/issues",
                 "security": "https://github.com/composer/composer/security/policy",
-                "source": "https://github.com/composer/composer/tree/2.11.1"
+                "source": "https://github.com/composer/composer/tree/2.11.2"
             },
             "funding": [
                 {
@@ -12316,7 +12572,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-10-30T13:52:10+00:00"
+            "time": "2026-11-10T09:09:37+00:00"
         },
         {
             "name": "composer/metadata-minifier",
@@ -12909,6 +13165,7 @@
                     "type": "tidelift"
                 }
             ],
+            "abandoned": true,
             "time": "2025-01-01T22:12:03+00:00"
         },
         {
@@ -13560,16 +13817,16 @@
         },
         {
             "name": "mglaman/phpstan-drupal",
-            "version": "2.3.0",
+            "version": "2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mglaman/phpstan-drupal.git",
-                "reference": "517b460c44f55f8b40aa9dfaf4e43e6593ecf1b5"
+                "reference": "174a0d78a70e79f4a139e78d9b904b56f535cc65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mglaman/phpstan-drupal/zipball/517b460c44f55f8b40aa9dfaf4e43e6593ecf1b5",
-                "reference": "517b460c44f55f8b40aa9dfaf4e43e6593ecf1b5",
+                "url": "https://api.github.com/repos/mglaman/phpstan-drupal/zipball/174a0d78a70e79f4a139e78d9b904b56f535cc65",
+                "reference": "174a0d78a70e79f4a139e78d9b904b56f535cc65",
                 "shasum": ""
             },
             "require": {
@@ -13585,6 +13842,7 @@
                 "composer/installers": "^1.9 || ^2",
                 "drupal/core-recommended": "^11",
                 "drush/drush": "^11 || ^12 || ^13",
+                "nette/neon": "^3.0",
                 "phpstan/extension-installer": "^1.4.3",
                 "phpstan/phpstan-strict-rules": "^2.0",
                 "phpunit/phpunit": "^9 || ^10 || ^11",
@@ -13641,7 +13899,7 @@
             "description": "Drupal extension and rules for PHPStan",
             "support": {
                 "issues": "https://github.com/mglaman/phpstan-drupal/issues",
-                "source": "https://github.com/mglaman/phpstan-drupal/tree/2.3.0"
+                "source": "https://github.com/mglaman/phpstan-drupal/tree/2.4.0"
             },
             "funding": [
                 {
@@ -13657,7 +13915,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-11-05T18:22:32+00:00"
+            "time": "2026-11-09T21:03:37+00:00"
         },
         {
             "name": "micheh/phpcs-gitlab",
@@ -17495,7 +17753,10 @@
         "drupal/mcp_server": 10,
         "drupal/mcp_server_oauth": 15,
         "drupal/mcp_server_tool_bridge": 10,
-        "drupal/tool": 20
+        "drupal/tool": 20,
+        "drupal/tool_ai_connector": 10,
+        "drupal/tool_belt": 15,
+        "drupal/tool_belt_content": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,

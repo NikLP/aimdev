@@ -40,8 +40,12 @@
         "drupal/mcp_server_tool_bridge": "^1.0.0-beta2",
         "drupal/queue_ui": "^3.2",
         "drupal/simple_oauth": "^6",
+        "drupal/site_agent": "^1.0",
         "drupal/token": "^1.17",
         "drupal/tool": "1.0.x-dev@dev",
+        "drupal/tool_ai_connector": "^1.0@beta",
+        "drupal/tool_belt": "@alpha",
+        "drupal/tool_belt_content": "@alpha",
         "drush/drush": "^13.8",
         "e0ipso/simple_oauth_21": "^1.13.1"
     },
@@ -77,6 +81,9 @@
         "patches": {
             "drupal/ai_provider_typesafeai": {
                 "listModels() accepts OpenAI-style /models responses (subq)": "patches/ai_provider_typesafeai-listmodels-openai-shape.patch"
+            },
+            "drupal/site_agent": {
+                "Tell a tool when a person approved its call (SiteAgentInvokerCapability::PersonApproved)": "patches/site_agent-person-approved-invoker.patch"
             }
         },
         "drupal-scaffold": {
