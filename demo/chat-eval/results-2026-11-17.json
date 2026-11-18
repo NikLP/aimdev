@@ -1,0 +1,709 @@
+{
+    "free": [
+        {
+            "scenario": "sunday-then-phone",
+            "run": 1,
+            "turn": 1,
+            "q": "Are you open on Sundays?",
+            "verdict": "ok",
+            "reply": "Yes, we're open on Sundays from 12pm to 4pm.\n\nWe're closed on public holidays, so a Sunday that falls on one won't be an open day.",
+            "seconds": 4.5,
+            "calls": 4,
+            "in": 5927,
+            "out": 113,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5744
+                },
+                "ollama": {
+                    "calls": 1,
+                    "tok": 0
+                },
+                "typesafeai": {
+                    "calls": 1,
+                    "tok": 296
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "scenario": "sunday-then-phone",
+            "run": 1,
+            "turn": 2,
+            "q": "What's your phone number?",
+            "verdict": "ok",
+            "reply": "Our main phone number is +44 1223 000000. You can use it to speak to a librarian or to reach customer service.\n\nYou can also email us at hello@harbourside-library.example.\n\nI should add something to my earlier answer about Sundays. We're open 12pm to 4pm, and we're also closed on the last Friday of every month for staff training. That doesn't affect Sundays, but it's worth knowing when you plan a visit.",
+            "seconds": 4,
+            "calls": 5,
+            "in": 6991,
+            "out": 290,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 6985
+                },
+                "ollama": {
+                    "calls": 1,
+                    "tok": 0
+                },
+                "typesafeai": {
+                    "calls": 1,
+                    "tok": 296
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "scenario": "phone-first",
+            "run": 1,
+            "turn": 1,
+            "q": "What's your phone number?",
+            "verdict": "ok",
+            "reply": "You can call the library's main phone on **+44 1223 000000**. That number also reaches customer service and lets you speak to a librarian.\n\nYou can also email us at hello@harbourside-library.example.\n\nWe're open Monday to Friday 9am\u20138pm, Saturday 10am\u20135pm and Sunday 12pm\u20134pm.",
+            "seconds": 3,
+            "calls": 3,
+            "in": 5705,
+            "out": 162,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5867
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "scenario": "offtopic-then-hours",
+            "run": 1,
+            "turn": 1,
+            "q": "Capital of Australia",
+            "verdict": "ok",
+            "reply": "I can only help with questions about Harbourside Community Library, so I can't answer that one. If you want to know about our opening hours, services, or events, just ask.",
+            "seconds": 3,
+            "calls": 1,
+            "in": 2410,
+            "out": 50,
+            "tools": [],
+            "prov": {
+                "amazeeio": {
+                    "calls": 1,
+                    "tok": 2460
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "scenario": "offtopic-then-hours",
+            "run": 1,
+            "turn": 2,
+            "q": "When are you open on Saturday?",
+            "verdict": "ok",
+            "reply": "We're open on Saturdays from 10am to 5pm.\n\nWe close on public holidays. If a Saturday lands on one, we'll be closed that day.",
+            "seconds": 4,
+            "calls": 4,
+            "in": 6046,
+            "out": 109,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5859
+                },
+                "ollama": {
+                    "calls": 1,
+                    "tok": 0
+                },
+                "typesafeai": {
+                    "calls": 1,
+                    "tok": 296
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "scenario": "wifi",
+            "run": 1,
+            "turn": 1,
+            "q": "What's the Wi-Fi password?",
+            "verdict": "ok",
+            "reply": "You don't need a password. The library has free Wi-Fi in the building. Just join the network called **Harbourside_Public**.",
+            "seconds": 3,
+            "calls": 4,
+            "in": 5659,
+            "out": 100,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5463
+                },
+                "ollama": {
+                    "calls": 1,
+                    "tok": 0
+                },
+                "typesafeai": {
+                    "calls": 1,
+                    "tok": 296
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "scenario": "printer-followup",
+            "run": 1,
+            "turn": 1,
+            "q": "Do you have 3D printers?",
+            "verdict": "ok",
+            "reply": "Yes, we do. The makerspace has two 3D printers. Before you use them, you'll need to complete a 20-minute induction.",
+            "seconds": 3.5,
+            "calls": 4,
+            "in": 5931,
+            "out": 99,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5734
+                },
+                "ollama": {
+                    "calls": 1,
+                    "tok": 0
+                },
+                "typesafeai": {
+                    "calls": 1,
+                    "tok": 296
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "scenario": "printer-followup",
+            "run": 1,
+            "turn": 2,
+            "q": "How long does the induction take?",
+            "verdict": "ok",
+            "reply": "The induction takes 20 minutes. You need to complete it before you use the makerspace's 3D printers.",
+            "seconds": 3,
+            "calls": 4,
+            "in": 6071,
+            "out": 144,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5915
+                },
+                "ollama": {
+                    "calls": 1,
+                    "tok": 0
+                },
+                "typesafeai": {
+                    "calls": 1,
+                    "tok": 300
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "scenario": "borrowing-followup",
+            "run": 1,
+            "turn": 1,
+            "q": "How many books can I borrow?",
+            "verdict": "ok",
+            "reply": "You can borrow up to 20 items at a time. Each loan lasts 3 weeks. You can renew twice online, unless another member has reserved the item.",
+            "seconds": 5.5,
+            "calls": 4,
+            "in": 5940,
+            "out": 115,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5752
+                },
+                "ollama": {
+                    "calls": 1,
+                    "tok": 0
+                },
+                "typesafeai": {
+                    "calls": 1,
+                    "tok": 303
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "scenario": "borrowing-followup",
+            "run": 1,
+            "turn": 2,
+            "q": "And for how long?",
+            "verdict": "ok",
+            "reply": "Each loan lasts 3 weeks. You can renew twice online, unless another member has reserved the item. That means you can keep an item for up to 9 weeks in total.\n\nThe library doesn't charge overdue fines. If an item hasn't come back after 8 weeks, you'll be billed the replacement cost.",
+            "seconds": 6.7,
+            "calls": 4,
+            "in": 6057,
+            "out": 231,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5983
+                },
+                "ollama": {
+                    "calls": 1,
+                    "tok": 0
+                },
+                "typesafeai": {
+                    "calls": 1,
+                    "tok": 305
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "scenario": "kids-followup",
+            "run": 1,
+            "turn": 1,
+            "q": "Is there anything for kids on Thursdays?",
+            "verdict": "ok",
+            "reply": "Yes. Code Club meets every Thursday at 4pm in the makerspace. It's for ages 9 to 13.\n\nThe library is open until 8pm on Thursdays. Younger children have Baby Rhyme Time, but that's on Tuesdays at 10:30am in the Children's Room.",
+            "seconds": 4.1,
+            "calls": 4,
+            "in": 5970,
+            "out": 160,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5831
+                },
+                "ollama": {
+                    "calls": 1,
+                    "tok": 0
+                },
+                "typesafeai": {
+                    "calls": 1,
+                    "tok": 299
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "scenario": "kids-followup",
+            "run": 1,
+            "turn": 2,
+            "q": "What ages is it for?",
+            "verdict": "ok",
+            "reply": "Code Club is for ages 9 to 13. It meets every Thursday at 4pm in the makerspace.\n\nIf your child is under 16, a parent or guardian needs to sign them up for library membership. Membership is free for residents of the borough.",
+            "seconds": 11.4,
+            "calls": 4,
+            "in": 6195,
+            "out": 198,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 6093
+                },
+                "ollama": {
+                    "calls": 1,
+                    "tok": 0
+                },
+                "typesafeai": {
+                    "calls": 1,
+                    "tok": 300
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "scenario": "dog-then-fines",
+            "run": 1,
+            "turn": 1,
+            "q": "Can I bring my dog in?",
+            "verdict": "ok",
+            "reply": "I'm sorry, but only assistance dogs are allowed inside the library. If your dog is an assistance dog, you're welcome to bring them in.",
+            "seconds": 4.7,
+            "calls": 4,
+            "in": 5921,
+            "out": 113,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5734
+                },
+                "ollama": {
+                    "calls": 1,
+                    "tok": 0
+                },
+                "typesafeai": {
+                    "calls": 1,
+                    "tok": 300
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "scenario": "dog-then-fines",
+            "run": 1,
+            "turn": 2,
+            "q": "Do you charge late fines?",
+            "verdict": "ok",
+            "reply": "No, we don't charge late fines. We stopped in 2022. If an item isn't returned after 8 weeks, we bill you for the cost of replacing it.\n\nIf you have a question about a bill or a charge, you can call our accounts team on +1 555 0103.",
+            "seconds": 22.3,
+            "calls": 6,
+            "in": 7285,
+            "out": 282,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 6969
+                },
+                "ollama": {
+                    "calls": 2,
+                    "tok": 0
+                },
+                "typesafeai": {
+                    "calls": 2,
+                    "tok": 598
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "scenario": "room-then-number",
+            "run": 1,
+            "turn": 1,
+            "q": "Can my community group book a meeting room?",
+            "verdict": "ok",
+            "reply": "Yes, it can. Community groups can book a meeting room for free, for up to 4 hours at a time.\n\nTo make the booking, call the reservations line on +1 555 0102.",
+            "seconds": 12.8,
+            "calls": 4,
+            "in": 6038,
+            "out": 117,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5856
+                },
+                "ollama": {
+                    "calls": 1,
+                    "tok": 0
+                },
+                "typesafeai": {
+                    "calls": 1,
+                    "tok": 299
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "scenario": "room-then-number",
+            "run": 1,
+            "turn": 2,
+            "q": "What number do I call to book it?",
+            "verdict": "ok",
+            "reply": "The number to call is +1 555 0102. That's the reservations line for booking a meeting room.",
+            "seconds": 3.4,
+            "calls": 4,
+            "in": 6196,
+            "out": 129,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 6022
+                },
+                "ollama": {
+                    "calls": 1,
+                    "tok": 0
+                },
+                "typesafeai": {
+                    "calls": 1,
+                    "tok": 303
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "scenario": "wifi-after-hours",
+            "run": 1,
+            "turn": 1,
+            "q": "What time do you close on weekdays?",
+            "verdict": "ok",
+            "reply": "We close at 8pm on weekdays. The library is open Monday to Friday from 9am to 8pm.\n\nThere are two exceptions. We're closed on public holidays, and we're closed on the last Friday of every month for staff training.",
+            "seconds": 3.8,
+            "calls": 4,
+            "in": 5933,
+            "out": 135,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5770
+                },
+                "ollama": {
+                    "calls": 1,
+                    "tok": 0
+                },
+                "typesafeai": {
+                    "calls": 1,
+                    "tok": 298
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "scenario": "wifi-after-hours",
+            "run": 1,
+            "turn": 2,
+            "q": "Is there Wi-Fi?",
+            "verdict": "ok",
+            "reply": "Yes, we have free Wi-Fi throughout the building. Connect to the network **Harbourside_Public**. You don't need a password.\n\nIf you need a computer, you can book one of our public computers for 60 minutes at a time. Printing costs 10p per black-and-white page.",
+            "seconds": 4.4,
+            "calls": 6,
+            "in": 7248,
+            "out": 295,
+            "tools": [
+                "tool:aim_recall",
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 6948
+                },
+                "ollama": {
+                    "calls": 2,
+                    "tok": 0
+                },
+                "typesafeai": {
+                    "calls": 2,
+                    "tok": 595
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "scenario": "events",
+            "run": 1,
+            "turn": 1,
+            "q": "Any upcoming events?",
+            "verdict": "wrong",
+            "reply": "I don't have a list of upcoming events recorded. Here's what I do know:\n\n- **Annual book sale:** It's held in the main hall on the first weekend of June.\n- **New events calendar:** The library is building one. Events will be published at least two weeks before they take place, so dates should show up there once it launches.\n\nYou can also contact the library by email at hello@harbourside-library.example to ask about current events.\n\nIf you know of an event that's coming up, tell me and I can make a note of it.",
+            "seconds": 3.5,
+            "calls": 4,
+            "in": 5878,
+            "out": 211,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5790
+                },
+                "ollama": {
+                    "calls": 1,
+                    "tok": 0
+                },
+                "typesafeai": {
+                    "calls": 1,
+                    "tok": 299
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "scenario": "kids-this-week",
+            "run": 1,
+            "turn": 1,
+            "q": "What's on for kids this week?",
+            "verdict": "ok",
+            "reply": "Here are the regular kids' sessions I have on record:\n\n- **Baby Rhyme Time** runs every Tuesday at 10:30am in the Children's Room.\n- **Code Club** is for ages 9 to 13. It meets every Thursday at 4pm in the makerspace.\n\nI don't have a list of one-off events for this specific week. If you know of anything else on, tell me and I can make a note of it.\n\nThe library is open Monday to Friday 9am\u20138pm, Saturday 10am\u20135pm and Sunday 12pm\u20134pm.",
+            "seconds": 3.6,
+            "calls": 4,
+            "in": 5943,
+            "out": 237,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5881
+                },
+                "ollama": {
+                    "calls": 1,
+                    "tok": 0
+                },
+                "typesafeai": {
+                    "calls": 1,
+                    "tok": 299
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "scenario": "services",
+            "run": 1,
+            "turn": 1,
+            "q": "What services do you offer?",
+            "verdict": "ok",
+            "reply": "I don't have a full list of services recorded. Here's what I do know that may help:\n\n- **Accessibility:** The building is step-free. There's a hearing loop at the main desk. Large-print and audio books are shelved by the entrance.\n- **Fines:** The library stopped charging overdue fines in 2022. Items not returned after 8 weeks are billed at replacement cost.\n- **Events:** The annual book sale is on the first weekend of June in the main hall.\n- **Opening hours:** Monday to Friday 9am\u20138pm, Saturday 10am\u20135pm, and Sunday 12pm\u20134pm. The library is closed on public holidays and on the last Friday of each month for staff training.\n- **Assistance dogs:** Only assistance dogs are allowed inside.\n\nIs there a particular service you're looking for, such as borrowing, computers or study spaces? If you know about other services, tell me and I can note them down.",
+            "seconds": 3.9,
+            "calls": 4,
+            "in": 5904,
+            "out": 355,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5962
+                },
+                "ollama": {
+                    "calls": 1,
+                    "tok": 0
+                },
+                "typesafeai": {
+                    "calls": 1,
+                    "tok": 297
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "scenario": "wheelchair",
+            "run": 1,
+            "turn": 1,
+            "q": "Is there wheelchair access?",
+            "verdict": "ok",
+            "reply": "Yes. The building is step-free, so you can get around it in a wheelchair without using steps.\n\nThe library also has these accessibility features:\n- A hearing loop at the main desk.\n- Large-print and audio books, shelved by the entrance.\n\nIf you need something specific, such as accessible toilets or help finding a book, tell me and I'll check what I have recorded.",
+            "seconds": 3,
+            "calls": 4,
+            "in": 5953,
+            "out": 176,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5832
+                },
+                "ollama": {
+                    "calls": 1,
+                    "tok": 0
+                },
+                "typesafeai": {
+                    "calls": 1,
+                    "tok": 297
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "scenario": "parking-unknown",
+            "run": 1,
+            "turn": 1,
+            "q": "Where can I park?",
+            "verdict": "ok",
+            "reply": "I don't have any parking information recorded for the library. If you know where people can park, tell me and I can note it. You could also contact the library by email at hello@harbourside-library.example and ask the staff.",
+            "seconds": 2.5,
+            "calls": 4,
+            "in": 5895,
+            "out": 115,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5715
+                },
+                "ollama": {
+                    "calls": 1,
+                    "tok": 0
+                },
+                "typesafeai": {
+                    "calls": 1,
+                    "tok": 295
+                }
+            },
+            "gate": "-"
+        },
+        {
+            "scenario": "cafe-unknown",
+            "run": 1,
+            "turn": 1,
+            "q": "Do you have a cafe?",
+            "verdict": "ok",
+            "reply": "I don't have anything recorded about a cafe at Harbourside Community Library. If you know whether there is one, tell me and I can make a note of it.\n\nI can help with other things, such as opening hours, Wi-Fi, accessibility, and meeting room bookings.",
+            "seconds": 3,
+            "calls": 4,
+            "in": 5903,
+            "out": 139,
+            "tools": [
+                "tool:aim_recall"
+            ],
+            "prov": {
+                "amazeeio": {
+                    "calls": 2,
+                    "tok": 5747
+                },
+                "ollama": {
+                    "calls": 1,
+                    "tok": 0
+                },
+                "typesafeai": {
+                    "calls": 1,
+                    "tok": 295
+                }
+            },
+            "gate": "-"
+        }
+    ]
+}

@@ -10,6 +10,31 @@ persona's "recall first" sentence dropped).
 Run: `ddev drush aim:chatbot-converse /var/www/html/demo/chat-eval/scenarios.yml --repeat=2 --dump=/var/www/html/demo/chat-eval/results.json`
 (`--modes`, `--only` to narrow).
 
+## 2026-11-17: finder inside recall (free mode, 1 run, 24 turns)
+
+After `aim_recall` started returning exact values through the finder
+(aim's ADR-0061 addendum). Run as uid 1, then as `demo-user` (uid 2, a
+plain authenticated member, from a copy with `as: 2`).
+
+| | Turns ok | Calls per turn (hosted chat / decision / embeddings) | Median time |
+| --- | --- | --- | --- |
+| 2026-10-27, 0.60 cutoff | 46/48 | 1.96 / 0 / 0.21 | 2.9 s |
+| 2026-11-17, uid 1 | 23/24 | 1.96 / 1.0 / 1.0 | 3.9 s |
+| 2026-11-17, member | 23/24 | about the same, 4.0 calls in all | 3.4 s |
+
+No restricted literal value (`staff_line`, `my_account`,
+`private_page_link`, `site_name`) appeared in a member reply. The library's
+name does, but from the persona's system prompt, not the restricted
+`site_name` literal.
+
+All three literal turns (`main_phone` twice, the meeting-room line) gave the
+right value. The one miss is "Any upcoming events?", the known ranking miss.
+The finder adds one decision call per recall and no hosted chat calls; the
+embeddings count is higher because the earlier run's second pass hit cached
+query embeddings. Mean time (5.3 s) is skewed by amazeeio `/model/info`
+timeouts during the run (three turns over 11 s), so the median is the fair
+figure. Raw replies: `results-2026-11-17.json`, `results-2026-11-17-member.json`.
+
 ## 2026-10-27: loose recall cutoff (free mode, 2 runs each, 48 turns)
 
 Six scenarios added for broad and no-answer questions (from

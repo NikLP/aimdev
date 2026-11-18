@@ -59,15 +59,17 @@ Chat `amazeeio`, Decision endpoint, Embeddings `ollama` /
 | --- | --- | --- | --- | --- |
 | Models > Consolidation classifier > Backend, Decision model | `activities.consolidation` | Decision API, decision endpoint | Chat, site default | - |
 | Models > Merge verifier > Backend, Decision model | `activities.verifier` | Decision API, decision endpoint | Chat, site default | - |
-| Models > Merge verifier > Verifier threshold | `activities.verifier.threshold` | 0.9 (recipe) | empty (0.5) | Decision endpoint (`subq-snap-1.2`, hard merge set 2026-11-12) |
+| Models > Merge verifier > Verifier threshold | `activities.verifier.threshold` | 0.9 (recipe) | 0.5 | Decision endpoint (`subq-snap-1.2`, hard merge set 2026-11-12) |
 | Models > Grounded check > Decision model | `activities.grounding` | Decision endpoint | none | - |
-| Models > Grounded check > Grounded threshold | `activities.grounding.threshold` | 0.7 | empty (0.7) | Decision endpoint (`subq-snap-1.2`, grounding set 2026-11-12) |
+| Models > Grounded check > Grounded threshold | `activities.grounding.threshold` | 0.7 | 0.7 | Decision endpoint (`subq-snap-1.2`, grounding set 2026-11-12) |
 | Models > Grounded check > Mode | `grounding_mode` | Demote (since 2026-11-01, ADR-0065) | Off | - |
 | Models > Grounded check > Time check | `time_check_mode` | Flag | Off | - |
-| Models > Grounded check > Time-bound threshold | `activities.grounding.time_threshold` | empty (0.3) | empty (0.3) | Decision endpoint (`subq-snap-1.2`, time gold set 2026-11-12, ADR-0057) |
+| Models > Grounded check > Time-bound threshold | `activities.grounding.time_threshold` | 0.3 | 0.3 | Decision endpoint (`subq-snap-1.2`, time gold set 2026-11-12, ADR-0057) |
+| (not on the form) | `activities.grounding.max_questions` | 16 | 16 | Decision endpoint's per-call question cap |
 | Consolidation > Comparison distance | `compare_distance` | 0.45 | 0.45 | `nomic-embed-text` |
 | Recall > Recall maximum distance | `recall_max_distance` | 0.60 (recipe) | 0.48 | `nomic-embed-text` |
 | Recall > Recall gap | `recall_gap` | 0 | 0 | `nomic-embed-text` |
+| Recall > Include exact values in recall | `recall_literals` | on | on | Finder's `match_threshold` 0.8 (recipe) |
 | Logging & Debug > Log audit events | `log_audit` | on | off | - |
 | Logging & Debug > Log verbose detail | `log_verbose` | on | off | - |
 

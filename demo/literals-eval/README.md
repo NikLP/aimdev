@@ -5,7 +5,7 @@ site's demo library, kept out of the `literals` module because they depend on
 this site (an `evaltester` user that does not exist yet) and its history.
 The literals they expect ship with the `aim_demo_library` recipe or come
 from `pools/`. The module ships
-only `eval/gold.example.yml` and the method (its DEVELOPING.md, "Tuning the thresholds"). Results:
+only `eval/gold.example.yml` and the method ([`literals_finder`'s DEVELOPING.md](../../web/modules/contrib/literals/modules/literals_finder/DEVELOPING.md), "Tuning the thresholds"). Results:
 [RESULTS.md](RESULTS.md).
 
 | Path | What |

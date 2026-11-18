@@ -3,15 +3,7 @@
 Dated `literals:sweep` results on the synthetic demo library (hosted Jev
 `subq-snap-preview`). Tuned to that library: not defaults, not for another
 site. The method is in the module's
-[DEVELOPING.md](../../web/modules/contrib/literals/DEVELOPING.md) "Tuning the thresholds".
-
-## Open
-
-- Judgment-call labels, left as written: "how do I renew a book" (and
-  "renew ... online") expects none but gets `login`; "phone number" and
-  "call" in the stress set expect a tie but get `main_phone`; two
-  agentblind account questions expect a tie but get one literal. Decide
-  whether those labels or those answers are wrong.
+`literals_finder`'s [DEVELOPING.md](../../web/modules/contrib/literals/modules/literals_finder/DEVELOPING.md) "Tuning the thresholds".
 
 ## Gist overlap (2026-10-22, subq-snap-preview, pool100 and stress seeded)
 
